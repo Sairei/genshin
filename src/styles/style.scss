@@ -1,0 +1,9 @@
+// SCSS pour oute l'appli
+@import './settings';
+
+// SCSS pour la page d'accueil
+@import './home/welcome';
+
+// SCSS pour les composants annexes
+@import './items/header';
+@import './items/navbar';

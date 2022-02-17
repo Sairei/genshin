@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'barcadebrawl';
+  src: url('../assets/font/BarcadeBrawl.ttf');
+}
+
+html {
+  --toggle: hsl(230deg 17% 85%);
+  --bggradient: url("../assets/images/white_background.png");
+  --bgcolor: none;
+  --colorPrimary: #000;
+  --filterHeading: #000;
+  --selectBg : #fff;
+  --selectText : #000;
+}
+
+body {
+  margin: 0;
+  background-image: var(--bggradient);
+  background-color: var(--bgcolor);
+  background-repeat: repeat;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 1s ease;
+}
+
+.main_container {
+  font-family: 'Press Start 2P', cursive;
+  color: #000;
+  margin-top: 55px;
+  margin-bottom: 40px;
+
+  .main_body {
+    min-height: 90vh;
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.vertical_text {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+}
+
+.vertical_align_text {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.flag {
+  border: 2px #000000 solid;
+  border-radius: 0.3rem;
+}

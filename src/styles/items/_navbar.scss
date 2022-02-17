@@ -1,0 +1,25 @@
+.drawer {
+  margin-top: 60px;
+}
+
+.drawer_header {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+
+  .drawer_title {
+    font-size: 40px;
+  }
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.list-item {
+  color: black;
+  font-size: 16px;
+  margin-right: 20px;
+  font-weight: bold;
+}
