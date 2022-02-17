@@ -20,7 +20,7 @@ const CharacterCard = ({ name }) => {
 
   return (
     <div className='character_card'>
-      <div className="character_image" onClick={() => nav(`/character/${name}`)}>
+      <div className="character_card_image" onClick={() => nav(`/character/${name}`)}>
         <Image
           src={characterData.images.icon}
           height={180}
@@ -28,7 +28,7 @@ const CharacterCard = ({ name }) => {
           fit="contain" />
       </div>
 
-      <div className='character_name'>
+      <div className='character_card_name'>
         {characterData.name}
       </div>
     </div>
