@@ -9,6 +9,9 @@
 @import './characters/card';
 @import './characters/list';
 
+// SCSS de la page d'un personnage
+@import './character/page';
+
 // SCSS pour les composants annexes
 @import './items/header';
 @import './items/navbar';

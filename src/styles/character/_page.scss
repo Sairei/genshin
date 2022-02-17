@@ -1,0 +1,21 @@
+.character_main_container {
+  display:flex;
+  width: 100%;
+  height: 90vh;
+  font-family: "VT323",monospace;
+  font-size: 21px;
+
+  .character_container {
+    display: flex;
+    padding: 20px 0px 5px 20px;
+    width: 100%;
+
+    .charac_info_image{
+      width: 20%;
+    }
+
+    .charac_info_container {
+      width: 80%;
+    }
+  }
+}
