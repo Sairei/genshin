@@ -16,7 +16,7 @@ const AppRouter = () => {
             <Route path="/" element={<MainPage />}>
               <Route index element={<HomePage />} />
 
-              <Route path='charaters' element={<ListCharactersPage />} />
+              <Route path='characters' element={<ListCharactersPage />} />
             </Route>
 
             <Route path="*" element={<Navigate replace to="/" />} />

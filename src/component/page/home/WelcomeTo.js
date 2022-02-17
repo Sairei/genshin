@@ -11,8 +11,7 @@ const WelcomeTo = () => {
       <p>
         Vous avez ici un site réalisé en REACT pour genshin.
         <br/>
-        Il s'agit d'un site où les données sont récupérer automatiquement sur la base <a href="https://github.com/theBowja/genshin-db">genshin db</a> 
-        et il est fait pour le fun !!
+        Il s'agit d'un site où les données sont récupérer automatiquement sur la base <a href="https://github.com/theBowja/genshin-db">genshin db</a> et il est fait pour le fun !!
       </p>
     </div>
   );
