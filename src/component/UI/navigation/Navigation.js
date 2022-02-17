@@ -49,15 +49,7 @@ const Navigation = () => {
                 Characters
               </Link>
             </li>
-
-            <Space h="md" />
-
-            <li className="list-item">
-              <Link to="/weapons" className="link">
-                Weapons
-              </Link>
-            </li>
-
+            
             <Space h="md" />
 
             <li className="list-item">
