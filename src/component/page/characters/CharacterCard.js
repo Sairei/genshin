@@ -1,9 +1,11 @@
 import { Image } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const genshindb = require('genshin-db');
 
 const CharacterCard = ({ name }) => {
+  const nav = useNavigate();
   const [characterData, setData] = useState();
 
   useEffect(() => {
@@ -18,12 +20,17 @@ const CharacterCard = ({ name }) => {
 
   return (
     <div className='character_card'>
-      {characterData.name}
-      <Image
-        src={characterData.images.icon} 
-        height={130}
-        width={200}
-        fit="contain" />
+      <div className="character_image" onClick={() => nav(`/character/${name}`)}>
+        <Image
+          src={characterData.images.icon}
+          height={180}
+          width={180}
+          fit="contain" />
+      </div>
+
+      <div className='character_name'>
+        {characterData.name}
+      </div>
     </div>
   );
 };

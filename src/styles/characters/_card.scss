@@ -7,7 +7,7 @@
   margin: 2rem;
   border-radius: 1rem;
   min-width: 220px;
-  height: 160px;
+  height: 200px;
   text-align: center;
   
   box-shadow:
@@ -24,5 +24,14 @@
   
   &:hover {
     transform: scale(1.1);
+  }
+
+  .character_image {
+    cursor: pointer;
+  }
+
+  .character_name {
+    margin-top: 5px;
+    font-size: 30px;
   }
 }
