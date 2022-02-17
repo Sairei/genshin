@@ -5,6 +5,10 @@
 @import './home/browsing';
 @import './home/welcome';
 
+// SCSS de la page de liste des personnages
+@import './characters/card';
+@import './characters/list';
+
 // SCSS pour les composants annexes
 @import './items/header';
 @import './items/navbar';
