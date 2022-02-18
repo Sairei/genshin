@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { Container, Image } from '@mantine/core';
+import { Container } from '@mantine/core';
+
 import CharacterInfoPage from './info/CharacterInfoPage';
 
 const genshindb = require('genshin-db');
@@ -16,16 +17,17 @@ const CharacterPage = () => {
 
   console.log(characterData);
 
+  if (!characterData) {
+    return (
+      <div></div>
+    )
+  }
+
   return (
     <div className='character_main_container'>
       <Container className='character_container'>
-        <CharacterInfoPage />
-
-        <Image
-          className='charac_info_image'
-          src={characterData.images.cover2}
-          fit='contain'
-        />
+        <CharacterInfoPage 
+          data={characterData} />
       </Container>
     </div>
   );

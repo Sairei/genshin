@@ -1,0 +1,32 @@
+.pres_info_container {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  justify-content: flex-end;
+
+  .info_name_elem {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .info_name {
+      font-size: 70px;
+      text-align: right;
+    }
+
+    .info_rarity {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .info_elem {
+      text-align: right;
+    }
+  }
+
+  .info_image {
+    margin-left: 20px;
+  }
+}

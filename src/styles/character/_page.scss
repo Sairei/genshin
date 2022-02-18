@@ -7,15 +7,8 @@
 
   .character_container {
     display: flex;
-    padding: 20px 0px 5px 20px;
+    padding: 20px 20px 5px 20px;
+    max-width: inherit;
     width: 100%;
-
-    .charac_info_image{
-      width: 20%;
-    }
-
-    .charac_info_container {
-      width: 80%;
-    }
   }
 }
