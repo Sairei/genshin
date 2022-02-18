@@ -11,7 +11,7 @@ const Header = () => {
   const open = useSelector((state) => state.isNavbarOpen);
 
   const [flag, setFlag] = useState(
-    <Flags.US width="27px" title="United States" />
+    <Flags.FR width="27px" title="France" />
   )
 
   const handleChangeLang = (value) => {
@@ -37,8 +37,8 @@ const Header = () => {
           disabled
           className="lang"
           data={[
+            { value: "FR", label: "Français" },
             { value: "US", label: "English" },
-            { value: "FR", label: "Français" }
           ]}
           onChange={(event) => handleChangeLang(event.currentTarget)}
           icon={flag} />

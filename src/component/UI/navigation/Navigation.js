@@ -38,7 +38,7 @@ const Navigation = () => {
           <ul className="middle-items">
             <li className="list-item">
               <Link to="/" className="link">
-                Home
+                Accueil
               </Link>
             </li>
 
@@ -46,7 +46,7 @@ const Navigation = () => {
 
             <li className="list-item">
               <Link to="/characters" className="link">
-                Characters
+                Personnages
               </Link>
             </li>
             
@@ -54,7 +54,7 @@ const Navigation = () => {
 
             <li className="list-item">
               <Link to="/about" className="link">
-                About
+                A propos
               </Link>
             </li>
           </ul>
