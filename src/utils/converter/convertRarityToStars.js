@@ -7,11 +7,11 @@ export const convertRarityToStars = (rarity) => {
   let res = [];
 
   for(i=0; i<rarity; i++) {
-    res.push(<FontAwesomeIcon icon={solidStar} />)
+    res.push(<FontAwesomeIcon key={i} icon={solidStar} />)
   }
 
   for(i=5; i>rarity; i--) {
-    res.push(<FontAwesomeIcon icon={emptyStar} />)
+    res.push(<FontAwesomeIcon key={i} icon={emptyStar} />)
   }
 
   return res;

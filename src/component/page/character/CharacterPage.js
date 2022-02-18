@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { Container } from '@mantine/core';
+import { Container, Image } from '@mantine/core';
 
 import CharacterInfoPage from './info/CharacterInfoPage';
 
@@ -28,6 +28,11 @@ const CharacterPage = () => {
       <Container className='character_container'>
         <CharacterInfoPage 
           data={characterData} />
+
+        <div>
+          <Image
+            src={require('../../../assets/images/horizontal_separator.png')} />
+        </div>
       </Container>
     </div>
   );
