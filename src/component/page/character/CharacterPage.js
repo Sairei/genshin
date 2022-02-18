@@ -29,7 +29,7 @@ const CharacterPage = () => {
         <CharacterInfoPage 
           data={characterData} />
 
-        <div>
+        <div className='separator'>
           <Image
             src={require('../../../assets/images/horizontal_separator.png')} />
         </div>
