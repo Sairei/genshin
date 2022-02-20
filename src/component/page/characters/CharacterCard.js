@@ -1,5 +1,6 @@
-import { Image } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
+
+import { Image } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 
 const genshindb = require('genshin-db');
