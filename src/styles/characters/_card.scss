@@ -7,7 +7,7 @@
   margin: 2rem;
   border-radius: 1rem;
   min-width: 220px;
-  height: 200px;
+  height: 240px;
   text-align: center;
   
   box-shadow:
@@ -32,6 +32,7 @@
 
   .character_card_name {
     margin-top: 5px;
-    font-size: 30px;
+    font-size: 28px;
+    max-width: 180px;
   }
 }
