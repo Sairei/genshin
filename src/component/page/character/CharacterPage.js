@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Container, Image } from '@mantine/core';
 
 import CharacterInfoPage from './info/CharacterInfoPage';
+import { convertElemToColor } from '../../../utils/converter/convertElemToColor';
 
 const genshindb = require('genshin-db');
 
@@ -23,8 +24,18 @@ const CharacterPage = () => {
     )
   }
 
+  const style = `
+    .character_container, 
+    .pres_info_container .info_image > * {
+      border: 3px solid ${convertElemToColor(characterData.element)};
+    }
+  `
   return (
     <div className='character_main_container'>
+      <style>
+        {style}
+      </style>
+
       <Container className='character_container'>
         <CharacterInfoPage 
           data={characterData} />

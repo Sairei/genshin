@@ -27,6 +27,13 @@
   }
 
   .info_image {
+    position: relative;
+    top: -3px;
+    right: -3px;
     margin-left: 20px;
+
+    > * {
+      border-radius: 0 1rem;
+    }
   }
 }
