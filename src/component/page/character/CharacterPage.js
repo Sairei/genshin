@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { Container, Image } from '@mantine/core';
+import { Container, Image, Tab, Tabs } from '@mantine/core';
 
-import CharacterInfoPage from './info/CharacterInfoPage';
 import { convertElemToColor } from '../../../utils/converter/convertElemToColor';
+import CharacterInfoPage from './info/CharacterInfoPage';
+import AdvancementTab from './tabs/AdvancementTab';
 
 const genshindb = require('genshin-db');
 
@@ -29,6 +30,10 @@ const CharacterPage = () => {
     .pres_info_container .info_image > * {
       border: 7px solid ${convertElemToColor(characterData.element)};
     }
+
+    .character_tab_label {
+      color: ${convertElemToColor(characterData.element)};
+    }
   `
   return (
     <div className='character_main_container'>
@@ -37,12 +42,26 @@ const CharacterPage = () => {
       </style>
 
       <Container className='character_container'>
-        <CharacterInfoPage 
+        <CharacterInfoPage
           data={characterData} />
 
         <div className='separator'>
           <Image
             src={require('../../../assets/images/horizontal_separator.png')} />
+        </div>
+
+        <div className='character_tabs_container'>
+          <Tabs grow color="gray"
+            classNames={{
+              root: 'character_tabs',
+              tabActive: 'character_tab_active',
+              tabLabel: 'character_tab_label'
+            }}
+          >
+            <Tab label="Avancement">
+              <AdvancementTab />
+            </Tab>
+          </Tabs>
         </div>
       </Container>
     </div>
