@@ -5,7 +5,7 @@ import { Container, Image, Tab, Tabs } from '@mantine/core';
 
 import { convertElemToColor } from '../../../utils/converter/convertElemToColor';
 import CharacterInfoPage from './info/CharacterInfoPage';
-import AdvancementTab from './tabs/AdvancementTab';
+import AdvancementTab from './advancement/AdvancementTab';
 
 const genshindb = require('genshin-db');
 
@@ -54,12 +54,13 @@ const CharacterPage = () => {
           <Tabs grow color="gray"
             classNames={{
               root: 'character_tabs',
+              body: 'character_tab_body',
               tabActive: 'character_tab_active',
               tabLabel: 'character_tab_label'
             }}
           >
             <Tab label="Avancement">
-              <AdvancementTab />
+              <AdvancementTab name={name} />
             </Tab>
           </Tabs>
         </div>

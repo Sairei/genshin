@@ -1,9 +1,11 @@
 import React from 'react';
 
-const AdvancementTab = () => {
+import BaseStats from './BaseStats';
+
+const AdvancementTab = ({ name }) => {
   return (
     <div className='advancement_container'>
-      
+      <BaseStats name={name} />
     </div>
   );
 };

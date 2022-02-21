@@ -8,6 +8,15 @@
     width: 90%;
     margin-bottom: 4%;
 
+    .character_tab_body {
+      margin: 10px auto;
+      width: 90%;
+      
+      .tabs_title {
+        padding-bottom: 10px;
+      }
+    }
+
     .character_tab_label {
       font-weight: 600;
       font-size: 18px;
