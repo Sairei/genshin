@@ -27,7 +27,7 @@ const CharacterPage = () => {
   const style = `
     .character_container, 
     .pres_info_container .info_image > * {
-      border: 3px solid ${convertElemToColor(characterData.element)};
+      border: 7px solid ${convertElemToColor(characterData.element)};
     }
   `
   return (

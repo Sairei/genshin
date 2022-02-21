@@ -1,19 +1,19 @@
 export const convertElemToColor = (color) => {
   switch (color) {
     case"Anémo":
-      return "#99ffef";
+      return "#7bddce";
     case "Cryo":
-      return "#99ffff";
+      return "#00e6e6";
     case "Dendro":
       return "green";
     case "Électro":
-      return "#f19efa";
+      return "#d17eda";
     case "Géo":
-      return "#ffe199";
+      return "#dfc179";
     case "Hydro":
-      return "#99d9ff";
+      return "#79c9df";
     case "Pyro":
-      return "#fea69a";
+      return "#de867a";
     default:
       return "black";
   }
