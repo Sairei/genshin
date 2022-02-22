@@ -1,11 +1,19 @@
 import React from 'react';
 
-import BaseStats from './BaseStats';
+import { Space } from '@mantine/core';
 
-const AdvancementTab = ({ name }) => {
+import BaseStats from './BaseStats';
+import AscentTable from './AscentTable';
+
+const AdvancementTab = ({ character, name }) => {
   return (
     <div className='advancement_container'>
       <BaseStats name={name} />
+
+      <Space h="xl" />
+      <Space h="xl" />
+
+      <AscentTable character={character} />
     </div>
   );
 };

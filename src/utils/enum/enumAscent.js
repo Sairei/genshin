@@ -6,3 +6,5 @@ export const ascent = [
   { value: 70, label: 'lvl 70' },
   { value: 80, label: 'lvl 80' },
 ];
+
+export const ascentLvl = [20, 40, 50, 60, 70, 80]

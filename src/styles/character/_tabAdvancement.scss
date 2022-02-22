@@ -32,4 +32,37 @@
       }
     }
   }
+
+  .ascent_container{
+    .ascent_table_container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+
+      .ascent_table {
+        th {
+          width: 150px;
+          font-size: 15px;
+          border-right: 1px solid black;
+        }
+  
+        td {
+          padding-left: 30px;
+        }
+  
+        tr:not(:last-child) > * {
+          border-bottom: 1px solid black;
+        }
+        
+        .ascent_item {
+          display: flex;
+          padding: 5px;
+          
+          .ascent_item_image {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
 }

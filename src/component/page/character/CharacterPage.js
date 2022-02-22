@@ -61,7 +61,8 @@ const CharacterPage = () => {
             }}
           >
             <Tab label="Avancement">
-              <AdvancementTab name={name} />
+              <AdvancementTab name={name}
+                character={characterData} />
             </Tab>
           </Tabs>
         </div>
