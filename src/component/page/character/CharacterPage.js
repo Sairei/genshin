@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Image, Tab, Tabs } from '@mantine/core';
 
-import { convertElemToColor } from '../../../utils/converter/convertElemToColor';
+import CharacterStyle from './CharacterStyle';
 import CharacterInfoPage from './info/CharacterInfoPage';
 import AdvancementTab from './advancement/AdvancementTab';
 
@@ -12,12 +12,15 @@ const genshindb = require('genshin-db');
 const CharacterPage = () => {
   const { name } = useParams()
   const [characterData, setData] = useState();
+  const [talentData, setTalentData] = useState();
 
   useEffect(() => {
     setData(genshindb.characters(name, { resultLanguage: "French" }));
-  }, [name])
 
-  console.log(characterData);
+    if (name !== 'Aether' | name !== 'Lumine') {
+      setTalentData(genshindb.talents(name, { resultLanguage: "French" }));
+    }
+  }, [name])
 
   if (!characterData) {
     return (
@@ -25,22 +28,9 @@ const CharacterPage = () => {
     )
   }
 
-  const style = `
-    .character_container, 
-    .pres_info_container .info_image > * {
-      border: 7px solid ${convertElemToColor(characterData.element)};
-    }
-
-    .tabs_sub_title,
-    .character_tab_label {
-      color: ${convertElemToColor(characterData.element)};
-    }
-  `
   return (
     <div className='character_main_container'>
-      <style>
-        {style}
-      </style>
+      <CharacterStyle elt={characterData.element} />
 
       <Container className='character_container'>
         <CharacterInfoPage
@@ -64,6 +54,7 @@ const CharacterPage = () => {
               <AdvancementTab name={name}
                 character={characterData} />
             </Tab>
+
           </Tabs>
         </div>
       </Container>

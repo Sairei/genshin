@@ -9,7 +9,6 @@ const ListCharactersPage = () => {
 
   useEffect(() => {
     setNameList(genshindb.characters('name', { matchCategories: true, resultLanguage: "French" }));
-    console.log(genshindb.characters('Aloy', { resultLanguage: "French" }));
   }, [])
 
   return (
