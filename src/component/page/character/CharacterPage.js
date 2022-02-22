@@ -31,6 +31,7 @@ const CharacterPage = () => {
       border: 7px solid ${convertElemToColor(characterData.element)};
     }
 
+    .tabs_sub_title,
     .character_tab_label {
       color: ${convertElemToColor(characterData.element)};
     }

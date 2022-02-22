@@ -22,7 +22,7 @@ const BaseStats = ({ name }) => {
 
   return (
     <div className='base_stats_container'>
-      <Title order={2} className='tabs_title'>
+      <Title order={2} className='tabs_sub_title'>
         Statistiques de base par niveau
       </Title>
 
