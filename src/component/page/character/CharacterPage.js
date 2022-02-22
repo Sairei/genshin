@@ -47,14 +47,13 @@ const CharacterPage = () => {
               root: 'character_tabs',
               body: 'character_tab_body',
               tabActive: 'character_tab_active',
-              tabLabel: 'character_tab_label'
+              tabLabel: 'character_tabs_label'
             }}
           >
             <Tab label="Avancement">
               <AdvancementTab name={name}
                 character={characterData} />
             </Tab>
-
           </Tabs>
         </div>
       </Container>
