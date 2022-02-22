@@ -13,6 +13,17 @@ const CharacterStyle = ({ elt }) => {
     .character_tab_label {
       color: ${convertElemToColor(elt)};
     }
+
+    .base_stats_slider_pointer,
+    .base_stats_slider_mark {
+      border-color: ${convertElemToColor(elt)};
+    }
+
+    .base_stats_slider_bar,
+    .base_stats_switch_input:checked {
+      background-color: ${convertElemToColor(elt)};
+      border-color: ${convertElemToColor(elt)};
+    }
   `
 
   return (

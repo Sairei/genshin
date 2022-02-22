@@ -47,7 +47,12 @@ const BaseStats = ({ name }) => {
 
       <div className='base_stats_level'>
         <Slider
-          className='base_stats_slider'
+          classNames={{
+            root: 'base_stats_slider',
+            bar: 'base_stats_slider_bar',
+            thumb: 'base_stats_slider_pointer',
+            mark: 'base_stats_slider_mark'
+          }}
           min={1} max={90}
           label={null} marks={ascent}
           value={lvl} onChange={setLvl} />
@@ -55,6 +60,7 @@ const BaseStats = ({ name }) => {
         <Switch
           classNames={{
             root: 'base_stats_switch',
+            input: 'base_stats_switch_input',
             label: 'base_stats_switch_label'
           }}
           checked={ascentPlusOne} onChange={(event) => setAscentPlusOne(event.currentTarget.checked)}
