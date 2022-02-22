@@ -6,7 +6,7 @@ const StartBrowsing = () => {
   return (
     <div className='browsing_container'>
       <Title order={1}>
-        Start Browsing
+        Commencer à naviguer
       </Title>
 
       <div>
@@ -14,7 +14,7 @@ const StartBrowsing = () => {
           <ul>
             <li>
               <BrowsingItem
-                title="Character" link="/characters"
+                title="Personnages" link="/characters"
               />
             </li>
           </ul>
