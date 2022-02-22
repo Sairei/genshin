@@ -6,6 +6,7 @@ import { Container, Image, Tab, Tabs } from '@mantine/core';
 import CharacterStyle from './CharacterStyle';
 import CharacterInfoPage from './info/CharacterInfoPage';
 import AdvancementTab from './advancement/AdvancementTab';
+import SkillTab from './skill/SkillTab';
 
 const genshindb = require('genshin-db');
 
@@ -53,6 +54,11 @@ const CharacterPage = () => {
             <Tab label="Avancement">
               <AdvancementTab name={name}
                 character={characterData} />
+            </Tab>
+
+            <Tab label="Compétences">
+              <SkillTab name={name}
+                talent={talentData} />
             </Tab>
           </Tabs>
         </div>

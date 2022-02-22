@@ -11,7 +11,8 @@ const CharacterStyle = ({ elt }) => {
 
     .tabs_sub_title,
     .info_name_elem,
-    .character_tabs_label {
+    .character_tabs_label,
+    .skill_name {
       color: ${convertElemToColor(elt)};
     }
 

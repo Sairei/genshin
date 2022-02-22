@@ -1,0 +1,69 @@
+.skill_container {
+  .skill_list_container {
+    .skill {
+      .skill_img_name_lvl {
+        display: flex;
+        justify-content: space-between;
+
+        .skill_img_name {
+          display: flex;
+          
+          .skill_name{
+            font-weight: bold;
+          }
+
+          > * {
+            margin-right: 15px;
+          }
+        }
+
+        .skill_lvl {
+          display: flex;
+          
+          .button_lvl {
+            margin: 0 10px;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .skill_info {
+        width: 75%;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .skill_cost_container{
+    .skill_cost_table_container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+
+      .skill_cost_table {
+        th {
+          width: 150px;
+          font-size: 15px;
+          border-right: 1px solid black;
+        }
+  
+        td {
+          padding-left: 30px;
+        }
+  
+        tr:not(:last-child) > * {
+          border-bottom: 1px solid black;
+        }
+        
+        .skill_cost_item {
+          display: flex;
+          padding: 5px;
+          
+          .skill_cost_item_image {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
