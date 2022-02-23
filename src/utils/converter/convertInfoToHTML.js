@@ -11,7 +11,7 @@ export const convertInfo = (info) => {
       element = element.replace('**', ' $ <b>')
       element = element.replace('**', '</b> $ ')
     }
-    console.log(element);
+    
     let eltSplit = [];
     element.split(" $ ").forEach((e) => {
       let tmp = e;
@@ -24,7 +24,6 @@ export const convertInfo = (info) => {
 
       eltSplit.push(tmp);
     })
-    console.log(eltSplit);
 
     return (
       <div key={index}>

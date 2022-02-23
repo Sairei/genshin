@@ -12,7 +12,6 @@ const CharacterInfoPage = ({ data }) => {
     )
   }
 
-  console.log(data.images);
   return (
     <div className='pres_info_container'>
       <Info 

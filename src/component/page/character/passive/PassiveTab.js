@@ -15,8 +15,6 @@ const PassiveTab = ({ talent }) => {
   const passive3 = talent.passive3;
   const passive4 = talent.passive4;
 
-  console.log(talent);
-
   return (
     <div className='passive_container'>
       <ItemPassive passive={passive1}
