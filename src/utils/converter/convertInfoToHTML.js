@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 export const convertInfo = (info) => {
   let split = info.split(/\n/g);
 
@@ -13,7 +15,7 @@ export const convertInfo = (info) => {
     }
     
     let eltSplit = [];
-    element.split(" $ ").forEach((e) => {
+    element.split(" $ ").forEach((e, index) => {
       let tmp = e;
       if (tmp.startsWith("<b>")) {
         tmp = tmp.replace('<b>', '')
@@ -22,7 +24,7 @@ export const convertInfo = (info) => {
         tmp = <b>{tmp}</b>
       }
 
-      eltSplit.push(tmp);
+      eltSplit.push(<Fragment key={index}>{tmp}</Fragment> );
     })
 
     return (
