@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { ActionIcon, Image } from '@mantine/core';
+
 import { findImage } from '../../../../utils/finder/findImage';
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
 import AttributeList from './AttributeList';

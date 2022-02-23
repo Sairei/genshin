@@ -2,19 +2,33 @@ export const convertInfo = (info) => {
   let split = info.split(/\n/g);
 
   let res = split.map((elt, index) => {
-    let element = elt;
-    if (element.startsWith('**')) {
-      element = element.replaceAll('**', '')
-      element = <b>{element}</b>
-    }
-
-    if (elt === "") {
+    if (!elt) {
       return <br key={index} />
     }
 
+    let element = elt;
+    while (element.includes('**')) {
+      element = element.replace('**', ' $ <b>')
+      element = element.replace('**', '</b> $ ')
+    }
+    console.log(element);
+    let eltSplit = [];
+    element.split(" $ ").forEach((e) => {
+      let tmp = e;
+      if (tmp.startsWith("<b>")) {
+        tmp = tmp.replace('<b>', '')
+        tmp = tmp.replace('</b>', '')
+
+        tmp = <b>{tmp}</b>
+      }
+
+      eltSplit.push(tmp);
+    })
+    console.log(eltSplit);
+
     return (
       <div key={index}>
-        {element}
+        {eltSplit}
       </div>
     );
   })

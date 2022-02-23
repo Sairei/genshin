@@ -1,0 +1,18 @@
+.passive_container {
+  .passive {
+    width: 95%;
+    margin-right: 10px;
+
+    .passive_img_name {
+      display: flex;
+      
+      .passive_name{
+        font-weight: bold;
+      }
+    }
+
+    .passive_info {
+      font-size: 14px;
+    }
+  }
+}

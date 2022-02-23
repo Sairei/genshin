@@ -7,6 +7,7 @@ import CharacterStyle from './CharacterStyle';
 import CharacterInfoPage from './info/CharacterInfoPage';
 import AdvancementTab from './advancement/AdvancementTab';
 import SkillTab from './skill/SkillTab';
+import PassiveTab from './passive/PassiveTab';
 
 const genshindb = require('genshin-db');
 
@@ -58,6 +59,11 @@ const CharacterPage = () => {
 
             <Tab label="Compétences">
               <SkillTab name={name}
+                talent={talentData} />
+            </Tab>
+
+            <Tab label="Passifs">
+              <PassiveTab
                 talent={talentData} />
             </Tab>
           </Tabs>
