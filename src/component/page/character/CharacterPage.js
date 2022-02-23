@@ -8,6 +8,7 @@ import CharacterInfoPage from './info/CharacterInfoPage';
 import AdvancementTab from './advancement/AdvancementTab';
 import SkillTab from './skill/SkillTab';
 import PassiveTab from './passive/PassiveTab';
+import ConstellationTab from './constellation/ConstellationTab';
 
 const genshindb = require('genshin-db');
 
@@ -15,12 +16,14 @@ const CharacterPage = () => {
   const { name } = useParams()
   const [characterData, setData] = useState();
   const [talentData, setTalentData] = useState();
+  const [constellationData, setConstellationData] = useState();
 
   useEffect(() => {
     setData(genshindb.characters(name, { resultLanguage: "French" }));
 
     if (name !== 'Aether' | name !== 'Lumine') {
       setTalentData(genshindb.talents(name, { resultLanguage: "French" }));
+      setConstellationData(genshindb.constellations(name, { resultLanguage: "French" }));
     }
   }, [name])
 
@@ -65,6 +68,11 @@ const CharacterPage = () => {
             <Tab label="Passifs">
               <PassiveTab
                 talent={talentData} />
+            </Tab>
+
+            <Tab label="Constellations">
+              <ConstellationTab
+                constellation={constellationData} />
             </Tab>
           </Tabs>
         </div>
