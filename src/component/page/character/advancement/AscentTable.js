@@ -3,6 +3,7 @@ import React from 'react';
 import { Image, Table, Title } from '@mantine/core';
 
 import { ascentLvl } from '../../../../utils/enum/enumAscent';
+import { findImage } from '../../../../utils/finder/findImage';
 
 const genshindb = require('genshin-db');
 
@@ -31,7 +32,7 @@ const AscentTable = ({ character }) => {
                 <div className='ascent_item' key={`${index}_${i}`}>
                   <Image
                     className='ascent_item_image'
-                    src={material.images.fandom}
+                    src={findImage(material.images.nameicon)}
                     height={30} width={30} />
 
                   <div className='vertical_align_text'>

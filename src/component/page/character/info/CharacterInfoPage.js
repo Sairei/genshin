@@ -3,6 +3,7 @@ import React from 'react';
 import { Image } from '@mantine/core';
 
 import Info from './Info';
+import { findImage } from '../../../../utils/finder/findImage';
 
 const CharacterInfoPage = ({ data }) => {
   if (!data) {
@@ -11,6 +12,7 @@ const CharacterInfoPage = ({ data }) => {
     )
   }
 
+  console.log(data.images);
   return (
     <div className='pres_info_container'>
       <Info 
@@ -20,7 +22,7 @@ const CharacterInfoPage = ({ data }) => {
 
       <div className='info_image'>
         <Image
-          src={data.images.cover1 ? data.images.cover1 : data.images.portrait}
+          src={data.images.namegachasplash ? findImage(data.images.namegachasplash) : data.images.portrait}
           height={255}
           fit='contain'
         />

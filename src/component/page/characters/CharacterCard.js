@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Image } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
+import { findImage } from '../../../utils/finder/findImage';
 
 const genshindb = require('genshin-db');
 
@@ -23,7 +24,7 @@ const CharacterCard = ({ name }) => {
     <div className='character_card'>
       <div className="character_card_image" onClick={() => nav(`/character/${name}`)}>
         <Image
-          src={characterData.images.icon}
+          src={findImage(characterData.images.nameicon)}
           height={180}
           width={180}
           fit="contain" />
