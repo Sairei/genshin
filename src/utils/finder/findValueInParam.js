@@ -7,7 +7,7 @@ export const findValueInParam = (s, params, lvl) => {
 
     let p = tmp.substring(open+1, close).split(':');
 
-    tmp = tmp.substring(0, open) + calcul(params[p[0]][lvl], p[1]) + tmp.substring(close+1);
+    tmp = tmp.substring(0, open) + calcul(params[p[0]][lvl-1], p[1]) + tmp.substring(close+1);
   }
 
   return tmp;
