@@ -1,9 +1,12 @@
 .skill_container {
   .skill_list_container {
     .skill {
-      .skill_img_name_lvl {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
+
+      .skill_img_name_info {
+        width: 65%;
+        margin-right: 10px;
 
         .skill_img_name {
           display: flex;
@@ -11,25 +14,35 @@
           .skill_name{
             font-weight: bold;
           }
-
-          > * {
-            margin-right: 15px;
-          }
         }
+
+        .skill_info {
+          font-size: 14px;
+        }
+      }
+
+      .skill_info_attributes {
+        width: 30%;
 
         .skill_lvl {
           display: flex;
+          white-space: nowrap;
           
           .button_lvl {
             margin: 0 10px;
             font-size: 20px;
           }
         }
-      }
 
-      .skill_info {
-        width: 75%;
-        font-size: 14px;
+        .skill_attributes {
+          .attribute_list_container {
+            font-size: 14px;
+
+            > ul {
+              padding: 0 10px;
+            }
+          }
+        }
       }
     }
   }

@@ -3,26 +3,28 @@ import React, { useState } from 'react';
 import { ActionIcon, Image } from '@mantine/core';
 import { findImage } from '../../../../utils/findImage';
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
+import AttributeList from './AttributeList';
 
 const ItemSkill = ({ skill, image }) => {
   const [lvl, setLvl] = useState(1);
-  const maxLvl = 10;
+  const maxLvl = skill.attributes.parameters.param1.length > 10
+    ? 10 : skill.attributes.parameters.param1.length;
 
   const upLvl = () => {
     if (lvl < maxLvl) {
-      setLvl(lvl+1);
+      setLvl(lvl + 1);
     }
   }
 
   const downLvl = () => {
     if (lvl > 1) {
-      setLvl(lvl-1);
+      setLvl(lvl - 1);
     }
   }
 
   return (
     <div className='skill'>
-      <div className='skill_img_name_lvl'>
+      <div className='skill_img_name_info'>
         <div className='skill_img_name'>
           <Image
             src={findImage(image)}
@@ -33,10 +35,18 @@ const ItemSkill = ({ skill, image }) => {
           </div>
         </div>
 
+        <div className='skill_info'>
+          {
+            convertInfo(skill.info)
+          }
+        </div>
+      </div>
+
+      <div className='skill_info_attributes'>
         <div className='vertical_align_text'>
           <div className='skill_lvl'>
-            <ActionIcon className='button_lvl' 
-              disabled={lvl===1} onClick={downLvl}
+            <ActionIcon className='button_lvl'
+              disabled={lvl === 1} onClick={downLvl}
               size="lg" variant="light">
               -
             </ActionIcon>
@@ -45,19 +55,17 @@ const ItemSkill = ({ skill, image }) => {
               LVL {lvl}
             </div>
 
-            <ActionIcon className='button_lvl' 
-              disabled={lvl===maxLvl} onClick={upLvl}
+            <ActionIcon className='button_lvl'
+              disabled={lvl === maxLvl} onClick={upLvl}
               size="lg" variant="light">
               +
             </ActionIcon>
           </div>
         </div>
-      </div>
 
-      <div className='skill_info'>
-        {
-          convertInfo(skill.info)
-        }
+        <div className='skill_attributes'>
+          <AttributeList attributes={skill.attributes} lvl={lvl} />
+        </div>
       </div>
     </div>
   );

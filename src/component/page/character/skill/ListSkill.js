@@ -9,7 +9,7 @@ const ListSkill = ({ talent }) => {
   const skill = talent.combat2;
   const ult = talent.combat3;
   const special = talent.combatsp;
-console.log(talent);
+  
   return (
     <div className='skill_list_container'>
       <ItemSkill 
