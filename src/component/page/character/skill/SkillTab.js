@@ -17,6 +17,7 @@ const SkillTab = ({ talent, name }) => {
       <ListSkill talent={talent} />
 
       <Space h="xl" />
+      <hr />
       <Space h="xl" />
 
       <Costs talent={talent} name={name} />

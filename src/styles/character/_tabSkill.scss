@@ -1,5 +1,10 @@
 .skill_container {
   .skill_list_container {
+    hr {
+      color: beige;
+      width: 80%;
+    }
+
     .skill {
       display: flex;
       justify-content: space-between;
@@ -23,6 +28,7 @@
 
       .skill_info_attributes {
         width: 30%;
+        padding-top: 20px;
 
         .skill_lvl {
           display: flex;
