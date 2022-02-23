@@ -1,5 +1,6 @@
 import React from 'react';
-import { findValueInParam } from '../../../../utils/findValueInParam';
+
+import { findValueInParam } from '../../../../utils/finder/findValueInParam';
 
 const AttributeList = ({ attributes, lvl }) => {
   return (

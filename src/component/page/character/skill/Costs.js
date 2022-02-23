@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Image, Table, Title } from '@mantine/core';
 
-import { findImage } from '../../../../utils/findImage';
+import { findImage } from '../../../../utils/finder/findImage';
 
 const genshindb = require('genshin-db');
 
