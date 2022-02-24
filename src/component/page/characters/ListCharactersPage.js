@@ -25,7 +25,6 @@ const ListCharactersPage = () => {
     });
     setList(list);
   }, [])
-  console.log(caracterList);
 
   return (
     <div className='character_list_container'>
