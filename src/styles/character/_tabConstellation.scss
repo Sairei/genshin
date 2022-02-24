@@ -14,4 +14,28 @@
     .constellation_hydro { background: url('../../assets/font/constellations/hydro_bg.jpg') no-repeat center; }
     .constellation_pyro { background: url('../../assets/font/constellations/pyro_bg.jpg') no-repeat center; }
   }
+  
+  .constellation_list_container {
+    hr {
+      color: beige;
+      width: 80%;
+    }
+
+    .constellation {
+      width: 95%;
+      margin-right: 10px;
+
+      .constellation_img_name {
+        display: flex;
+        
+        .constellation_name{
+          font-weight: bold;
+        }
+      }
+
+      .constellation_info {
+        font-size: 14px;
+      }
+    }
+  }
 }

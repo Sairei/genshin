@@ -17,14 +17,14 @@ const ListSkill = ({ talent }) => {
 
       <Space h="xl" />
       <hr />
-      <Space h="l" />
+      <Space h="md" />
 
       <ItemSkill
         skill={skill} image={talent.images['combat2']} />
 
       <Space h="xl" />
       <hr />
-      <Space h="l" />
+      <Space h="md" />
 
       <ItemSkill
         skill={ult} image={talent.images['combat3']} />
@@ -34,7 +34,7 @@ const ListSkill = ({ talent }) => {
         <>
           <Space h="xl" />
           <hr />
-          <Space h="l" />
+          <Space h="md" />
 
           <ItemSkill
             skill={special} image={talent.images['combatsp']} />

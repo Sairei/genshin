@@ -22,7 +22,7 @@ const PassiveTab = ({ talent }) => {
 
       <Space h="xl" />
       <hr />
-      <Space h="l" />
+      <Space h="md" />
 
       <ItemPassive passive={passive2}
         image={talent.images.passive2} />
@@ -32,7 +32,7 @@ const PassiveTab = ({ talent }) => {
         <>
           <Space h="xl" />
           <hr />
-          <Space h="l" />
+          <Space h="md" />
 
           <ItemPassive passive={passive3}
             image={talent.images.passive3} />
@@ -43,6 +43,9 @@ const PassiveTab = ({ talent }) => {
         passive4 &&
         <>
           <Space h="xl" />
+          <hr />
+          <Space h="md" />
+          
           <ItemPassive passive={passive4}
             image={talent.images.passive4} />
         </>

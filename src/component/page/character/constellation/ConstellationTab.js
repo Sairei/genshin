@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Image } from '@mantine/core';
+import { Image, Space } from '@mantine/core';
 
 import { findConstellationClassnameByElt } from '../../../../utils/finder/findConstellationBG';
 import { findImage } from '../../../../utils/finder/findImage';
+import ListConstellation from './ListConstellation';
 
 const ConstellationTab = ({ elt, constellation }) => {
   if (!constellation) {
@@ -22,6 +23,13 @@ const ConstellationTab = ({ elt, constellation }) => {
           src={findImage(constellationImg)}
           fit='contain' />
       </div>
+
+      <Space h="xl" />
+      <hr />
+      <Space h="xl" />
+
+      <ListConstellation
+        constellations={constellation} />
     </div>
   );
 };
