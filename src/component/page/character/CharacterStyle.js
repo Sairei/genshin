@@ -4,9 +4,13 @@ import { convertElemToColor } from '../../../utils/converter/convertElemToColor'
 
 const CharacterStyle = ({ elt }) => {
   const style = `
-    .character_container, 
-    .pres_info_container .info_image > * {
+    .character_container {
       border: 7px solid ${convertElemToColor(elt)};
+    }
+
+    .pres_info_container .info_image > * {
+      border-left: 7px solid ${convertElemToColor(elt)};
+      border-bottom: 7px solid ${convertElemToColor(elt)};
     }
 
     .tabs_sub_title,

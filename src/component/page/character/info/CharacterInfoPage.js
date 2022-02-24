@@ -23,7 +23,7 @@ const CharacterInfoPage = ({ data }) => {
         <Image
           src={data.images.namegachasplash ? findImage(data.images.namegachasplash) : data.images.portrait}
           height={255}
-          fit='contain'
+          fit='cover'
         />
       </div>
     </div>
