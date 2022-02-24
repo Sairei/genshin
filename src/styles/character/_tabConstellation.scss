@@ -1,0 +1,17 @@
+.constellation_container {
+  .constellation_background {
+    margin: auto;
+
+    img {
+      max-height: 720px;
+    }
+
+    .constellation_anemo { background: url('../../assets/font/constellations/anemo_bg.jpg') no-repeat center; }
+    .constellation_cryo { background: url('../../assets/font/constellations/cryo_bg.jpg') no-repeat center; }
+    .constellation_dendro { background: url('../../assets/font/constellations/dendro_bg.jpg') no-repeat center; }
+    .constellation_electro { background: url('../../assets/font/constellations/electro_bg.jpg') no-repeat center; }
+    .constellation_geo { background: url('../../assets/font/constellations/geo_bg.jpg') no-repeat center; }
+    .constellation_hydro { background: url('../../assets/font/constellations/hydro_bg.jpg') no-repeat center; }
+    .constellation_pyro { background: url('../../assets/font/constellations/pyro_bg.jpg') no-repeat center; }
+  }
+}
