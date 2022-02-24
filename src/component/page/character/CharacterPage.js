@@ -24,7 +24,7 @@ const CharacterPage = () => {
 
     setData(genshindb.characters(name, { resultLanguage: "French" }));
     
-    if (name !== 'Aether' | name !== 'Lumine') {
+    if (name === 'Aether' | name === 'Lumine') {
       setName('Traveler (anemo)');
     }
     
@@ -41,14 +41,15 @@ const CharacterPage = () => {
     )
   }
 
+  let element = characterData.element;
   return (
     <div className='character_main_container'>
-      <CharacterStyle elt={characterData.element} />
+      <CharacterStyle elt={element} />
 
       <Container className='character_container'>
         <ScrollArea>
-          <CharacterInfoPage
-            data={characterData} />
+          <CharacterInfoPage data={characterData}
+            name={searchName} setName={setName} />
 
           <div className='separator'>
             <Image
