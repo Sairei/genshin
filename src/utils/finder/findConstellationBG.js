@@ -10,7 +10,7 @@ export const findConstellationClassnameByElt = (elt) => {
       return "constellation_cryo";
     case "electro":      
       return "constellation_electro";
-    case "Geo":      
+    case "geo":      
       return "constellation_geo";
     case "hydro":      
       return "constellation_hydro";

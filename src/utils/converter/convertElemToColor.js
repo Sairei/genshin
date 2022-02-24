@@ -12,7 +12,7 @@ export const convertElemToColor = (color) => {
       return "green";
     case "electro":
       return "#d17eda";
-    case "Geo":
+    case "geo":
       return "#dfc179";
     case "hydro":
       return "#79c9df";
