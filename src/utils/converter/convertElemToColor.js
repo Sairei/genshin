@@ -1,18 +1,22 @@
+import { simplifyText } from "./simplifyElementText";
+
 export const convertElemToColor = (color) => {
+  color = simplifyText(color)
+
   switch (color) {
-    case"Anémo":
+    case "anemo":
       return "#7bddce";
-    case "Cryo":
+    case "cryo":
       return "#00e6e6";
-    case "Dendro":
+    case "dendro":
       return "green";
-    case "Électro":
+    case "electro":
       return "#d17eda";
-    case "Géo":
+    case "Geo":
       return "#dfc179";
-    case "Hydro":
+    case "hydro":
       return "#79c9df";
-    case "Pyro":
+    case "pyro":
       return "#de867a";
     default:
       return "black";

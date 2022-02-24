@@ -1,16 +1,20 @@
+import { simplifyText } from "../converter/simplifyElementText";
+
 export const findConstellationClassnameByElt = (elt) => {
+  elt = simplifyText(elt);
+  
   switch (elt) {
-    case"Anémo":      
+    case"anemo":      
       return "constellation_anemo";
-    case "Cryo":      
+    case "cryo":      
       return "constellation_cryo";
-    case "Électro":      
+    case "electro":      
       return "constellation_electro";
-    case "Géo":      
+    case "Geo":      
       return "constellation_geo";
-    case "Hydro":      
+    case "hydro":      
       return "constellation_hydro";
-    case "Pyro":      
+    case "pyro":      
       return "constellation_pyro";
     default:      
       return "constellation_dendro";
