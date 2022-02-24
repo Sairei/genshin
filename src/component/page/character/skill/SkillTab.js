@@ -6,6 +6,7 @@ import Costs from './Costs';
 import ListSkill from './ListSkill';
 
 const SkillTab = ({ talent, name }) => {
+  console.log(talent);
   if (!talent) {
     return (
       <div>Traitement particulier à faire</div>

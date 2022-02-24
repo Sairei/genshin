@@ -14,18 +14,26 @@ const genshindb = require('genshin-db');
 
 const CharacterPage = () => {
   const { name } = useParams()
+  const [searchName, setName] = useState();
   const [characterData, setData] = useState();
   const [talentData, setTalentData] = useState();
   const [constellationData, setConstellationData] = useState();
 
   useEffect(() => {
-    setData(genshindb.characters(name, { resultLanguage: "French" }));
+    setName(name);
 
+    setData(genshindb.characters(name, { resultLanguage: "French" }));
+    
     if (name !== 'Aether' | name !== 'Lumine') {
-      setTalentData(genshindb.talents(name, { resultLanguage: "French" }));
-      setConstellationData(genshindb.constellations(name, { resultLanguage: "French" }));
+      setName('Traveler (anemo)');
     }
+    
   }, [name])
+
+  useEffect(() => {
+    setTalentData(genshindb.talents(searchName, { resultLanguage: "French" }));
+    setConstellationData(genshindb.constellations(searchName, { resultLanguage: "French" }));
+  }, [searchName])
 
   if (!characterData) {
     return (
@@ -63,7 +71,7 @@ const CharacterPage = () => {
               </Tab>
 
               <Tab label="Compétences">
-                <SkillTab name={name}
+                <SkillTab name={searchName}
                   talent={talentData} />
               </Tab>
 
@@ -73,7 +81,7 @@ const CharacterPage = () => {
               </Tab>
 
               <Tab label="Constellations">
-                <ConstellationTab elt={characterData.element}
+                <ConstellationTab elt={characterData.element} name={name}
                   constellation={constellationData} />
               </Tab>
             </Tabs>

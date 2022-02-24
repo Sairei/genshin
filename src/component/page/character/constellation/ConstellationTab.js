@@ -6,14 +6,17 @@ import { findConstellationClassnameByElt } from '../../../../utils/finder/findCo
 import { findImage } from '../../../../utils/finder/findImage';
 import ListConstellation from './ListConstellation';
 
-const ConstellationTab = ({ elt, constellation }) => {
+const ConstellationTab = ({ elt, name, constellation }) => {
   if (!constellation) {
     return (
       <div>Traitement particulier à faire</div>
     );
   }
 
-  const constellationImg = constellation.images.constellation;
+  let constellationImg = constellation.images.constellation;
+  if (name === 'Lumine') {
+    constellationImg = constellation.images.constellation2;
+  }
 
   return (
     <div className='constellation_container'>
