@@ -3,11 +3,22 @@
   flex-direction: row;
   justify-content: space-between;
   
-  .info_traveler_element{
+  .info_traveler_elements{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    padding: 10px 15px;
+    padding: 10px 20px;
+
+    .traveler_elt {
+      cursor: pointer;
+      border-width: 3px;
+      border-style: solid;
+      border-radius: 1rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
   
   .pres_info_container {

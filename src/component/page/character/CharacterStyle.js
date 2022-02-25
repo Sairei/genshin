@@ -24,7 +24,8 @@ const CharacterStyle = ({ elt }) => {
 
     
     .base_stats_slider_pointer,
-    .base_stats_slider_mark {
+    .base_stats_slider_mark,
+    .traveler_elt {
       border-color: ${convertElemToColor(elt)};
     }
     .base_stats_slider_bar,

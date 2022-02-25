@@ -18,12 +18,15 @@ const CharacterPage = () => {
   const [characterData, setData] = useState();
   const [talentData, setTalentData] = useState();
   const [constellationData, setConstellationData] = useState();
+  const [element, setElt] = useState();
 
   useEffect(() => {
     setName(name);
 
-    setData(genshindb.characters(name, { resultLanguage: "French" }));
+    let d = genshindb.characters(name, { resultLanguage: "French" });
+    setData(d);
     
+    setElt(d.element);
     if (name === 'Aether' | name === 'Lumine') {
       setName('Traveler (anemo)');
     }
@@ -33,6 +36,12 @@ const CharacterPage = () => {
   useEffect(() => {
     setTalentData(genshindb.talents(searchName, { resultLanguage: "French" }));
     setConstellationData(genshindb.constellations(searchName, { resultLanguage: "French" }));
+
+    if (searchName && searchName.startsWith('Traveler')) {
+      let open = searchName.indexOf('(');
+      let close = searchName.indexOf(')');
+      setElt(searchName.substring(open+1, close));
+    }
   }, [searchName])
 
   if (!characterData) {
@@ -41,7 +50,6 @@ const CharacterPage = () => {
     )
   }
 
-  let element = characterData.element;
   return (
     <div className='character_main_container'>
       <CharacterStyle elt={element} />
@@ -82,7 +90,7 @@ const CharacterPage = () => {
               </Tab>
 
               <Tab label="Constellations">
-                <ConstellationTab elt={characterData.element} name={name}
+                <ConstellationTab elt={element} name={name}
                   constellation={constellationData} />
               </Tab>
             </Tabs>

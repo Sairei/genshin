@@ -3,6 +3,7 @@ import React from 'react';
 import { Image } from '@mantine/core';
 
 import Info from './Info';
+import ElementSelector from './ElementSelector';
 import { findImage } from '../../../../utils/finder/findImage';
 
 const CharacterInfoPage = ({ data, name, setName }) => {
@@ -12,17 +13,13 @@ const CharacterInfoPage = ({ data, name, setName }) => {
     )
   }
 
-  console.log(name);
   return (
     <div className='info_container'>
-      <div className='info_traveler_element'>
+      <div className='info_traveler_elements'>
         {
           name.startsWith("Traveler") &&
-          <>
-            <div>anemo</div>
-            <div>geo</div>
-            <div>electro</div>
-          </>
+          <ElementSelector
+            name={name} setName={setName} />
         }
       </div>
 
