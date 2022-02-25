@@ -1,0 +1,35 @@
+.breadcrumb {
+  display: flex;
+
+  .ariane-list-item {
+    color: white;
+    font-size: 25px;
+    margin: auto 20px auto auto;
+    font-weight: bold;
+    
+    .ariane-link {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    span {
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+  }
+}
+
+@media screen and (max-width:720px){
+  .breadcrumb {
+    .ariane-list-item {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width:580px){
+  .breadcrumb {
+    display: none;
+  }
+}

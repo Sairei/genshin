@@ -19,6 +19,9 @@ const AppRouter = () => {
 
               <Route path='characters' element={<ListCharactersPage />} />
               <Route path='character/:name' element={<CharacterPage />} />
+
+              {/* Pour pallier les problème de lien dans le fil d'ariane */}
+              <Route path="/character" element={<Navigate replace to="/characters" />} />
             </Route>
 
             <Route path="*" element={<Navigate replace to="/" />} />

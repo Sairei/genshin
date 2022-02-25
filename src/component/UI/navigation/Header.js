@@ -5,6 +5,7 @@ import { Burger, NativeSelect } from "@mantine/core";
 import Flags from 'country-flag-icons/react/3x2'
 
 import { isNavbarOpen } from "../../../router/provider/Dispatcher";
+import Breadcrumb from "./Breadcrumb";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -30,10 +31,12 @@ const Header = () => {
           color="#FFFFFF"
           opened={open}
           onClick={() => dispatch(isNavbarOpen())} />
+
+        <Breadcrumb />
       </div>
 
       <div className="right_header">
-        <NativeSelect 
+        <NativeSelect
           disabled
           className="lang"
           data={[
