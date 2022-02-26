@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+import { Space } from '@mantine/core';
+
 import CharacterCard from './CharacterCard';
 import { simplifyText } from '../../../utils/converter/simplifyElementText';
+import SortElement from './SortElement';
 
 const genshindb = require('genshin-db');
 
@@ -15,7 +18,7 @@ const ListCharactersPage = () => {
 
       let obj = {};
       obj['name'] = name;
-      obj['elt'] = simplifyText(c.element);
+      obj['elt'] = simplifyText(c.element !== "None" ? c.element : 'adaptive');
       obj['weapon'] = simplifyText(c.weapontype);
       obj['region'] = simplifyText(c.region);
       obj['rarity'] = simplifyText(c.rarity);
@@ -24,10 +27,15 @@ const ListCharactersPage = () => {
       list.push(obj);
     });
     setList(list);
+    console.log(list);
   }, [])
 
   return (
     <div className='character_list_container'>
+      <SortElement />
+
+      <Space h='xl' />
+
       <div className='list_characters'>
         <ul>
           {

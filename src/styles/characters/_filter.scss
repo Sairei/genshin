@@ -1,0 +1,13 @@
+.character_list_filter_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-top: 15px;
+
+  > * {
+    width: 25%;
+    min-width: 220px;
+    margin: 0 20px;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Image, Table, Title } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
@@ -35,7 +36,12 @@ const Costs = ({ talent, name }) => {
                     height={30} width={30} />
 
                   <div className='vertical_align_text'>
-                    {`${item.name} x${item.count}`}
+                    <div>
+                      <Anchor component={Link} to='/characters' >
+                        {`${item.name} `} 
+                      </Anchor>
+                      {`x${item.count}`}
+                    </div>
                   </div>
                 </div>
               )
