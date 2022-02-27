@@ -26,13 +26,13 @@ export const ConvertFR = {
     switch (weapon) {
       case "claymore":
         return "Épée à deux mains";
-      case "sword":        
+      case "sword":
         return "Épée à une main";
-      case "polearm":        
+      case "polearm":
         return "Arme d’hast";
-      case "catalyst":        
+      case "catalyst":
         return "Catalyseur";
-      case "bow":        
+      case "bow":
         return "Arc";
       default:
         return "";
@@ -41,9 +41,9 @@ export const ConvertFR = {
 
   genderLabel: (gender) => {
     switch (gender) {
-      case "male":        
+      case "male":
         return "Homme";
-      case "female":        
+      case "female":
         return "Femme";
       default:
         return "";
@@ -52,11 +52,13 @@ export const ConvertFR = {
 
   regionLabel: (region) => {
     switch (region) {
-      case "mondstadt":        
+      case "mondstadt":
         return "Mondstadt";
-      case "liyue":        
+      case "liyue":
         return "Liyue";
-      case "snezhnaya":        
+      case "snezhnaya":
+        return "Snezhnaya";
+      case "inazuma":
         return "Inazuma";
       default:
         return "";
