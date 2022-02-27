@@ -5,6 +5,7 @@ import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { ascentLvl } from '../../../../utils/enum/enumAscent';
 import { findImage } from '../../../../utils/finder/findImage';
+import { simplifyText } from '../../../../utils/converter/simplifyElementText';
 
 const genshindb = require('genshin-db');
 
@@ -17,7 +18,7 @@ const AscentTable = ({ character }) => {
 
 
   const trAscent = Object.entries(character.costs).map((val, index) => {
-    let en = genshindb.characters(character.name);
+    let en = genshindb.characters(simplifyText(character.name));
     return (
       <tr key={index}>
         <th>
