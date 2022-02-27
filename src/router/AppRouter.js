@@ -7,6 +7,7 @@ import MainPage from '../component/MainPage';
 import HomePage from '../component/page/home/HomePage';
 import ListCharactersPage from '../component/page/characters/ListCharactersPage';
 import CharacterPage from '../component/page/character/CharacterPage';
+import MaterialsPage from '../component/page/matierials/MaterialsPage';
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,8 @@ const AppRouter = () => {
 
               <Route path='characters' element={<ListCharactersPage />} />
               <Route path='character/:name' element={<CharacterPage />} />
+              
+              <Route path='items' element={<MaterialsPage />} />
 
               {/* Pour pallier les problème de lien dans le fil d'ariane */}
               <Route path="/character" element={<Navigate replace to="/characters" />} />

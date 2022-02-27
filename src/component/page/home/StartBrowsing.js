@@ -17,6 +17,12 @@ const StartBrowsing = () => {
                 title="Personnages" link="/characters"
               />
             </li>
+            
+            <li>
+              <BrowsingItem
+                title="Objets" link="/items"
+              />
+            </li>
           </ul>
         </div>
       </div>

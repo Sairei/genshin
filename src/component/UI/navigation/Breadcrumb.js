@@ -14,6 +14,8 @@ const Breadcrumb = () => {
       let name, link;
       if (partUrl.startsWith("chara")) {
         name = "Personnages";
+      } else if (partUrl.startsWith("item")) {
+        name = "Objets";
       } else {
         name = partUrl;
       }
