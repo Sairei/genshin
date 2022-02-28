@@ -1,52 +1,28 @@
-import { Image } from '@mantine/core';
-import React, { useEffect, useState } from 'react';
-import { findImage } from '../../../utils/finder/findImage';
+import React from 'react';
 
-const genshindb = require('genshin-db');
+import { Image } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
 
 const MaterialsPage = () => {
-  const [materialList, setList] = useState([]);
-
-  useEffect(() => {
-    let list = [];
-    genshindb.materials('name', { matchCategories: true }).forEach(link => {
-      let m = genshindb.materials(link, { resultLanguage: 'French' });
-
-      let obj = {};
-      obj['link'] = link;
-      obj['name'] = m.name;
-      obj['description'] = m.description;
-      obj['image'] = m.images.nameicon;
-      obj['category'] = m.category;
-      obj['source'] = m.source;
-      obj['dropdomain'] = m.dropdomain;
-      obj['daysofweek'] = m.daysofweek;
-
-      list.push(obj);
-    });
-    setList(list);
-  }, []);
+  const nav = useNavigate();
 
   return (
     <div className='materials_list_container'>
-      <ul>
-        {
-          materialList.map((e) => {
-            return (
-              <li key={e.name} >
-                <div style={{display: 'flex'}}>
-                  <Image
-                    src={findImage(e.image)}
-                    height={50}
-                    fit='contain' />
+      <Image
+        src={require('../../../assets/images/items/produits.png')}
+        onClick={() => nav()}
+        height={150} width={150}
+        fit='contain' />
 
-                  {e.name}
-                </div>
-              </li>
-            );
-          })
-        }
-      </ul>
+      <Image
+        src={require('../../../assets/images/items/ascension_personnages.png')}
+        height={150} width={150}
+        fit='contain' />
+
+      <Image
+        src={require('../../../assets/images/items/ascension_armes.png')}
+        height={150} width={150}
+        fit='contain' />
     </div>
   );
 };
