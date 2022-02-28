@@ -19,6 +19,9 @@
 @import './character/tabPassive';
 @import './character/tabConstellation';
 
+// SCSS pour les materials
+@import './material/categories';
+
 // SCSS pour les composants annexes
 @import './items/header';
 @import './items/navbar';

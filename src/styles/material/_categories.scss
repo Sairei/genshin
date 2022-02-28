@@ -1,0 +1,11 @@
+.materials_list_container {
+  display: flex;
+
+  > * {
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
