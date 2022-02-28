@@ -8,7 +8,7 @@ import HomePage from '../component/page/home/HomePage';
 import ListCharactersPage from '../component/page/characters/ListCharactersPage';
 import CharacterPage from '../component/page/character/CharacterPage';
 import MaterialsPage from '../component/page/matierials/MaterialsPage';
-import LocalSpecialty from '../component/page/matierials/LocalSpecialty';
+import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -35,7 +35,7 @@ const AppRouter = () => {
               <Route path='categories_items' element={<MaterialsPage />} />
               <Route path='categorie_items' element={<Outlet />} >
                 {/**/} <Route index element={<Navigate replace to="/categories_items" />} />
-                <Route path='local_specialty' element={<LocalSpecialty />} />
+                <Route path='local_specialty' element={<LocalSpecialtyPage />} />
               </Route>          
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
 
