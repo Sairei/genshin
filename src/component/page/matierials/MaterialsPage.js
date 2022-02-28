@@ -10,7 +10,7 @@ const MaterialsPage = () => {
     <div className='materials_list_container'>
       <Image
         src={require('../../../assets/images/items/produits.png')}
-        onClick={() => nav()}
+        onClick={() => nav('/categorie_items/local_specialty')}
         height={150} width={150}
         fit='contain' />
 
