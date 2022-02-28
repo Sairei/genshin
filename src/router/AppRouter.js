@@ -21,10 +21,12 @@ const AppRouter = () => {
               <Route path='characters' element={<ListCharactersPage />} />
               <Route path='character/:name' element={<CharacterPage />} />
               
-              <Route path='items' element={<MaterialsPage />} />
+              <Route path='categories_items' element={<MaterialsPage />} />
 
               {/* Pour pallier les problème de lien dans le fil d'ariane */}
               <Route path="/character" element={<Navigate replace to="/characters" />} />
+              <Route path="/categorie_items" element={<Navigate replace to="/characters" />} />
+              <Route path="/item" element={<Navigate replace to="/categories_items" />} />
             </Route>
 
             <Route path="*" element={<Navigate replace to="/" />} />

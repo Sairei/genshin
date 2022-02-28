@@ -53,7 +53,7 @@ const Navigation = () => {
             <Space h="md" />
 
             <li className="list-item">
-              <Link to="/items" className="link">
+              <Link to="/categories_items" className="link">
                 Objets
               </Link>
             </li>
