@@ -9,6 +9,7 @@ import AdvancementTab from './advancement/AdvancementTab';
 import SkillTab from './skill/SkillTab';
 import PassiveTab from './passive/PassiveTab';
 import ConstellationTab from './constellation/ConstellationTab';
+import ProfilTab from './profil/ProfilTab';
 
 const genshindb = require('genshin-db');
 
@@ -25,12 +26,12 @@ const CharacterPage = () => {
 
     let d = genshindb.characters(name, { resultLanguage: "French" });
     setData(d);
-    
+
     setElt(d.element);
     if (name === 'Aether' | name === 'Lumine') {
       setName('Traveler (anemo)');
     }
-    
+
   }, [name])
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const CharacterPage = () => {
     if (searchName && searchName.startsWith('Traveler')) {
       let open = searchName.indexOf('(');
       let close = searchName.indexOf(')');
-      setElt(searchName.substring(open+1, close));
+      setElt(searchName.substring(open + 1, close));
     }
   }, [searchName])
 
@@ -74,6 +75,11 @@ const CharacterPage = () => {
                 tabLabel: 'character_tabs_label'
               }}
             >
+              <Tab label="Profil">
+                <ProfilTab name={name}
+                  character={characterData} />
+              </Tab>
+
               <Tab label="Avancement">
                 <AdvancementTab name={name}
                   character={characterData} />

@@ -18,7 +18,8 @@ const CharacterStyle = ({ elt }) => {
     .character_tabs_label,
     .skill_name,
     .passive_name,
-    .constellation_name {
+    .constellation_name,
+    .elem_color_text {
       color: ${convertElemToColor(elt)};
     }
 

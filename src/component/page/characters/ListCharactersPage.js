@@ -30,7 +30,6 @@ const ListCharactersPage = () => {
     });
     setList(list);
     setFilterList(list);
-    console.log(list);
   }, [])
   
   const elementValue = useSelector((state) => state.element);
