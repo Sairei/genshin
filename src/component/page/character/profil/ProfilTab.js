@@ -17,7 +17,7 @@ const ProfilTab = ({ character, name }) => {
       <Space h='md' />
 
       <div>
-        <b className='elem_color_text'>{`Région d'origine : `}</b> {character.region}
+        <b className='elem_color_text'>{`Région d'origine : `}</b> {character.region ? character.region : "Aucune connue"}
       </div>
 
       <Space h='md' />
@@ -29,7 +29,21 @@ const ProfilTab = ({ character, name }) => {
       <Space h='md' />
 
       <div>
-        <b className='elem_color_text'>{`Doublage (Cover Voice) : (TODO)`}</b> 
+        <b className='elem_color_text'>{`Doublage (Cover Voice) :`}</b>
+        <ul>
+          {
+            Object.entries(character.cv).map((entry) => {
+              let lang = entry[0];
+              let cover = entry[1];
+
+              return (
+                <li key={lang}>
+                  <i className='elem_color_text'>{`${lang} : `}</i> {cover}
+                </li>
+              );
+            })
+          }
+        </ul> 
       </div>
 
       <Space h='md' />
