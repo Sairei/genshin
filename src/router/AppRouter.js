@@ -9,6 +9,7 @@ import ListCharactersPage from '../component/page/characters/ListCharactersPage'
 import CharacterPage from '../component/page/character/CharacterPage';
 import MaterialsPage from '../component/page/matierials/MaterialsPage';
 import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
+import TalentMaterialPage from '../component/page/matierials/characters/TalentMaterialPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -36,6 +37,7 @@ const AppRouter = () => {
               <Route path='categorie_items' element={<Outlet />} >
                 {/**/} <Route index element={<Navigate replace to="/categories_items" />} />
                 <Route path='local_specialty' element={<LocalSpecialtyPage />} />
+                <Route path='talent' element={<TalentMaterialPage />} />
               </Route>          
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
 

@@ -16,6 +16,7 @@ const MaterialsPage = () => {
 
       <Image
         src={require('../../../assets/images/items/ascension_personnages.png')}
+        onClick={() => nav('/categorie_items/talent')}
         height={150} width={150}
         fit='contain' />
 
