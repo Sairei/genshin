@@ -1,0 +1,37 @@
+.character_ascent_material_container {
+  padding: 20px;
+
+  hr {
+    color: rgb(206, 206, 183);
+    width: 80%;
+  }
+  
+  .ascent_material_region {
+    .region_title {
+      text-align: center;
+    }
+
+    .ascent_material_region {
+      display: flex;
+
+      .domain_image_name {
+        .domain_title {
+          text-align: center;
+        }
+      }
+
+      .talent_table {
+        width: 30%;
+        margin-right: 30px;
+
+        td {
+          display: flex;
+        }
+
+        .talent_item_icon {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

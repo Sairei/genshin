@@ -9,7 +9,7 @@ import ListCharactersPage from '../component/page/characters/ListCharactersPage'
 import CharacterPage from '../component/page/character/CharacterPage';
 import MaterialsPage from '../component/page/matierials/MaterialsPage';
 import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
-import TalentMaterialPage from '../component/page/matierials/characters/TalentMaterialPage';
+import TalentMaterialPage from '../component/page/matierials/talent/TalentMaterialPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.

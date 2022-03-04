@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 
+import { Space } from '@mantine/core';
+
+import { sortTalent } from '../../../../utils/sort/sortTalentMaterials';
 import { categorie } from '../../../../utils/categorie/categorie';
+import ByRegion from './ByRegion';
 
 const genshindb = require('genshin-db');
 
@@ -9,8 +13,6 @@ const TalentMaterialPage = () => {
 
   useEffect(() => {
     let sourceTalentList = [];
-    let regionTalentList = {};
-    let talentList = {};
 
     // Récupération des valeurs
     categorie.materialtype.talent_lvl_up.map((val) => {
@@ -26,43 +28,43 @@ const TalentMaterialPage = () => {
 
         let o = genshindb.materials(m, { resultLanguage: 'French' });
         o['link'] = m;
+        o['domainLink'] = enObj.dropdomain;
         o['region'] = domain.region;
         sourceTalentList.push(o)
 
-        regionTalentList[o.region] = [];
-        talentList[o.region] = {};
-
         return '';
       })
       return '';
     })
 
-    // Tri par region
-    sourceTalentList.map((talent) => {
-      regionTalentList[talent.region].push(talent);
-      talentList[talent.region][talent.dropdomain] = []
-      return '';
-    })
-
-    // Tri par region
-    Object.entries(regionTalentList).map((entry) => {
-      let region = entry[0];
-      let talents = entry[1]
-      talents.map((talent) => {
-        talentList[region][talent.dropdomain].push(talent)
-        return '';
-      })
-      return '';
-    })
-
-    setTalentList(talentList);
+    setTalentList(sortTalent(sourceTalentList));
   }, [])
 
   console.log(talentLvlUpList);
 
   return (
     <div className='character_ascent_material_container'>
-      
+      {
+        Object.entries(talentLvlUpList).map((entry, index) => {
+          return (
+            <Fragment key={entry[0]} >
+              {
+                index !== 0 &&
+                <>
+                  <Space h="xl" />
+                  <hr />
+                  <Space h="xl" />
+                </>
+              }
+
+              <ByRegion key={entry[0]}
+                region={entry[0]}
+                materials={entry[1]} />
+
+            </Fragment>
+          )
+        })
+      }
     </div>
   );
 };
