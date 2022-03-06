@@ -19,6 +19,7 @@ const CharacterPage = () => {
   const [characterData, setData] = useState();
   const [talentData, setTalentData] = useState();
   const [constellationData, setConstellationData] = useState();
+  const [outfit, setOutfit] = useState();
   const [element, setElt] = useState();
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const CharacterPage = () => {
   useEffect(() => {
     setTalentData(genshindb.talents(searchName, { resultLanguage: "French" }));
     setConstellationData(genshindb.constellations(searchName, { resultLanguage: "French" }));
+    setOutfit(genshindb.outfits(searchName, { matchCategories:true }));
 
     if (searchName && searchName.startsWith('Traveler')) {
       let open = searchName.indexOf('(');
@@ -77,6 +79,7 @@ const CharacterPage = () => {
             >
               <Tab label="Profil">
                 <ProfilTab name={name}
+                  outfit={outfit}
                   character={characterData} />
               </Tab>
 
