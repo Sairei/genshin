@@ -18,6 +18,10 @@ const Breadcrumb = () => {
         name = "Objets";
       } else if (partUrl === "local_specialty") {
         name = "Spécialités locales";
+      } else if (partUrl === "talent") {
+        name = "Talents";
+      } else if (partUrl === "weapon") {
+        name = "Armes";
       } else {
         name = partUrl;
       }

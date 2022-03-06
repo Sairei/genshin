@@ -10,6 +10,7 @@ import CharacterPage from '../component/page/character/CharacterPage';
 import MaterialsPage from '../component/page/matierials/MaterialsPage';
 import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
 import TalentMaterialPage from '../component/page/matierials/talent/TalentMaterialPage';
+import WeaponMaterialPage from '../component/page/matierials/weapon/WeaponMaterialPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -38,6 +39,7 @@ const AppRouter = () => {
                 {/**/} <Route index element={<Navigate replace to="/categories_items" />} />
                 <Route path='local_specialty' element={<LocalSpecialtyPage />} />
                 <Route path='talent' element={<TalentMaterialPage />} />
+                <Route path='weapon' element={<WeaponMaterialPage />} />
               </Route>          
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
 

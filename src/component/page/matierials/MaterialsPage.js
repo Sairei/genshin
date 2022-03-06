@@ -22,6 +22,7 @@ const MaterialsPage = () => {
 
       <Image
         src={require('../../../assets/images/items/ascension_armes.png')}
+        onClick={() => nav('/categorie_items/weapon')}
         height={150} width={150}
         fit='contain' />
     </div>
