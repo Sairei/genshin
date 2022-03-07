@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Image, Space, Title } from '@mantine/core';
+
 import { ConvertFR } from '../../../utils/categorie/convertByLang';
 import { findImage } from '../../../utils/finder/findImage';
 
@@ -16,7 +17,6 @@ const ImageList = ({ type, bestiaryList }) => {
       <div className='list_images'>
         {
           bestiaryList.map((elt) => {
-            console.log(elt);
             return (
               <Image key={elt.link}
                 className='bestiary_image'

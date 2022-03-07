@@ -1,9 +1,11 @@
 .bestiary_container {
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   display: flex;
 
   .list_bestiary {
     .list_bestiary_container {
+      height: 90vh;
+
       .list_images {
         display: flex;
         flex-wrap: wrap;
