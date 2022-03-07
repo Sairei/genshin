@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { ScrollArea, Space } from '@mantine/core';
 import ImageList from './ImageList';
 
-const BestiaryList = ({ list }) => {
+const BestiaryList = ({ list, select }) => {
   if (!list) {
     return (
       <div></div>
@@ -11,7 +11,8 @@ const BestiaryList = ({ list }) => {
   }
 
   return (
-    <ScrollArea className='list_bestiary_container' >
+    <ScrollArea offsetScrollbars type="never"
+      className='list_bestiary_container' >
       {
         Object.entries(list).map((entry, index) => {
           let key = entry[0];
@@ -27,7 +28,7 @@ const BestiaryList = ({ list }) => {
               }
 
               <ImageList
-                type={key}
+                select={select} type={key}
                 bestiaryList={items} />
             </Fragment>
           )

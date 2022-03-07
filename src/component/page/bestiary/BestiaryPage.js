@@ -8,6 +8,7 @@ import BestiaryList from './BestiaryList';
 const genshindb = require('genshin-db');
 
 const BestiaryPage = () => {
+  const [selected, setSelect] = useState();
   const [animalList, setAnimalList] = useState({});
   const [enemiesList, setEnemiesList] = useState({});
 
@@ -44,24 +45,23 @@ const BestiaryPage = () => {
     setEnemiesList(enemiesTmpList);
   }, []);
 
-  console.log(animalList);
-  console.log(enemiesList);
+  let display = !selected ? "none" : "";
 
   return (
     <div className='bestiary_container' >
-      <div className='list_bestiary'>
-        <Tabs variant="outline" orientation="vertical">
-          <Tab label="Animaux" >
-            <BestiaryList list={animalList} />
-          </Tab>
-          <Tab label="Enemies" >
-            <BestiaryList list={enemiesList} />
-          </Tab>
-        </Tabs>
-      </div>
+      
+      <Tabs variant="outline" orientation="vertical">
+        <Tab label="Animaux" >
+          <BestiaryList list={animalList} select={setSelect} />
+        </Tab>
+        <Tab label="Enemies" >
+          <BestiaryList list={enemiesList} select={setSelect} />
+        </Tab>
+      </Tabs>
 
-      <div className='bestiary_page'>
-
+      <div className='bestiary_page'
+        style={{ display: display }}>
+          {selected}
       </div>
     </div>
   );

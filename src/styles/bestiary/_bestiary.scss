@@ -2,19 +2,17 @@
   padding: 15px 15px 0 15px;
   display: flex;
 
-  .list_bestiary {
-    .list_bestiary_container {
-      height: 90vh;
+  .list_bestiary_container {
+    height: 90vh;
 
-      .list_images {
-        display: flex;
-        flex-wrap: wrap;
+    .list_images {
+      display: flex;
+      flex-wrap: wrap;
 
-        .bestiary_image {
-          margin: 10px 15px;
-          border: 1px solid;
-          border-radius: 0.5rem;
-        }
+      .bestiary_image {
+        margin: 10px 15px;
+        border: 1px solid;
+        border-radius: 0.5rem;
       }
     }
   }

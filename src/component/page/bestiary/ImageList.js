@@ -5,7 +5,7 @@ import { Image, Space, Title } from '@mantine/core';
 import { ConvertFR } from '../../../utils/categorie/convertByLang';
 import { findImage } from '../../../utils/finder/findImage';
 
-const ImageList = ({ type, bestiaryList }) => {
+const ImageList = ({ select, type, bestiaryList }) => {
   return (
     <>
       <Title order={3}>
@@ -19,6 +19,7 @@ const ImageList = ({ type, bestiaryList }) => {
           bestiaryList.map((elt) => {
             return (
               <Image key={elt.link}
+                onClick={() => select(elt.link)}
                 className='bestiary_image'
                 radius='lg' fit='contain'
                 width={100} height={100}
