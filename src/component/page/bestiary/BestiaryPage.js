@@ -4,6 +4,7 @@ import { Tab, Tabs } from '@mantine/core';
 
 import { categorie } from '../../../utils/categorie/categorie';
 import BestiaryList from './BestiaryList';
+import BestiaryInfo from './BestiaryInfo';
 
 const genshindb = require('genshin-db');
 
@@ -49,7 +50,7 @@ const BestiaryPage = () => {
 
   return (
     <div className='bestiary_container' >
-      
+
       <Tabs variant="outline" orientation="vertical">
         <Tab label="Animaux" >
           <BestiaryList list={animalList} select={setSelect} />
@@ -59,10 +60,8 @@ const BestiaryPage = () => {
         </Tab>
       </Tabs>
 
-      <div className='bestiary_page'
-        style={{ display: display }}>
-          {selected}
-      </div>
+      <BestiaryInfo select={selected} display={display} />
+
     </div>
   );
 };
