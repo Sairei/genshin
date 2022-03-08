@@ -22,11 +22,18 @@
       }
 
       .talent_table {
-        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         margin-right: 30px;
+        width: 30%;
 
         td {
           display: flex;
+        }
+
+        tr {
+          display: block;
         }
 
         .talent_item_icon {

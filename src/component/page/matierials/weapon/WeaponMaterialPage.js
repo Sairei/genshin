@@ -40,7 +40,6 @@ const WeaponMaterialPage = () => {
       {
         categorie.region.map((region, index) => {
           if (!weaponLvlUpList[region]) {
-            console.log(weaponLvlUpList[region]);
             return '';
           }
 

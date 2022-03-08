@@ -12,17 +12,17 @@ const ByRegion = ({ region, materials }) => {
         {capitalize(region)}
       </Title>
 
-      <Space h='md' />
+      <Space h='xl' />
 
       <ByDay
         materials={materials['Lundi']} />
     
-      <Space h='md' />
+      <Space h='xl' />
 
       <ByDay
         materials={materials['Mardi']} />
     
-      <Space h='md' />
+      <Space h='xl' />
 
       <ByDay
         materials={materials['Mercredi']} />

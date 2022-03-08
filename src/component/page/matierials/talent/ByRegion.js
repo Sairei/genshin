@@ -15,7 +15,7 @@ const ByRegion = ({ region, materials }) => {
         Object.entries(materials).map((entry) => {
           return (
             <Fragment key={entry[0]} >
-              <Space h='md' />
+              <Space h='xl' />
 
               <ByDomain key={entry[0]}
                 domain={entry[0]}
