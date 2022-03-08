@@ -10,7 +10,7 @@ const ByDomain = ({ domain, materials }) => {
   let domainImage = genshindb.domains(materials[0].domainLink, { resultLanguage: 'French' }).images.namepic;
 
   return (
-    <div className='ascent_material_region' >
+    <div className='ascent_material_domain' >
       <Table className='talent_table'>
         <tbody>
           {
