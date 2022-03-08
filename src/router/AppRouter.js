@@ -11,6 +11,7 @@ import MaterialsPage from '../component/page/matierials/MaterialsPage';
 import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
 import TalentMaterialPage from '../component/page/matierials/talent/TalentMaterialPage';
 import WeaponMaterialPage from '../component/page/matierials/weapon/WeaponMaterialPage';
+import MonsterMaterialPage from '../component/page/matierials/monster/MonsterMaterialPage';
 import BestiaryPage from '../component/page/bestiary/BestiaryPage';
 
 const AppRouter = () => {
@@ -41,7 +42,7 @@ const AppRouter = () => {
                 <Route path='local_specialty' element={<LocalSpecialtyPage />} />
                 <Route path='talent' element={<TalentMaterialPage />} />
                 <Route path='weapon' element={<WeaponMaterialPage />} />
-                <Route path='monster' element={<WeaponMaterialPage />} />
+                <Route path='monster' element={<MonsterMaterialPage />} />
               </Route>          
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
 
