@@ -51,7 +51,7 @@ const ByDay = ({ materials }) => {
 
         <Image
           src={findImage(domainImage)} 
-          height={300} />
+          width={400} />
       </div>
     </div>
   );
