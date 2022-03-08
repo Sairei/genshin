@@ -1,29 +1,58 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import { Space, Title } from '@mantine/core';
+import { Image, Table, Title } from '@mantine/core';
 
-import ByDomain from './ByDomain';
+import { findImage } from '../../../../utils/finder/findImage';
+
+const genshindb = require('genshin-db');
 
 const ByDay = ({ materials }) => {
+  const date = 
+    materials[0].daysofweek[0] + " / " +
+    materials[0].daysofweek[1] + " / " +
+    materials[0].daysofweek[2]
+  const dropDomain = materials[0].dropdomain.split(": ")[1];
+  
+  let domainImage = genshindb.domains(materials[0].domainLink, { resultLanguage: 'French' }).images.namepic;
+  
   return (
-    <div className='ascent_material_region' >
-      {/* <Title order={1} className="region_title" >
-        {materials.get(0)}
-      </Title>
+    <div className='weapon_material_day' >
+      <Table className='weapon_table'>
+        <tbody>
+          {
+            materials.sort((a, b) => a.rarity - b.rarity).map((i) => {
+              return (
+                <tr key={i.name}>
+                  <td>
+                    <Image
+                      className='weapon_item_icon'
+                      src={findImage(i.images.nameicon)}
+                      height={40}
+                      fit='contain' />
 
-      {
-        Object.entries(materials).map((entry) => {
-          return (
-            <Fragment key={entry[0]} >
-              <Space h='md' />
+                    <div className='vertical_align_text'>
+                      {i.name}
+                    </div>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </Table>
 
-              <ByDomain key={entry[0]}
-                domain={entry[0]}
-                materials={entry[1]} />
-            </Fragment>
-          );
-        })
-      } */}
+      <div className='domain_image_name' >
+        <Title order={3} className='domain_title' >
+          {dropDomain}
+        </Title>
+        <Title order={4} className='domain_title' >
+          {date}
+        </Title>
+
+        <Image
+          src={findImage(domainImage)} 
+          width={400} />
+      </div>
     </div>
   );
 };

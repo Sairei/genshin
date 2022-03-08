@@ -1,28 +1,31 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { Space, Title } from '@mantine/core';
 
+import { capitalize } from '../../../../utils/converter/capitalizeText';
 import ByDay from './ByDay';
 
 const ByRegion = ({ region, materials }) => {
   return (
-    <div className='ascent_material_region' >
+    <div className='weapon_material_region' >
       <Title order={1} className="region_title" >
-        {region}
+        {capitalize(region)}
       </Title>
 
-      {
-        Object.entries(materials).map((entry) => {
-          return (
-            <Fragment key={entry[0]} >
-              <Space h='md' />
+      <Space h='md' />
 
-              <ByDay
-                materials={entry[1]} />
-            </Fragment>
-          );
-        })
-      }
+      <ByDay
+        materials={materials['Lundi']} />
+    
+      <Space h='md' />
+
+      <ByDay
+        materials={materials['Mardi']} />
+    
+      <Space h='md' />
+
+      <ByDay
+        materials={materials['Mercredi']} />
     </div>
   );
 };

@@ -1,3 +1,38 @@
 .weapon_ascent_material_container {
   padding: 20px;
+
+  hr {
+    color: rgb(206, 206, 183);
+    width: 80%;
+  }
+
+  .weapon_material_region {
+    .region_title {
+      text-align: center;
+    }
+
+    .weapon_material_day {
+      display: flex;
+      justify-content: center;  
+
+      .domain_image_name {
+        .domain_title {
+          text-align: center;
+        }
+      }
+
+      .weapon_table {
+        width: 30%;
+        margin-right: 30px;
+
+        td {
+          display: flex;
+        }
+
+        .weapon_item_icon {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
 }
