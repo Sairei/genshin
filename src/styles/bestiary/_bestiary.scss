@@ -26,20 +26,45 @@
     min-width: 350px;
     width: 500px;
     margin: 15px;
-    text-align: right;
     
     > * {
       border: 2px solid;
-      padding: 15px;
+      border-radius: 1rem;
+      padding: 0 15px;
+      
+      > * {
+        margin: 20px 0;
+      }
     }
-
+    
     .image_nom_bestiaire {
       display: flex;
       justify-content: flex-end;
       font-size: 30px;
+      text-align: right;
 
       .img {
         margin-left: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:720px){
+  .bestiary_container {
+    flex-direction: column;
+
+    .bestiary_page {
+      min-width: auto;
+      width: auto;
+
+      .image_nom_bestiaire {
+        display: inherit;
+        text-align: center;
+
+        .img {
+          display: none;
+        }
       }
     }
   }
