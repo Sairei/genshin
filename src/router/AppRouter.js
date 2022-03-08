@@ -11,6 +11,7 @@ import MaterialsPage from '../component/page/matierials/MaterialsPage';
 import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
 import TalentMaterialPage from '../component/page/matierials/talent/TalentMaterialPage';
 import WeaponMaterialPage from '../component/page/matierials/weapon/WeaponMaterialPage';
+import BestiaryPage from '../component/page/bestiary/BestiaryPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -42,6 +43,11 @@ const AppRouter = () => {
                 <Route path='weapon' element={<WeaponMaterialPage />} />
               </Route>          
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
+
+              {/******************/}
+              {/* Page bestiaire */}
+              {/******************/}
+              <Route path='bestiary' element={<BestiaryPage />} />
 
             </Route>
 

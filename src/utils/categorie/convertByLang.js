@@ -63,5 +63,38 @@ export const ConvertFR = {
       default:
         return "";
     }
+  },
+
+  animalAndEnemiesLabel: (animal) => {
+    switch (animal) {
+      case "birds":
+        return "Oiseaux";
+      case "beasts":
+        return "Animal terrestre";
+      case "fish":
+        return "Animal aquatique";
+      case "other":
+        return "Divers";
+
+      case "The Abyss":
+        return "Ordre de l'Abîme";
+      case "Elemental Lifeforms":
+        return "Êtres élémentaires";
+      case "Hilichurls":
+        return "Brutocollinus";
+      case "Enemies of Note":
+        return "Boss";
+      case "Mystical Beasts":
+        return "Bêtes mystiques";
+      case "Fatui":
+        return "Fatui";
+      case "Other Human Factions":
+        return "Humains";
+      case "Automatons":
+        return "Automates";
+        
+      default:
+        return "";
+    }
   }
 }

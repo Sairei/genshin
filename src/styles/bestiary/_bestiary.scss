@@ -1,0 +1,46 @@
+.bestiary_container {
+  padding: 15px 15px 0 15px;
+  display: flex;
+
+  .list_bestiary_container {
+    height: 90vh;
+
+    .list_images {
+      display: flex;
+      flex-wrap: wrap;
+
+      .bestiary_image {
+        cursor: pointer;
+        margin: 10px 15px;
+        border: 1px solid;
+        border-radius: 0.5rem;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .bestiary_page {
+    min-width: 350px;
+    width: 500px;
+    margin: 15px;
+    text-align: right;
+    
+    > * {
+      border: 2px solid;
+      padding: 15px;
+    }
+
+    .image_nom_bestiaire {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30px;
+
+      .img {
+        margin-left: 15px;
+      }
+    }
+  }
+}

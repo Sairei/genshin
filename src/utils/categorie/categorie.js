@@ -6,6 +6,8 @@ export const categorie = {
 	rarity: ["1", "2", "3", "4", "5"],
 	day: ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
 	birthday: ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
+	animal: ["birds", "beasts", "fish", "other"],
+	enemies: ["Elemental Lifeforms", "Hilichurls", "The Abyss", "Fatui", "Automatons", "Other Human Factions", "Mystical Beasts", "Enemies of Note"],
 	materialtype: {
 		local_specialty: ["Local Specialty (Mondstadt)", "Local Specialty (Liyue)", "Local Specialty (Inazuma)"],
 		character_lvl_up: ["Character Level-Up Material"],

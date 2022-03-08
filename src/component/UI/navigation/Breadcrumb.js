@@ -22,6 +22,8 @@ const Breadcrumb = () => {
         name = "Talents";
       } else if (partUrl === "weapon") {
         name = "Armes";
+      } else if (partUrl === "bestiary") {
+        name = "Bestiaire";
       } else {
         name = partUrl;
       }
