@@ -40,8 +40,6 @@ const TalentMaterialPage = () => {
     setTalentList(sortTalent(sourceTalentList));
   }, [])
 
-  console.log(talentLvlUpList);
-
   return (
     <div className='character_ascent_material_container'>
       {

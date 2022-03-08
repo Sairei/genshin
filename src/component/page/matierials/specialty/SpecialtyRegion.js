@@ -11,8 +11,6 @@ const SpecialtyRegion = ({ name, items }) => {
   }
 
   const regionName = name.substring(name.indexOf('(') + 1, name.indexOf(')'))
-  console.log(regionName);
-  console.log(items);
 
   return (
     <div className='specialty_region'>

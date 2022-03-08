@@ -25,7 +25,6 @@ const LocalSpecialtyPage = () => {
     setList(list);
   }, [])
 
-  console.log(specialtyList);
   return (
     <div className='local_specialty_container'>
       {

@@ -66,7 +66,6 @@ const ProfilTab = ({ character, outfit, name }) => {
           {
             outfit.map((tenue) => {
               let res = genshindb.outfits(tenue, { resultLanguage: 'French' });
-              console.log(res);
               
               return (
                 <li key={tenue}>

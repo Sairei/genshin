@@ -6,8 +6,6 @@ import { findImage } from '../../../utils/finder/findImage';
 import { convertInfo } from '../../../utils/converter/convertInfoToHTML';
 
 const BestiaryInfo = ({ display, select }) => {
-  console.log(select);
-
   return (
     <div className='bestiary_page vertical_align_text' style={{ display: display }}>
       {
