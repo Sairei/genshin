@@ -25,6 +25,12 @@ const MaterialsPage = () => {
         onClick={() => nav('/categorie_items/weapon')}
         height={150} width={150}
         fit='contain' />
+
+      <Image
+        src={require('../../../assets/images/items/ressources_monstres.png')}
+        onClick={() => nav('/categorie_items/monster')}
+        height={150} width={150}
+        fit='contain' />
     </div>
   );
 };
