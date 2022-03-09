@@ -46,6 +46,14 @@ const BestiaryPage = () => {
     setEnemiesList(enemiesTmpList);
   }, []);
 
+  const handleSelected = (elt) => {
+    if (elt === selected) {
+      setSelect(undefined);
+    } else {
+      setSelect(elt);
+    }
+  }
+
   let display = !selected ? "none" : "";
 
   return (
@@ -53,10 +61,10 @@ const BestiaryPage = () => {
 
       <Tabs variant="outline" orientation="vertical">
         <Tab label="Animaux" >
-          <BestiaryList list={animalList} select={setSelect} />
+          <BestiaryList list={animalList} select={handleSelected} />
         </Tab>
         <Tab label="Enemies" >
-          <BestiaryList list={enemiesList} select={setSelect} />
+          <BestiaryList list={enemiesList} select={handleSelected} />
         </Tab>
       </Tabs>
 

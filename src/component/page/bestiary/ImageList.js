@@ -7,10 +7,6 @@ import { findImage } from '../../../utils/finder/findImage';
 
 const ImageList = ({ select, type, bestiaryList }) => {
 
-  const handleClick = (elt) => {
-    select(elt);
-  }
-
   return (
     <>
       <Title order={3}>
@@ -24,7 +20,7 @@ const ImageList = ({ select, type, bestiaryList }) => {
           bestiaryList.map((elt) => {
             return (
               <Image key={elt.link}
-                onClick={() => handleClick(elt)}
+                onClick={() => select(elt)}
                 className='bestiary_image'
                 radius='lg' fit='contain'
                 width={100} height={100}
