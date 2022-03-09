@@ -4,7 +4,7 @@ import { Anchor, Space } from '@mantine/core';
 
 const genshindb = require('genshin-db');
 
-const ProfilTab = ({ character, outfit, name }) => {
+const ProfilTab = ({ character, outfit }) => {
   if (!character) {
     return (
       <div></div>
@@ -64,6 +64,7 @@ const ProfilTab = ({ character, outfit, name }) => {
         <b className='elem_color_text'>{`Tenues :`}</b>
         <ul>
           {
+            outfit &&
             outfit.map((tenue) => {
               let res = genshindb.outfits(tenue, { resultLanguage: 'French' });
               

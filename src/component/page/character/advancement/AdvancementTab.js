@@ -5,7 +5,7 @@ import { Space } from '@mantine/core';
 import BaseStats from './BaseStats';
 import AscentTable from './AscentTable';
 
-const AdvancementTab = ({ character, name }) => {
+const AdvancementTab = ({ character, name, searchName }) => {
   return (
     <div className='advancement_container'>
       <BaseStats name={name} />
@@ -13,7 +13,9 @@ const AdvancementTab = ({ character, name }) => {
       <Space h="xl" />
       <Space h="xl" />
 
-      <AscentTable character={character} />
+      <AscentTable 
+        searchName={searchName}
+        character={character} />
     </div>
   );
 };

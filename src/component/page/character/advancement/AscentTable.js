@@ -9,7 +9,7 @@ import { simplifyText } from '../../../../utils/converter/simplifyElementText';
 
 const genshindb = require('genshin-db');
 
-const AscentTable = ({ character }) => {
+const AscentTable = ({ character, searchName }) => {
   if (!character) {
     return (
       <div></div>
@@ -18,7 +18,7 @@ const AscentTable = ({ character }) => {
 
 
   const trAscent = Object.entries(character.costs).map((val, index) => {
-    let en = genshindb.characters(simplifyText(character.name));
+    let en = genshindb.characters(simplifyText(searchName));
     return (
       <tr key={index}>
         <th>

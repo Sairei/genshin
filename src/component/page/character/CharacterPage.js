@@ -85,6 +85,7 @@ const CharacterPage = () => {
 
               <Tab label="Avancement">
                 <AdvancementTab name={name}
+                  searchName={searchName}
                   character={characterData} />
               </Tab>
 
