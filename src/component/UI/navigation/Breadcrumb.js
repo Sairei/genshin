@@ -27,7 +27,7 @@ const Breadcrumb = () => {
       } else if (partUrl === "bestiary") {
         name = "Bestiaire";
       } else {
-        name = partUrl;
+        name = partUrl.replaceAll("%20", " ");
       }
 
       link = tmp[0];
