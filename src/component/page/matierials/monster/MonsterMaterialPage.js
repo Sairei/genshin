@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import { Title } from '@mantine/core';
+import { Space } from '@mantine/core';
 
 import { sortMonsterMaterials } from '../../../../utils/sort/sortMonsterMaterials';
+import MoraSection from './MoraSection';
+import ExperienceSection from './ExperienceSection';
+import ArtifactSection from './ArtifactSection';
 
 const genshindb = require('genshin-db');
 
@@ -27,36 +30,22 @@ const MonsterMaterialPage = () => {
   }, []);
 
   return (
-    <div>
-      {
-        Object.entries(monsterList).map((entry) => {
-          let key = entry[0];
-          let values = entry[1];
+    <div className='monster_material_container' >
 
-          let title = values.name + (values.rarity 
-            ? " " + values.rarity
-            : "");
-          return (
-            <div key={key}>
-              <Title order={2}>
-                {title}
-              </Title>
+      <MoraSection monsterList={monsterList["mora"]} />
 
-              <ul>
-                {
-                  values.monsters.map((monstre) => {
-                    return (
-                      <li key={key+"_"+monstre.name}>
-                        {monstre.name}
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-            </div>
-          )
-        })
-      }
+      <Space h="lg" />
+      <hr />
+      <Space h="lg" />
+
+      <ExperienceSection monsterList={monsterList["exp"]} />
+
+      <Space h="lg" />
+      <hr />
+      <Space h="lg" />
+
+      <ArtifactSection monsterList={monsterList["artifact"]} />
+
     </div>
   );
 };

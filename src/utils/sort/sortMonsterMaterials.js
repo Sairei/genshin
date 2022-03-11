@@ -1,4 +1,13 @@
+const genshindb = require('genshin-db');
+
 export const sortMonsterMaterials = (sourceList) => {
+  let material = {};
+  material["exp"] = [];
+  material["mora"] = [];
+  material["cristal"] = [];
+  material["artifact"] = [];
+  material["materials"] = [];
+
   let filterList = sourceList.filter((e) => {
     return e.rewardpreview.length > 0;
   })
@@ -7,31 +16,50 @@ export const sortMonsterMaterials = (sourceList) => {
   filterList.map((m) => {
     m.rewardEn.map((r, index) => {
       let name = r.name;
-      if (r.rarity) {
-        name += "_" + r.rarity;
-      }
 
       if (!list[name]) {
         list[name] = {};
         list[name]["name"] = m.rewardpreview[index]["name"];
         list[name]["monsters"] = [];
       }
-      if (r.rarity) {
-        list[name]["rarity"] = r.rarity;
-      }
 
-      list[name]["monsters"].push({
+      let o = {
         obj: m,
         name: m.name,
         category: m.category,
         image: m.images.nameicon,
         count: m.rewardpreview[index]["count"]
-      });
+      }
+
+      if (list[name]["monsters"].findIndex(obj => obj.name === o.name) === -1) {
+        list[name]["monsters"].push(o);
+      }
 
       return '';
     })
     return '';
   })
 
-  return list;
+  Object.entries(list).map((entry) => {
+    let key = entry[0];
+    let values = entry[1];
+    values.monsters.sort((a, b) => { return a["name"].localeCompare(b["name"]) });
+
+    let mat = genshindb.materials(key);
+    let art = genshindb.artifacts(key.split("_")[0]);
+    
+    if (key.toLocaleLowerCase().includes("exp")) {
+      material["exp"].push({ name: key, img: mat.images.nameicon, values: values });
+    } else if (key.toLocaleLowerCase().includes("mora")) {
+      material["mora"].push({ name: key, img: mat.images.nameicon, values: values });
+    } else if (art) {
+      material["artifact"].push({ name: key, img: art.images, rarity: art.rarity, values: values });
+    } else {
+      // console.log(values);
+    }
+
+    return '';
+  })
+
+  return material;
 }

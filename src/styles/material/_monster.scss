@@ -1,0 +1,25 @@
+.monster_material_container {
+  padding: 20px;
+
+  .monster_material {
+    .img_title {
+      display: flex;  
+
+      img {
+        margin-bottom: 10px;
+        margin-right: 10px;
+      }
+    }
+
+    .list_images {
+      display: flex;
+      flex-wrap: wrap;
+
+      .bestiary_image {
+        margin: 10px 15px;
+        border: 1px solid;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
