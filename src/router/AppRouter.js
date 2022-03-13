@@ -13,6 +13,7 @@ import TalentMaterialPage from '../component/page/matierials/talent/TalentMateri
 import WeaponMaterialPage from '../component/page/matierials/weapon/WeaponMaterialPage';
 import MonsterMaterialPage from '../component/page/matierials/monster/MonsterMaterialPage';
 import BestiaryPage from '../component/page/bestiary/BestiaryPage';
+import ItemPage from '../component/page/material/ItemPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -32,7 +33,7 @@ const AppRouter = () => {
               <Route path='characters' element={<ListCharactersPage />} />
               <Route path='character/:name' element={<CharacterPage />} />
               {/**/} <Route path="character" element={<Navigate replace to="/characters" />} />
-              
+
               {/******************/}
               {/* Page materials */}
               {/******************/}
@@ -43,7 +44,8 @@ const AppRouter = () => {
                 <Route path='talent' element={<TalentMaterialPage />} />
                 <Route path='weapon' element={<WeaponMaterialPage />} />
                 <Route path='monster' element={<MonsterMaterialPage />} />
-              </Route>          
+              </Route>
+              <Route path='item/:name' element={<ItemPage />} />
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
 
               {/******************/}

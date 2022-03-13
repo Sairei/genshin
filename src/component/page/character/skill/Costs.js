@@ -27,7 +27,8 @@ const Costs = ({ talent, name }) => {
         <td>
           {
             val[1].map((item, i) => {
-              let material = genshindb.materials(en.costs[val[0]][i].name)
+              let enName = en.costs[val[0]][i].name;
+              let material = genshindb.materials(enName)
               return (
                 <div className='skill_cost_item' key={`${index}_${i}`}>
                   <Image
@@ -37,7 +38,7 @@ const Costs = ({ talent, name }) => {
 
                   <div className='vertical_align_text'>
                     <div>
-                      <Anchor component={Link} to='/characters' >
+                      <Anchor component={Link} to={`/item/${enName}`} >
                         {`${item.name} `} 
                       </Anchor>
                       {`x${item.count}`}
