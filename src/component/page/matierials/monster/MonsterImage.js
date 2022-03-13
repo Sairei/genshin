@@ -1,15 +1,20 @@
 import React from 'react';
 
-import { Image } from '@mantine/core';
+import { Image, Tooltip } from '@mantine/core';
 
-const MonsterImage = ({ src }) => {
+const MonsterImage = ({ name, src }) => {
   return (
-    <Image
+    <Tooltip
       className='bestiary_image'
-      radius='lg' fit='contain'
-      width={75} height={75}
-      src={src}
-    />
+      label={name} position="bottom"
+      transition="slide-down"
+    >
+      <Image
+        radius='lg' fit='contain'
+        width={75} height={75}
+        src={src}
+      />
+    </Tooltip>
   );
 };
 

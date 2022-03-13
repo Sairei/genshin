@@ -48,6 +48,7 @@ const MoraSection = ({ monsterList }) => {
                   values.monsters.map((elt) => {
                     return (
                       <MonsterImage key={elt.name}
+                        name={elt.name}
                         src={findImage(elt.image)}
                       />
                     )
