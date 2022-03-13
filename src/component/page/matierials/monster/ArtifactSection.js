@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image, Space, Title } from '@mantine/core';
+import { Accordion, Image, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 import MonsterImage from './MonsterImage';
@@ -13,7 +13,7 @@ const ArtifactSection = ({ monsterList }) => {
   }
 
   monsterList.sort((a, b) => {
-    return a["name"].localeCompare(b["name"])
+    return a.values["name"].localeCompare(b.values["name"])
   })
 
   return (
@@ -22,26 +22,29 @@ const ArtifactSection = ({ monsterList }) => {
         Artéfact
       </Title>
 
-      {
-        monsterList.map((v) => {
-          let name = v.name;
-          let values = v.values;
-          let rarity = v.rarity;
+      <Accordion className='accordion_materials'
+        classNames={{
+          icon: 'accordion_icon'
+        }}
+      >
+        {
+          monsterList.map((v) => {
+            let name = v.name;
+            let values = v.values;
+            let rarity = v.rarity;
 
-          let title = values.name + " [";
-          rarity.map((r, index) => {
-            if (index !== 0) {
-              title += " / ";
-            }
-            title += r;
+            let title = values.name + " [";
+            rarity.map((r, index) => {
+              if (index !== 0) {
+                title += " / ";
+              }
+              title += r;
 
-            return '';
-          })
-          title +="]";
-          return (
-            <div key={name}>
-              <Space h="lg" />
+              return '';
+            })
+            title += "]";
 
+            let label =
               <div className='img_title'>
                 {
                   Object.entries(v.img).map((elt) => {
@@ -53,7 +56,6 @@ const ArtifactSection = ({ monsterList }) => {
                     );
                   })
                 }
-
                 <div className='vertical_align_text'>
                   <Title order={2}>
                     {title}
@@ -61,24 +63,27 @@ const ArtifactSection = ({ monsterList }) => {
                 </div>
               </div>
 
-              <div className='list_images'>
-                {
-                  values.monsters.map((elt) => {
-                    return (
-                      <MonsterImage key={elt.name}
-                        name={elt.name}
-                        src={findImage(elt.image)}
-                      />
-                    )
-                  })
-                }
-              </div>
-
-              <Space h="lg" />
-            </div>
-          )
-        })
-      }
+            return (
+              <Accordion.Item key={name}
+                label={label}
+              >
+                <div className='list_images'>
+                  {
+                    values.monsters.map((elt) => {
+                      return (
+                        <MonsterImage key={elt.name}
+                          name={elt.name}
+                          src={findImage(elt.image)}
+                        />
+                      )
+                    })
+                  }
+                </div>
+              </Accordion.Item>
+            )
+          })
+        }
+      </Accordion>
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image, Space, Title } from '@mantine/core';
+import { Accordion, Image, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 import MonsterImage from './MonsterImage';
@@ -18,18 +18,21 @@ const ExperienceSection = ({ monsterList }) => {
         Expériences
       </Title>
 
-      {
-        monsterList.map((v) => {
-          let name = v.name;
-          let values = v.values;
+      <Accordion className='accordion_materials'
+        classNames={{
+          icon: 'accordion_icon'
+        }}
+      >
+        {
+          monsterList.map((v) => {
+            let name = v.name;
+            let values = v.values;
 
-          let title = values.name + (values.rarity
-            ? " " + values.rarity
-            : "");
-          return (
-            <div key={name}>
-              <Space h="lg" />
+            let title = values.name + (values.rarity
+              ? " " + values.rarity
+              : "");
 
+            let label =
               <div className='img_title'>
                 <Image
                   width={50}
@@ -43,24 +46,27 @@ const ExperienceSection = ({ monsterList }) => {
                 </div>
               </div>
 
-              <div className='list_images'>
-                {
-                  values.monsters.map((elt) => {
-                    return (
-                      <MonsterImage key={elt.name}
-                        name={elt.name}
-                        src={findImage(elt.image)}
-                      />
-                    )
-                  })
-                }
-              </div>
-
-              <Space h="lg" />
-            </div>
-          )
-        })
-      }
+            return (
+              <Accordion.Item key={name}
+                label={label}
+              >
+                <div className='list_images'>
+                  {
+                    values.monsters.map((elt) => {
+                      return (
+                        <MonsterImage key={elt.name}
+                          name={elt.name}
+                          src={findImage(elt.image)}
+                        />
+                      )
+                    })
+                  }
+                </div>
+              </Accordion.Item>
+            )
+          })
+        }
+      </Accordion>
     </div>
   )
 };
