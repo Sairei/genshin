@@ -1,3 +1,5 @@
+import { categorie } from '../categorie/categorie';
+
 const genshindb = require('genshin-db');
 
 export const sortMonsterMaterials = (sourceList) => {
@@ -7,6 +9,7 @@ export const sortMonsterMaterials = (sourceList) => {
   material["cristal"] = [];
   material["artifact"] = [];
   material["materials"] = [];
+  material["others"] = [];
 
   let filterList = sourceList.filter((e) => {
     return e.rewardpreview.length > 0;
@@ -50,12 +53,18 @@ export const sortMonsterMaterials = (sourceList) => {
     
     if (key.toLocaleLowerCase().includes("exp")) {
       material["exp"].push({ name: key, img: mat.images.nameicon, values: values });
-    } else if (key.toLocaleLowerCase().includes("mora")) {
+    } 
+    else if (key.toLocaleLowerCase().includes("mora")) {
       material["mora"].push({ name: key, img: mat.images.nameicon, values: values });
-    } else if (art) {
+    } 
+    else if (art) {
       material["artifact"].push({ name: key, img: art.images, rarity: art.rarity, values: values });
-    } else {
-      // console.log(values);
+    }
+    else if (categorie.cristal.some(v => key.toLocaleLowerCase().includes(v))) {
+      material["cristal"].push({ name: key, rarity: mat.rarity, img: mat.images.nameicon, values: values });
+    }
+    else {
+      material['others'].push({ name: key, img: mat.images.nameicon, values: values });
     }
 
     return '';

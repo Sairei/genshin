@@ -6,6 +6,7 @@ import { sortMonsterMaterials } from '../../../../utils/sort/sortMonsterMaterial
 import MoraSection from './MoraSection';
 import ExperienceSection from './ExperienceSection';
 import ArtifactSection from './ArtifactSection';
+import CristalSection from './CristalSection';
 
 const genshindb = require('genshin-db');
 
@@ -28,6 +29,7 @@ const MonsterMaterialPage = () => {
 
     setMonsterList(sortMonsterMaterials(list));
   }, []);
+  console.log(monsterList);
 
   return (
     <div className='monster_material_container' >
@@ -45,6 +47,12 @@ const MonsterMaterialPage = () => {
       <Space h="lg" />
 
       <ArtifactSection monsterList={monsterList["artifact"]} />
+
+      <Space h="lg" />
+      <hr />
+      <Space h="lg" />
+
+      <CristalSection monsterList={monsterList["cristal"]} />
 
     </div>
   );
