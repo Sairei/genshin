@@ -8,8 +8,7 @@ import AttributeList from './AttributeList';
 
 const ItemSkill = ({ skill, image }) => {
   const [lvl, setLvl] = useState(1);
-  const maxLvl = skill.attributes.parameters.param1.length > 10
-    ? 10 : skill.attributes.parameters.param1.length;
+  const maxLvl = skill.attributes.parameters.param1.length;
 
   const upLvl = () => {
     if (lvl < maxLvl) {
