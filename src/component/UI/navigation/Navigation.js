@@ -33,7 +33,7 @@ const Navigation = () => {
         header: 'drawer_header',
         title: 'drawer_title',
       }}
-      hideCloseButton
+      withCloseButton={false}
       title="Menu"
       opened={open}
       onClose={() => dispatch(isNavbarOpen())} >
