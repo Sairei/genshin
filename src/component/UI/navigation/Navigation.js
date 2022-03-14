@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { Drawer, Navbar, Space } from '@mantine/core';
+import { Drawer, Navbar, ScrollArea, Space, Title } from '@mantine/core';
 
 import { isNavbarOpen } from "../../../router/provider/Dispatcher";
+import ObjectNav from './ObjectNav';
+import CharacterNav from './CharacterNav';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -18,6 +20,10 @@ const Navigation = () => {
   },
     // eslint-disable-next-line
     [url, dispatch])
+
+  let persoNav = url.pathname.startsWith("/chara");
+  let objectNav = url.pathname.includes("item");
+
   return (
     <Drawer
       classNames={{
@@ -32,13 +38,14 @@ const Navigation = () => {
       opened={open}
       onClose={() => dispatch(isNavbarOpen())} >
 
-      <Navbar >
-
-        <Navbar.Section>
+      <Navbar height='85vh'>
+        <Navbar.Section grow component={ScrollArea}>
           <ul className="middle-items">
             <li className="list-item">
               <Link to="/" className="link">
-                Accueil
+                <Title order={3}>
+                  Accueil
+                </Title>
               </Link>
             </li>
 
@@ -46,15 +53,23 @@ const Navigation = () => {
 
             <li className="list-item">
               <Link to="/characters" className="link">
-                Personnages
+                <Title order={3}>
+                  Personnages
+                </Title>
               </Link>
+              {
+                persoNav &&
+                <CharacterNav />
+              }
             </li>
 
             <Space h="md" />
 
             <li className="list-item">
               <Link to="/bestiary" className="link">
-                Bestiaires
+                <Title order={3}>
+                  Bestiaires
+                </Title>
               </Link>
             </li>
 
@@ -62,22 +77,28 @@ const Navigation = () => {
 
             <li className="list-item">
               <Link to="/categories_items" className="link">
-                Objets
+                <Title order={3}>
+                  Objets
+                </Title>
               </Link>
+              {
+                objectNav &&
+                <ObjectNav />
+              }
             </li>
 
             <Space h="md" />
 
             <li className="list-item">
               <Link to="/about" className="link">
-                A propos
+                <Title order={3}>
+                  A propos
+                </Title>
               </Link>
             </li>
           </ul>
         </Navbar.Section>
-
       </Navbar>
-
     </Drawer>
   );
 };
