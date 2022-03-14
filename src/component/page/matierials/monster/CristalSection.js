@@ -13,7 +13,7 @@ const CristalSection = ({ monsterList }) => {
   }
 
   monsterList.sort((a, b) => {
-    if (a["name"].split(" ")[0] == b["name"].split(" ")[0]) {
+    if (a["name"].split(" ")[0] === b["name"].split(" ")[0]) {
       return a["rarity"].localeCompare(b["rarity"])
     }
 
