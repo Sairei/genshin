@@ -29,7 +29,7 @@ export const sortMonsterMaterials = (sourceList) => {
       let o = {
         obj: m,
         name: m.name,
-        category: m.category,
+        category: m.categoryEn,
         image: m.images.nameicon,
         count: m.rewardpreview[index]["count"]
       }
@@ -63,8 +63,11 @@ export const sortMonsterMaterials = (sourceList) => {
     else if (categorie.cristal.some(v => key.toLocaleLowerCase().includes(v))) {
       material["cristal"].push({ name: key, rarity: mat.rarity, img: mat.images.nameicon, values: values });
     }
+    else if (!mat.rarity) {
+      material['others'].push({ name: key, rarity: mat.rarity, img: mat.images.nameicon, values: values });
+    }
     else {
-      material['others'].push({ name: key, img: mat.images.nameicon, values: values });
+      material['materials'].push({ name: key, rarity: mat.rarity, img: mat.images.nameicon, values: values });
     }
 
     return '';

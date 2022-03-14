@@ -1,4 +1,5 @@
 export const categorie = {
+	enemiesType: ['COMMON', 'ELITE', 'BOSS'],
 	element: ["geo", "dendro", "hydro", "anemo", "electro", "cryo", "pyro", "adaptive"],
 	weapontype: ["claymore", "sword", "polearm", "catalyst", "bow"],
 	gender: ["male", "female"],
