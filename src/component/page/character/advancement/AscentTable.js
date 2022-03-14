@@ -18,7 +18,11 @@ const AscentTable = ({ character, searchName }) => {
 
 
   const trAscent = Object.entries(character.costs).map((val, index) => {
-    let en = genshindb.characters(simplifyText(searchName));
+    let en = genshindb.characters(simplifyText(character.name));
+    if (!en) {
+      en = genshindb.characters(simplifyText(searchName));
+    }
+
     return (
       <tr key={index}>
         <th>
