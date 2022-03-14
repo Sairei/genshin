@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Burger, NativeSelect } from "@mantine/core";
 import Flags from 'country-flag-icons/react/3x2'
 
-import { isNavbarOpen } from "../../../router/provider/Dispatcher";
+import { isNavbarOpen } from "../../router/provider/Dispatcher";
 import Breadcrumb from "./Breadcrumb";
 
 const Header = () => {

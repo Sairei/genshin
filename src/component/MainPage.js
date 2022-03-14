@@ -3,7 +3,7 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import { AppShell } from '@mantine/core';
 
-import Header from './UI/navigation/Header';
+import Header from './UI/Header';
 import Navigation from './UI/navigation/Navigation';
 
 const MainPage = () => {
