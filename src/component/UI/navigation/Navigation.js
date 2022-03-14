@@ -6,7 +6,6 @@ import { Drawer, Navbar, ScrollArea, Space, Title } from '@mantine/core';
 
 import { isNavbarOpen } from "../../../router/provider/Dispatcher";
 import ObjectNav from './ObjectNav';
-import CharacterNav from './CharacterNav';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -21,7 +20,6 @@ const Navigation = () => {
     // eslint-disable-next-line
     [url, dispatch])
 
-  let persoNav = url.pathname.startsWith("/chara");
   let objectNav = url.pathname.includes("item");
 
   return (
@@ -57,10 +55,6 @@ const Navigation = () => {
                   Personnages
                 </Title>
               </Link>
-              {
-                persoNav &&
-                <CharacterNav />
-              }
             </li>
 
             <Space h="md" />
