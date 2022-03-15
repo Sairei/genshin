@@ -48,6 +48,7 @@ const MonsterMaterialPage = () => {
       {
         url.pathname.includes('boss') &&
         <>
+          <Space h="md" />
           <Space h="lg" />
           <hr />
           <Space h="lg" />

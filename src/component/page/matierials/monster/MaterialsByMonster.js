@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import { Accordion, Image } from '@mantine/core';
-
-import { findImage } from '../../../../utils/finder/findImage';
 import MonsterImage from './MonsterImage';
+import MaterialsTable from './MaterialsTable';
+import { findImage } from '../../../../utils/finder/findImage';
+import { Space } from '@mantine/core';
 
 const MaterialsByMonster = ({ monsterList }) => {
   if (!monsterList) {
@@ -37,49 +37,36 @@ const MaterialsByMonster = ({ monsterList }) => {
 
   return (
     <div className="monster_material" >
-      <Accordion className='accordion_materials' 
-        iconPosition='right' multiple >
-        {
-          Object.entries(list).map((entry) => {
-            let values = entry[1];
+      {
+        Object.entries(list).map((entry) => {
+          let values = entry[1];
 
-            let label =
-              <div className='img_title'>
-                {
-                  Object.entries(values.objects).map((elt) => {
-                    let obj = elt[1];
+          return (
+            <Fragment key={entry[0]} >
+              <Space h='md' />
 
-                    return (
-                      <Image key={obj.name}
-                        width={50}
-                        src={findImage(obj.img)}
-                      />
-                    );
-                  })
-                }
-              </div>
+              <div className='list_materials'>
+                <MaterialsTable values={values} />
 
-            return (
-              <Accordion.Item key={entry[0]}
-                label={label}
-              >
-                <div className='list_images'>
-                  {
-                    values.monsters.map((elt) => {
-                      return (
-                        <MonsterImage key={elt.name}
-                          name={elt.name}
-                          src={findImage(elt.image)}
-                        />
-                      )
-                    })
-                  }
+                <div className='list_images vertical_align_text'>
+                  <div>
+                    {
+                      values.monsters.map((elt) => {
+                        return (
+                          <MonsterImage key={elt.name}
+                            name={elt.name}
+                            src={findImage(elt.image)}
+                          />
+                        )
+                      })
+                    }
+                  </div>
                 </div>
-              </Accordion.Item>
-            )
-          })
-        }
-      </Accordion>
+              </div>
+            </Fragment>
+          )
+        })
+      }
     </div>
   )
 };
