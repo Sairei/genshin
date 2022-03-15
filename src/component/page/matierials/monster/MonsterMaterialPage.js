@@ -6,6 +6,7 @@ import { Space } from '@mantine/core';
 import { sortMonsterMaterials } from '../../../../utils/sort/sortMonsterMaterials';
 import CristalSection from './CristalSection';
 import TypeMonster from './TypeMonster';
+import MaterialsByMonster from './MaterialsByMonster';
 
 const genshindb = require('genshin-db');
 
@@ -52,7 +53,7 @@ const MonsterMaterialPage = () => {
           <hr />
           <Space h="lg" />
 
-          <CristalSection monsterList={monsterList["cristal"]} />
+          <MaterialsByMonster monsterList={monsterList["cristal"]} />
         </>
       }
     </div>
