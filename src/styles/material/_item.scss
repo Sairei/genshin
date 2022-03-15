@@ -1,0 +1,20 @@
+.item_container {
+  padding: 15px 15px 0 15px;
+
+  .name_image {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    
+    .name {
+      margin-left: 20px;
+    }
+  }
+
+  .item_description {
+
+  }
+
+  .item_sources {
+    
+  }
+}
