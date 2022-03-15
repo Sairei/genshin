@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { Space } from '@mantine/core';
 
 import { sortMonsterMaterials } from '../../../../utils/sort/sortMonsterMaterials';
-import CristalSection from './CristalSection';
 import TypeMonster from './TypeMonster';
 import MaterialsByMonster from './MaterialsByMonster';
 
@@ -35,9 +34,9 @@ const MonsterMaterialPage = () => {
 
   useEffect(() => {
     if (url.pathname.includes('monster')) {
-      setTypes(['COMMON']);
+      setTypes(['COMMON', 'ELITE']);
     } else if (url.pathname.includes('boss')) {
-      setTypes(['ELITE', 'BOSS']);
+      setTypes(['BOSS']);
     }
   }, [url])
 
