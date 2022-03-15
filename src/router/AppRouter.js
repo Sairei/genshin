@@ -14,6 +14,7 @@ import WeaponMaterialPage from '../component/page/matierials/weapon/WeaponMateri
 import MonsterMaterialPage from '../component/page/matierials/monster/MonsterMaterialPage';
 import BestiaryPage from '../component/page/bestiary/BestiaryPage';
 import ItemPage from '../component/page/material/ItemPage';
+import MonsterPage from '../component/page/monster/MonsterPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -52,7 +53,10 @@ const AppRouter = () => {
               {/******************/}
               {/* Page bestiaire */}
               {/******************/}
-              <Route path='bestiary' element={<BestiaryPage />} />
+              <Route path='bestiary' >
+                <Route index element={<BestiaryPage />} />
+                <Route path=':name' element={<MonsterPage />} />  
+              </Route>
 
             </Route>
 

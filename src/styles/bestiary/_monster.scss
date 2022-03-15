@@ -1,0 +1,55 @@
+.monster_container {
+  padding: 15px 15px 0 15px;
+  
+  .separator {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    > * {
+      width: 80%;
+    }
+  }
+  
+  .name_image {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    
+    .name {
+      margin-left: 20px;
+    }
+  }
+
+  .monster_description {
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+  }
+  
+  .monster_stats {
+    width: 90%;
+    margin: auto;
+  }
+
+  .monster_reward {
+    width: 90%;
+    margin: auto;
+
+    .reward_container {
+      display: flex;
+      flex-wrap: wrap;
+
+      .img_reward {
+        border: 1px solid black;
+        border-radius: 1rem;
+        margin: 10px;
+        padding: 2px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { Image } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
@@ -28,7 +29,13 @@ const BestiaryInfo = ({ display, select }) => {
 
           {
             select.enemytype &&
-            <MonstersInfo select={select} />
+            <>
+              <MonstersInfo select={select} />
+
+              <div>
+                <Link to={`/bestiary/${select.link}`} >Plus d'info...</Link>
+              </div>
+            </>
           }
         </div>
       }
