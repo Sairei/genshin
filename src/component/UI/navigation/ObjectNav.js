@@ -13,7 +13,7 @@ const ObjectNav = () => {
           Spécialités locales
         </Link>
       </li>
-      
+
       <Space h="sm" />
 
       <li>
@@ -35,6 +35,14 @@ const ObjectNav = () => {
       <li>
         <Link to="/categorie_items/monster" className="link">
           Par monstre
+        </Link>
+      </li>
+
+      <Space h="sm" />
+
+      <li>
+        <Link to="/categorie_items/boss" className="link">
+          Par boss
         </Link>
       </li>
     </ul>
