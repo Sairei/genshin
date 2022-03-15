@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Image } from '@mantine/core';
 
-import { findImage } from '../../../utils/finder/findImage';
-import { convertInfo } from '../../../utils/converter/convertInfoToHTML';
+import { findImage } from '../../../../utils/finder/findImage';
+import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
+import MonstersInfo from './MonstersInfo';
 
 const BestiaryInfo = ({ display, select }) => {
   return (
@@ -24,6 +25,11 @@ const BestiaryInfo = ({ display, select }) => {
           <div>
             {convertInfo(select.description)}
           </div>
+
+          {
+            select.enemytype &&
+            <MonstersInfo select={select} />
+          }
         </div>
       }
     </div>

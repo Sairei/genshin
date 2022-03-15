@@ -4,7 +4,7 @@ import { Tab, Tabs } from '@mantine/core';
 
 import { categorie } from '../../../utils/categorie/categorie';
 import BestiaryList from './BestiaryList';
-import BestiaryInfo from './BestiaryInfo';
+import BestiaryInfo from './info/BestiaryInfo';
 
 const genshindb = require('genshin-db');
 

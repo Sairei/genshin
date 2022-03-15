@@ -62,3 +62,25 @@ li {
   border: 2px #000000 solid;
   border-radius: 0.3rem;
 }
+
+// Background des matériaux
+.rarity_1 {
+  background-image: url("../assets/images/stars/1star.png");
+  background-size: cover;
+}
+.rarity_2 {
+  background-image: url("../assets/images/stars/2star.png");
+  background-size: cover;
+}
+.rarity_3 {
+  background-image: url("../assets/images/stars/3star.png");
+  background-size: cover;
+}
+.rarity_4 {
+  background-image: url("../assets/images/stars/4star.png");
+  background-size: cover;
+}
+.rarity_5 {
+  background-image: url("../assets/images/stars/5star.png");
+  background-size: cover;
+}
