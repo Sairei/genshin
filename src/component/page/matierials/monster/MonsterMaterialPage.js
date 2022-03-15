@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
+import { useLocation } from 'react-router-dom';
+import { Space } from '@mantine/core';
+
 import { sortMonsterMaterials } from '../../../../utils/sort/sortMonsterMaterials';
+import CristalSection from './CristalSection';
 import TypeMonster from './TypeMonster';
 
 const genshindb = require('genshin-db');
 
 const MonsterMaterialPage = () => {
   const [monsterList, setMonsterList] = useState([]);
+  const [types, setTypes] = useState([]);
+  const url = useLocation();
 
   useEffect(() => {
     let list = [];
@@ -26,11 +32,29 @@ const MonsterMaterialPage = () => {
     setMonsterList(sortMonsterMaterials(list));
   }, []);
 
+  useEffect(() => {
+    if (url.pathname.includes('monster')) {
+      setTypes(['COMMON']);
+    } else if (url.pathname.includes('boss')) {
+      setTypes(['ELITE', 'BOSS']);
+    }
+  }, [url])
+
   return (
     <div className='monster_material_container' >
+      <TypeMonster types={types}
+        monsterList={monsterList["materials"]} />
 
-      <TypeMonster monsterList={monsterList["materials"]} />
+      {
+        url.pathname.includes('boss') &&
+        <>
+          <Space h="lg" />
+          <hr />
+          <Space h="lg" />
 
+          <CristalSection monsterList={monsterList["cristal"]} />
+        </>
+      }
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { categorie } from '../../../../utils/categorie/categorie';
 import CategorieMonster from './CategorieMonster';
 
-const TypeMonster = ({ monsterList }) => {
+const TypeMonster = ({ types, monsterList }) => {
   if (!monsterList) {
     return (
       <div></div>
@@ -21,10 +21,14 @@ const TypeMonster = ({ monsterList }) => {
     return '';
   })
 
+  if (!types) {
+    types = categorie.enemiesType;
+  }
+
   return (
     <>
       {
-        categorie.enemiesType.map((v) => {
+        types.map((v) => {
           return (
             <CategorieMonster key={v}
               monsterList={monstersByType[v]} />

@@ -44,6 +44,7 @@ const AppRouter = () => {
                 <Route path='talent' element={<TalentMaterialPage />} />
                 <Route path='weapon' element={<WeaponMaterialPage />} />
                 <Route path='monster' element={<MonsterMaterialPage />} />
+                <Route path='boss' element={<MonsterMaterialPage />} />
               </Route>
               <Route path='item/:name' element={<ItemPage />} />
               {/**/} <Route path="item" element={<Navigate replace to="/categories_items" />} />
