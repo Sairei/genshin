@@ -34,7 +34,7 @@ const Reward = ({ select }) => {
 
   console.log(reward);
   return (
-    <div className='monster_stats'>
+    <div className='monster_reward'>
       <Title order={4}>
         Récompenses
       </Title>
