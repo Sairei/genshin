@@ -19,8 +19,15 @@
 
       .monster_table {
         background-color: #00000020;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         width: 30%;
         margin-right: 5px;
+
+        tr {
+          display: block;
+        }
 
         td {
           display: flex;
