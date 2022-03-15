@@ -7,7 +7,6 @@ const genshindb = require('genshin-db');
 const ItemPage = () => {
   const { name } = useParams()
   const data = genshindb.materials(name);
-  console.log(data);
 
   return (
     <div className='item_container'>

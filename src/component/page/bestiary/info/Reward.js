@@ -32,7 +32,6 @@ const Reward = ({ select }) => {
     setReward(rewardEn);
   }, [select])
 
-  console.log(reward);
   return (
     <div className='monster_reward'>
       <Title order={4}>

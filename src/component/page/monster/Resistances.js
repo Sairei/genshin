@@ -11,8 +11,6 @@ const Resistances = ({ select }) => {
     setStats(s);
   }, [select, lvl])
 
-  console.log(select);
-
   return (
     <div className='monster_stats'>
       <Title order={3} className='tabs_sub_title'>
