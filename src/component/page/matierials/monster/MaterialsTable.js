@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Image, Table } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import { Anchor, Image, Table } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
@@ -21,7 +22,9 @@ const MaterialsTable = ({ values }) => {
                   />
 
                   <div className='vertical_align_text'>
-                    {obj.name}
+                    <Anchor component={Link} to={`/item/${obj.link}`} >
+                      {obj.name}
+                    </Anchor>
                   </div>
                 </td>
               </tr>

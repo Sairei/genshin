@@ -1,20 +1,21 @@
 import React from 'react';
 
-import { Image, Table, Title } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
 const genshindb = require('genshin-db');
 
 const ByDay = ({ materials }) => {
-  const date = 
+  const date =
     materials[0].daysofweek[0] + " / " +
     materials[0].daysofweek[1] + " / " +
     materials[0].daysofweek[2]
   const dropDomain = materials[0].dropdomain.split(": ")[1];
-  
+
   let domainImage = genshindb.domains(materials[0].domainLink, { resultLanguage: 'French' }).images.namepic;
-  
+
   return (
     <div className='weapon_material_day' >
       <Table className='weapon_table'>
@@ -31,7 +32,9 @@ const ByDay = ({ materials }) => {
                       fit='contain' />
 
                     <div className='vertical_align_text'>
-                      {i.name}
+                      <Anchor component={Link} to={`/item/${i.link}`} >
+                        {i.name}
+                      </Anchor>
                     </div>
                   </td>
                 </tr>
@@ -50,7 +53,7 @@ const ByDay = ({ materials }) => {
         </Title>
 
         <Image
-          src={findImage(domainImage)} 
+          src={findImage(domainImage)}
           width={400} />
       </div>
     </div>

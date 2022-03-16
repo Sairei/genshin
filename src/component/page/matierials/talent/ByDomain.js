@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Image, Table, Title } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
@@ -25,7 +26,9 @@ const ByDomain = ({ domain, materials }) => {
                       fit='contain' />
 
                     <div className='vertical_align_text'>
-                      {i.name}
+                      <Anchor component={Link} to={`/item/${i.link}`} >
+                        {i.name}
+                      </Anchor>
                     </div>
                   </td>
                 </tr>
@@ -41,7 +44,7 @@ const ByDomain = ({ domain, materials }) => {
         </Title>
 
         <Image
-          src={findImage(domainImage)} 
+          src={findImage(domainImage)}
           width={350} />
       </div>
     </div>

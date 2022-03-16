@@ -12,8 +12,6 @@ const ItemPage = () => {
   const { name } = useParams()
   const data = genshindb.materials(name, { resultLanguage: "French" });
 
-  console.log(genshindb.enemies(name, { matchCategories: true }));
-
   return (
     <div className='item_container'>
       <div className='name_image'>

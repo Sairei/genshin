@@ -1,5 +1,8 @@
-import { Image, Space, Table, Title } from '@mantine/core';
 import React from 'react';
+
+import { Link } from 'react-router-dom';
+import { Anchor, Image, Space, Table, Title } from '@mantine/core';
+
 import { simplifyText } from '../../../../utils/converter/simplifyElementText';
 import { findImage } from '../../../../utils/finder/findImage';
 
@@ -24,7 +27,7 @@ const SpecialtyRegion = ({ name, items }) => {
         <Table className='specialty_table'>
           <tbody>
             {
-              items.map((i, index) => {
+              items.map((i) => {
                 return (
                   <tr key={i.name}>
                     <td>
@@ -35,7 +38,9 @@ const SpecialtyRegion = ({ name, items }) => {
                         fit='contain' />
 
                       <div className='vertical_align_text'>
-                        {i.name}
+                        <Anchor component={Link} to={`/item/${i.link}`} >
+                          {i.name}
+                        </Anchor>
                       </div>
                     </td>
                   </tr>
