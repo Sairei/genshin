@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image, Title } from '@mantine/core';
+import { Image, Space, Title } from '@mantine/core';
 import { useParams } from 'react-router-dom';
 
 import { findImage } from '../../../utils/finder/findImage';
@@ -12,7 +12,7 @@ const ItemPage = () => {
   const { name } = useParams()
   const data = genshindb.materials(name, { resultLanguage: "French" });
 
-  console.log(data);
+  console.log(genshindb.enemies(name, { matchCategories: true }));
 
   return (
     <div className='item_container'>
@@ -28,9 +28,17 @@ const ItemPage = () => {
         </div>
       </div>
 
+      <div className='separator'>
+        <Image
+          src={require('../../../assets/images/horizontal_separator.png')} />
+      </div>
+      <Space h='md' />
+
       <div className='item_description'>
         {convertInfo(data.description)}
       </div>
+
+      <Space h='xl' />
 
       <div className='item_sources'>
         {
