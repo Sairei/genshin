@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 
+import { useLocation } from 'react-router-dom';
 import { ActionIcon, Image } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
 import AttributeList from './AttributeList';
+import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
 const ItemSkill = ({ skill, image }) => {
+  const url = useLocation().pathname;
   const [lvl, setLvl] = useState(1);
   const maxLvl = skill.attributes.parameters.param1.length;
+  
+  const gender = url.toLocaleLowerCase().includes('lumine') ? "Female" : "Male";
 
   const upLvl = () => {
     if (lvl < maxLvl) {
@@ -37,7 +42,7 @@ const ItemSkill = ({ skill, image }) => {
 
         <div className='skill_info'>
           {
-            convertInfo(skill.info)
+            convertInfo(convertTextWithGender(skill.info, gender))
           }
         </div>
       </div>
