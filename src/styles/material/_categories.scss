@@ -1,11 +1,41 @@
-.materials_list_container {
+.materials_categories_container {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   > * {
     cursor: pointer;
 
     &:hover {
       transform: scale(1.1);
+    }
+  }
+}
+
+.materials_list_container {
+  padding: 10px;
+  
+  ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+
+    li {
+      display: flex;
+    }
+  }
+
+  .item_link {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width:720px){
+  .materials_list_container {
+    ul {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;  
     }
   }
 }

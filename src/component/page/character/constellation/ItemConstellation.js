@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { useLocation } from 'react-router-dom';
 import { Image } from '@mantine/core';
 
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
+import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
 const ItemConstellation = ({ constellation, img }) => {
+  const url = useLocation().pathname;
+  const gender = url.toLocaleLowerCase().includes('lumine') ? "Female" : "Male";
+
   return (
     <div className='constellation'>
       <div className='constellation_img_name'>
@@ -19,7 +24,7 @@ const ItemConstellation = ({ constellation, img }) => {
 
       <div className='constellation_info'>
         {
-          convertInfo(constellation.effect)
+          convertInfo(convertTextWithGender(constellation.effect, gender))
         }
       </div>
     </div>

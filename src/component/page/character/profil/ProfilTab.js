@@ -1,10 +1,16 @@
 import React from 'react';
 
+import { useLocation } from 'react-router-dom';
 import { Anchor, Space } from '@mantine/core';
+
+import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
 const genshindb = require('genshin-db');
 
 const ProfilTab = ({ character, outfit }) => {
+  const url = useLocation().pathname;
+  const gender = url.toLocaleLowerCase().includes('lumine') ? "Female" : "Male";
+
   if (!character) {
     return (
       <div></div>
@@ -55,7 +61,7 @@ const ProfilTab = ({ character, outfit }) => {
         <div>
           <b className='elem_color_text'>Description :</b>
         </div>
-        {`${character.description}`}
+        {`${convertTextWithGender(character.description, gender)}`}
       </div>
 
       <Space h='md' />

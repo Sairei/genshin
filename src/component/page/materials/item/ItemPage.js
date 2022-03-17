@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { findImage } from '../../../../utils/finder/findImage';
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
+import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
 const genshindb = require('genshin-db');
 
@@ -21,7 +22,7 @@ const ItemPage = () => {
 
         <div className='name vertical_align_text'>
           <Title order={1}>
-            {data.name}
+            {convertTextWithGender(data.name)}
           </Title>
         </div>
       </div>
@@ -33,7 +34,7 @@ const ItemPage = () => {
       <Space h='md' />
 
       <div className='item_description'>
-        {convertInfo(data.description)}
+        {convertInfo(convertTextWithGender(data.description))}
       </div>
 
       <Space h='xl' />
