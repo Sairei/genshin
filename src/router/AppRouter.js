@@ -7,13 +7,13 @@ import MainPage from '../component/MainPage';
 import HomePage from '../component/page/home/HomePage';
 import ListCharactersPage from '../component/page/characters/ListCharactersPage';
 import CharacterPage from '../component/page/character/CharacterPage';
-import MaterialsPage from '../component/page/matierials/MaterialsPage';
-import LocalSpecialtyPage from '../component/page/matierials/specialty/LocalSpecialtyPage';
-import TalentMaterialPage from '../component/page/matierials/talent/TalentMaterialPage';
-import WeaponMaterialPage from '../component/page/matierials/weapon/WeaponMaterialPage';
-import MonsterMaterialPage from '../component/page/matierials/monster/MonsterMaterialPage';
+import MaterialsPage from '../component/page/materials/MaterialsPage';
+import LocalSpecialtyPage from '../component/page/materials/specialty/LocalSpecialtyPage';
+import TalentMaterialPage from '../component/page/materials/talent/TalentMaterialPage';
+import WeaponMaterialPage from '../component/page/materials/weapon/WeaponMaterialPage';
+import MonsterMaterialPage from '../component/page/materials/monster/MonsterMaterialPage';
+import ItemPage from '../component/page/materials/item/ItemPage';
 import BestiaryPage from '../component/page/bestiary/BestiaryPage';
-import ItemPage from '../component/page/material/ItemPage';
 import MonsterPage from '../component/page/monster/MonsterPage';
 
 const AppRouter = () => {

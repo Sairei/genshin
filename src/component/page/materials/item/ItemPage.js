@@ -3,8 +3,8 @@ import React from 'react';
 import { Image, Space, Title } from '@mantine/core';
 import { useParams } from 'react-router-dom';
 
-import { findImage } from '../../../utils/finder/findImage';
-import { convertInfo } from '../../../utils/converter/convertInfoToHTML';
+import { findImage } from '../../../../utils/finder/findImage';
+import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
 
 const genshindb = require('genshin-db');
 
@@ -28,7 +28,7 @@ const ItemPage = () => {
 
       <div className='separator'>
         <Image
-          src={require('../../../assets/images/horizontal_separator.png')} />
+          src={require('../../../../assets/images/horizontal_separator.png')} />
       </div>
       <Space h='md' />
 
