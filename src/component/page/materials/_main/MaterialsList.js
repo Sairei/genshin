@@ -38,7 +38,9 @@ const MaterialsList = () => {
                   fit='contain'
                   width={40} height={40}
                   src={findImage(mat.images.nameicon)} />
-                <Anchor component={Link} to={`/item/${mat.link}`} >
+
+                <Anchor className='item_link vertical_align_text' 
+                  component={Link} to={`/item/${mat.link}`} >
                   {convertTextWithGender(mat.name)}
                 </Anchor>
               </li>
