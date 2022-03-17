@@ -34,7 +34,7 @@ const ItemPage = () => {
       <Space h='md' />
 
       <div className='item_description'>
-        {convertInfo(data.description)}
+        {convertInfo(convertTextWithGender(data.description))}
       </div>
 
       <Space h='xl' />
