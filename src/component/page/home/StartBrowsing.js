@@ -26,7 +26,7 @@ const StartBrowsing = () => {
             
             <li>
               <BrowsingItem
-                title="Objets" link="/categories_items"
+                title="Matériaux" link="/categories_items"
               />
             </li>
           </ul>

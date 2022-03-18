@@ -72,7 +72,7 @@ const Navigation = () => {
             <li className="list-item">
               <Link to="/categories_items" className="link">
                 <Title order={3}>
-                  Objets
+                  Matériaux
                 </Title>
               </Link>
               {

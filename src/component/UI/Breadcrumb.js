@@ -15,7 +15,7 @@ const Breadcrumb = () => {
       if (partUrl.startsWith("chara")) {
         name = "Personnages";
       } else if (partUrl.includes("item")) {
-        name = "Objets";
+        name = "Matériaux";
       } else if (partUrl === "local_specialty") {
         name = "Spécialités locales";
       } else if (partUrl === "talent") {
