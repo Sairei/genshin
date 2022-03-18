@@ -12,6 +12,16 @@
   }
 }
 
+.search_material_container {
+  width: 80%;
+  display: flex;
+  margin: auto;
+
+  > * {
+    width: 100%;
+  } 
+}
+
 .materials_list_container {
   display: flex;
   justify-content: center;

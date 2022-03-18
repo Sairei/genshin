@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { Anchor, Image } from '@mantine/core';
@@ -6,26 +6,7 @@ import { Anchor, Image } from '@mantine/core';
 import { findImage } from '../../../../utils/finder/findImage';
 import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
-const genshindb = require('genshin-db');
-
-const MaterialsList = () => {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    let l = [];
-    let enList = genshindb.materials('name', { matchCategories: true });
-    enList.map((elt) => {
-      let o = genshindb.materials(elt, { resultLanguage: "French" });
-      o['link'] = elt;
-      
-      l.push(o);
-
-      return '';
-    })
-
-    setList(l);
-  }, []);
-
+const MaterialsList = ({ list }) => {
   return (
     <div className='materials_list_container'>
       <ul>
