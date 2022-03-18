@@ -29,6 +29,12 @@ const StartBrowsing = () => {
                 title="Matériaux" link="/categories_items"
               />
             </li>
+            
+            <li>
+              <BrowsingItem
+                title="Equipement" link="/equipment"
+              />
+            </li>
           </ul>
         </div>
       </div>

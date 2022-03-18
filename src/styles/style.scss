@@ -31,6 +31,11 @@
 @import './bestiary/bestiary';
 @import './bestiary/monster';
 
+// SCSS pour le bestiaire
+@import './equipment/equipment';
+@import './equipment/weapon';
+@import './equipment/artifact';
+
 // SCSS pour les composants annexes
 @import './items/header';
 @import './items/navbar';

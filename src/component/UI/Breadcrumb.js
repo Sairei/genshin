@@ -28,6 +28,10 @@ const Breadcrumb = () => {
         name = "Boss";
       } else if (partUrl === "bestiary") {
         name = "Bestiaire";
+      } else if (partUrl === "equipment") {
+        name = "Equipement";
+      } else if (partUrl === "artifact") {
+        name = "Artéfacts";
       } else {
         name = partUrl.replaceAll("%20", " ");
       }
