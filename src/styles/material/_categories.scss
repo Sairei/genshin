@@ -1,6 +1,6 @@
 .materials_categories_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 
   > * {
@@ -13,12 +13,14 @@
 }
 
 .materials_list_container {
+  display: flex;
+  justify-content: center;
   padding: 10px;
   
   ul {
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
 
     li {
       display: flex;
@@ -27,6 +29,16 @@
 
   .item_link {
     margin-left: 15px;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .materials_list_container {
+    ul {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
   }
 }
 
