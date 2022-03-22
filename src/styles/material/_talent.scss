@@ -13,6 +13,7 @@
 
     .ascent_material_domain {
       display: flex;
+      flex-wrap: wrap-reverse;
       justify-content: center;  
 
       .domain_image_name {
@@ -26,7 +27,7 @@
         flex-direction: column;
         justify-content: flex-end;
         margin-right: 30px;
-        width: 30%;
+        width: 25%;
 
         td {
           display: flex;
@@ -38,6 +39,34 @@
 
         .talent_item_icon {
           margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .characters_by_donjon {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .charac_img {
+      margin: 3px;
+
+      img {
+        padding: 2px;
+        border: 1px solid;
+        border-radius: 0.75rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:700px){
+  .character_ascent_material_container {
+    .ascent_material_region {
+      .ascent_material_domain {
+        .talent_table {
+          width: 80%;
         }
       }
     }

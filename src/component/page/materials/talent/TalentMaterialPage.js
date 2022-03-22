@@ -25,6 +25,7 @@ const TalentMaterialPage = () => {
         }
 
         let domain = genshindb.domains(enObj.dropdomain.split(": ")[1], { resultLanguage: 'French' });
+        console.log(domain);
 
         let o = genshindb.materials(m, { resultLanguage: 'French' });
         o['link'] = m;
