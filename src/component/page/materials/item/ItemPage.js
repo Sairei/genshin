@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Image, Space, Title } from '@mantine/core';
 import { useParams } from 'react-router-dom';
@@ -38,19 +38,24 @@ const ItemPage = () => {
         {convertInfo(convertTextWithGender(data.description))}
       </div>
 
-      <Space h='xl' />
+      {
+        data.source.length > 0 &&
+        <Fragment>
+          <Space h='xl' />
 
-      <div className='item_sources'>
-        {
-          data.source.map((s, index) => {
-            return (
-              <div key={index}>
-                {s}
-              </div>
-            );
-          })
-        }
-      </div>
+          <div className='item_sources'>
+            {
+              data.source.map((s, index) => {
+                return (
+                  <div key={index}>
+                    {s}
+                  </div>
+                );
+              })
+            }
+          </div>
+        </Fragment>
+      }
 
       <Space h='xl' />
 

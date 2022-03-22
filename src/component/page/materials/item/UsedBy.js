@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image, Title } from '@mantine/core';
+import { Image, Title, Tooltip } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
@@ -56,21 +56,29 @@ const UsedBy = ({ name }) => {
       <div className='list'>
         {
           characList.map((elt) => {
+            let characName = elt;
             let img = genshindb.characters(elt).images;
-            if (name === "Aether") {
+            if (elt === "Aether") {
               img = img.image;
+              characName = "Aether / Lumine"
             }
             else {
               img = findImage(img.nameicon);
             }
 
             return (
-              <div className='charac_img' key={elt}>
-                <Image
-                  fit='contain'
-                  width={100} height={100}
-                  src={img} alt={elt}
-                />
+              <div className='charac_img' key={characName}>
+                <Tooltip
+                  className='bestiary_image'
+                  label={characName} position="bottom"
+                  transition="slide-down"
+                >
+                  <Image
+                    fit='contain'
+                    width={100} height={100}
+                    src={img} alt={characName}
+                  />
+                </Tooltip>
               </div>
             );
           })

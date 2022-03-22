@@ -46,16 +46,20 @@
   }
 
   .characters_list {
-    width: 80%;
+    width: 90%;
     margin: auto;
     
     .list {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       
       .charac_img {
-        margin: 3px;
+        margin: 10px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
         
         img {
           padding: 2px;
