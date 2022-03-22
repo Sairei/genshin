@@ -12,17 +12,19 @@ const ByRegion = ({ region, materials }) => {
       </Title>
 
       {
-        Object.entries(materials).map((entry) => {
-          return (
-            <Fragment key={entry[0]} >
-              <Space h='xl' />
+        Object.entries(materials)
+          .sort((a, b) => a[1][0].days[0].localeCompare(b[1][0].days[0]))
+          .map((entry) => {
+            return (
+              <Fragment key={entry[0]} >
+                <Space h='xl' />
 
-              <ByDomain key={entry[0]}
-                domain={entry[0]}
-                materials={entry[1]} />
-            </Fragment>
-          );
-        })
+                <ByDomain key={entry[0]}
+                  domain={entry[0]}
+                  materials={entry[1]} />
+              </Fragment>
+            );
+          })
       }
     </div>
   );

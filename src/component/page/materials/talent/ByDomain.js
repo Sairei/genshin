@@ -11,6 +11,11 @@ const genshindb = require('genshin-db');
 const ByDomain = ({ domain, materials }) => {
   let domainImage = genshindb.domains(materials[0].domainLink, { resultLanguage: 'French' }).images.namepic;
 
+  const date =
+    materials[0].daysofweek[0] + " / " +
+    materials[0].daysofweek[1] + " / " +
+    materials[0].daysofweek[2]
+
   return (
     <div>
       <div className='ascent_material_domain' >
@@ -43,6 +48,9 @@ const ByDomain = ({ domain, materials }) => {
         <div className='domain_image_name' >
           <Title order={3} className='domain_title' >
             {domain.split(": ")[1]}
+          </Title>
+          <Title order={4} className='domain_title' >
+            {date}
           </Title>
 
           <div>
