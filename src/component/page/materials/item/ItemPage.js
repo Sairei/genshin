@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { findImage } from '../../../../utils/finder/findImage';
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
 import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
+import UsedBy from './UsedBy';
 
 const genshindb = require('genshin-db');
 
@@ -50,6 +51,10 @@ const ItemPage = () => {
           })
         }
       </div>
+
+      <Space h='xl' />
+
+      <UsedBy name={name} />
     </div>
   );
 };

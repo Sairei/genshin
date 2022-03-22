@@ -44,4 +44,25 @@
       border-radius: 1.5rem;
     }
   }
+
+  .characters_list {
+    width: 80%;
+    margin: auto;
+    
+    .list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      .charac_img {
+        margin: 3px;
+        
+        img {
+          padding: 2px;
+          border: 1px solid;
+          border-radius: 0.75rem;
+        }
+      }
+    }
+  }
 }
