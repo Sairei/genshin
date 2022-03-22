@@ -44,12 +44,14 @@ const UsedBy = ({ name }) => {
     return '';
   })
 
-  console.log(characList);
   return (
     <div className='characters_list'>
-      <Title order={3}>
-        Utilisé par :
-      </Title>
+      {
+        characList.length > 0 &&
+        <Title order={3}>
+          Utilisé par :
+        </Title>
+      }
 
       <div className='list'>
         {
