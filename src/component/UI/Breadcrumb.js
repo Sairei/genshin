@@ -33,7 +33,7 @@ const Breadcrumb = () => {
       } else if (partUrl === "artifact") {
         name = "Artéfacts";
       } else {
-        name = partUrl.replaceAll("%20", " ");
+        name = partUrl.replaceAll("%20", " ").replaceAll("%22", "");
       }
 
       link = tmp[0];
