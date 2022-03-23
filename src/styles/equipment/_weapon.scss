@@ -1,5 +1,16 @@
 .weapon_container {
   li {
     display: flex;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+    .image {
+      border: 2px solid;
+      border-radius: .75rem;
+    }
+
+    .name {
+      margin-left: 15px;
+    }
   }
 }

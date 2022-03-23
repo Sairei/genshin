@@ -6,7 +6,7 @@ const WelcomeTo = () => {
   return (
     <div className='welcome_container'>
       <Title order={1}>
-        Bienvenu !
+        Bienvenue !
       </Title>
       <p>
         Vous avez ici un site réalisé en REACT pour genshin.
