@@ -1,3 +1,39 @@
 .equipment_main_container {
+  height: 100%;
+  margin-top: 25px;
   display: flex;
+  justify-content: space-around;
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    margin: auto;
+    border: 2px solid;
+    border-radius: 1rem;
+    padding: 7px 20px 5px 20px;
+    cursor: pointer;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .vertical_separator {
+    height: 100%;
+    width: 3px;
+    background-color: black;
+  }
+}
+
+@media screen and (max-width:720px){
+  .equipment_main_container {
+    width: 100%;
+    flex-direction: column;
+  
+    .vertical_separator {
+      height: 3px;
+      width: 100%;
+    }
+  }
 }
