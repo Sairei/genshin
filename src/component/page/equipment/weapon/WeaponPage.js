@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
-import { Image } from '@mantine/core';
+import { Tabs } from '@mantine/core';
 
-import { findImage } from '../../../../utils/finder/findImage';
+import { categorie } from '../../../../utils/categorie/categorie';
+import { ConvertFR } from '../../../../utils/categorie/convertByLang';
+import WeaponsByType from './WeaponsByType';
 
 const genshindb = require('genshin-db');
 
 const WeaponPage = () => {
   const [weapons, setWeapons] = useState([]);
   useEffect(() => {
-    let list = [];
+    let list = {};
 
     genshindb.weapons('name', { matchCategories: true }).map((elt) => {
       let o = genshindb.weapons(elt, { resultLanguage: 'French' });
       o['link'] = elt;
-      list.push(o);
+      
+      let enType = genshindb.weapons(elt).weapontype.toLocaleLowerCase();
+      if (!list[enType]) {
+        list[enType] = []
+      }
+      list[enType].push(o);
 
       return '';
     });
@@ -22,25 +29,21 @@ const WeaponPage = () => {
     setWeapons(list);
   }, []);
 
+  console.log(weapons);
+
   return (
     <div className='weapon_container'>
-      <ul>
+      <Tabs orientation="vertical">
         {
-          weapons.map((elt) => {
+          categorie.weapontype.map((elt) => {
             return (
-              <li key={elt.name} >
-                <Image 
-                  width={50} height={50}
-                  src={findImage(elt.images.nameicon)}
-                />
-                <div className='vertical_align_text'>
-                  {elt.name}
-                </div>
-              </li>
+              <Tabs.Tab key={elt} label={ConvertFR.weaponLabel(elt)} >
+                <WeaponsByType weapons={weapons[elt]} />
+              </Tabs.Tab>
             );
           })
         }
-      </ul>
+      </Tabs>
     </div>
   );
 };
