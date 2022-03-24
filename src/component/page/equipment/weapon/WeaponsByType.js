@@ -3,6 +3,7 @@ import React from 'react';
 import { Image } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
+import { Link } from 'react-router-dom';
 
 const WeaponsByType = ({ weapons }) => {
   if (!weapons) {
@@ -19,7 +20,7 @@ const WeaponsByType = ({ weapons }) => {
           .map((elt) => {
             return (
               <li key={elt.name} >
-                <div>
+                <Link to={`/equipment/weapon/${elt.link}`}>
                   <Image
                     className={`image rarity_${elt.rarity}`}
                     width={75} height={75}
@@ -33,7 +34,7 @@ const WeaponsByType = ({ weapons }) => {
                       {elt.description}
                     </div>
                   </div>
-                </div>
+                </Link>
               </li>
             );
           })

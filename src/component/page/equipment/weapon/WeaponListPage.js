@@ -9,7 +9,7 @@ import WeaponsByType from './WeaponsByType';
 
 const genshindb = require('genshin-db');
 
-const WeaponPage = () => {
+const WeaponListPage = () => {
   const matches = useMediaQuery('(max-width: 720px)');
 
   const [weapons, setWeapons] = useState([]);
@@ -58,4 +58,4 @@ const WeaponPage = () => {
   );
 };
 
-export default WeaponPage;
+export default WeaponListPage;

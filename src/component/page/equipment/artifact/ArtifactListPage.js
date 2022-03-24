@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArtifactPage = () => {
+const ArtifactListPage = () => {
   return (
     <div className='artifact_container'>
       
@@ -8,4 +8,4 @@ const ArtifactPage = () => {
   );
 };
 
-export default ArtifactPage;
+export default ArtifactListPage;

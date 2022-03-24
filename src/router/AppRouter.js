@@ -16,8 +16,8 @@ import ItemPage from '../component/page/materials/item/ItemPage';
 import BestiaryPage from '../component/page/bestiary/BestiaryPage';
 import MonsterPage from '../component/page/monster/MonsterPage';
 import EquipmentPage from '../component/page/equipment/EquipmentPage';
-import WeaponPage from '../component/page/equipment/weapon/WeaponPage';
-import ArtifactPage from '../component/page/equipment/artifact/ArtifactPage';
+import WeaponListPage from '../component/page/equipment/weapon/WeaponListPage';
+import ArtifactListPage from '../component/page/equipment/artifact/ArtifactListPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -69,8 +69,10 @@ const AppRouter = () => {
               {/*******************/}
               <Route path='equipment' >
                 <Route index element={<EquipmentPage />} />
-                <Route path='weapon' element={<WeaponPage />} />
-                <Route path='artifact' element={<ArtifactPage />} />
+                <Route path='weapon/:name' element={<WeaponListPage />} />
+                <Route path='weapon' element={<WeaponListPage />} />
+                <Route path='artifact/:name' element={<ArtifactListPage />} />
+                <Route path='artifact' element={<ArtifactListPage />} />
               </Route>
 
             </Route>
