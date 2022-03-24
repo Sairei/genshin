@@ -17,6 +17,7 @@ import BestiaryPage from '../component/page/bestiary/BestiaryPage';
 import MonsterPage from '../component/page/monster/MonsterPage';
 import EquipmentPage from '../component/page/equipment/EquipmentPage';
 import WeaponListPage from '../component/page/equipment/weapon/WeaponListPage';
+import WeaponPage from '../component/page/equipment/weapon/WeaponPage';
 import ArtifactListPage from '../component/page/equipment/artifact/ArtifactListPage';
 
 const AppRouter = () => {
@@ -69,7 +70,7 @@ const AppRouter = () => {
               {/*******************/}
               <Route path='equipment' >
                 <Route index element={<EquipmentPage />} />
-                <Route path='weapon/:name' element={<WeaponListPage />} />
+                <Route path='weapon/:name' element={<WeaponPage />} />
                 <Route path='weapon' element={<WeaponListPage />} />
                 <Route path='artifact/:name' element={<ArtifactListPage />} />
                 <Route path='artifact' element={<ArtifactListPage />} />
