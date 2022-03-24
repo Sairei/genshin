@@ -6,12 +6,16 @@ import { Image, Space, Title } from '@mantine/core';
 import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
 import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 import { findImage } from '../../../../utils/finder/findImage';
+import StatsWeapon from './StatsWeapon';
+import PassifWeapon from './PassifWeapon';
+import AscentWeapon from './AscentWeapon';
 
 const genshindb = require('genshin-db');
 
 const WeaponPage = () => {
   const { name } = useParams()
   const data = genshindb.weapons(name, { resultLanguage: "French" });
+  const substat = genshindb.weapons(name).substat;
 
   return (
     <div className='weapon_container'>
@@ -36,6 +40,22 @@ const WeaponPage = () => {
       <div className='weapon_description'>
         {convertInfo(convertTextWithGender(data.description))}
       </div>
+
+      <Space h='xl' />
+
+      <StatsWeapon
+        weaponData={data}
+        substat={substat} />
+
+      <Space h='xl' />
+
+      <PassifWeapon
+        weapon={data} />
+
+      <Space h='xl' />
+
+      <AscentWeapon
+        weapon={data} />
     </div>
   );
 };
