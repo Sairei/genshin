@@ -32,7 +32,6 @@ const MaterialsPage = () => {
     const value = event.target.value;
     setSearchValue(value);
 
-    console.log(value);
     let searchArr = [];
     if (value.length > 0) {
       searchArr = list.filter(elt => {

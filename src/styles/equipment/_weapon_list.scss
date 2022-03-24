@@ -1,0 +1,68 @@
+.weapon_list_container {
+  padding: 5px 20px;
+
+  .weapon_tabs_list {
+    position: fixed;
+    z-index: 50;
+    height: 100%;
+  }
+
+  .weapon_tabs_body {
+    position: absolute;
+    left: 175px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      width: 85%;
+
+      & > a {
+        display: flex;
+        text-decoration: none;
+        color: black;
+
+        .image {
+          border: 2px solid;
+          border-radius: .75rem;
+        }
+
+        .name_desc {
+          margin-left: 15px;
+
+          .name {
+            font-size: 25px;
+            font-weight: bolder;
+          }
+
+          .description {
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:720px){
+  .weapon_container {  
+    padding: 5px 0;
+
+    .weapon_tabs_list {
+      background-image: var(--bggradient);
+      width: 100%;
+      height: auto;
+
+      .control_tab {
+        height: 55px;
+      }
+    }
+  
+    .weapon_tabs_body {
+      position: relative;
+      top: 40px;
+      left: 0;
+    }
+  }
+}

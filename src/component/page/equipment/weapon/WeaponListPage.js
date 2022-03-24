@@ -32,10 +32,8 @@ const WeaponListPage = () => {
     setWeapons(list);
   }, []);
 
-  console.log(weapons);
-
   return (
-    <div className='weapon_container'>
+    <div className='weapon_list_container'>
       <Tabs
         classNames={{
           tabsListWrapper: "weapon_tabs_list",

@@ -1,68 +1,47 @@
 .weapon_container {
-  padding: 5px 20px;
-
-  .weapon_tabs_list {
-    position: fixed;
-    z-index: 50;
-    height: 100%;
-  }
-
-  .weapon_tabs_body {
-    position: absolute;
-    left: 175px;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-      width: 85%;
-
-      & > a {
-        display: flex;
-        text-decoration: none;
-        color: black;
-
-        .image {
-          border: 2px solid;
-          border-radius: .75rem;
-        }
-
-        .name_desc {
-          margin-left: 15px;
-
-          .name {
-            font-size: 25px;
-            font-weight: bolder;
-          }
-
-          .description {
-            font-size: 15px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width:720px){
-  .weapon_container {  
-    padding: 5px 0;
-
-    .weapon_tabs_list {
-      background-image: var(--bggradient);
-      width: 100%;
-      height: auto;
-
-      .control_tab {
-        height: 55px;
-      }
-    }
+  padding: 15px 15px 0 15px;
   
-    .weapon_tabs_body {
-      position: relative;
-      top: 40px;
-      left: 0;
+  .separator {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    > * {
+      width: 80%;
+    }
+  }
+
+  .name_image {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    
+    .name {
+      margin-left: 20px;
+    }
+  }
+
+  .weapon_description {
+    font-family: BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 18px;
+
+    > * {
+      width: 90%;
+      margin: auto;
+    }
+  }
+
+  .item_sources {
+    width: 90%;
+    margin: auto;
+
+    > * {
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid;
+      border-radius: 1.5rem;
     }
   }
 }
