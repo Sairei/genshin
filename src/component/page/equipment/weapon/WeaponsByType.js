@@ -25,8 +25,13 @@ const WeaponsByType = ({ weapons }) => {
                     width={75} height={75}
                     src={findImage(elt.images.nameicon)}
                   />
-                  <div className='name vertical_align_text'>
-                    {elt.name}
+                  <div className='name_desc vertical_align_text'>
+                    <div className='name'>
+                      {elt.name}
+                    </div>
+                    <div className='description'>
+                      {elt.description}
+                    </div>
                   </div>
                 </div>
               </li>

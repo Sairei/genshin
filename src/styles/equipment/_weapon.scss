@@ -15,18 +15,28 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 10px;
+      width: 85%;
   
       & > div {
         display: flex;
-        font-size: 20px;
   
         .image {
           border: 2px solid;
           border-radius: .75rem;
         }
   
-        .name {
+        .name_desc {
           margin-left: 15px;
+
+          .name {
+            font-size: 25px;
+            font-weight: bolder;
+          }
+
+          .description {
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
         }
       }
     }
