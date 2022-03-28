@@ -37,6 +37,9 @@
 @import './equipment/weapon';
 @import './equipment/artifact';
 
+// SCSS pour les recettes
+@import './recipes/recipes';
+
 // SCSS pour les composants annexes
 @import './items/header';
 @import './items/navbar';

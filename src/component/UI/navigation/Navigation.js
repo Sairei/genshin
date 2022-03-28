@@ -100,6 +100,16 @@ const Navigation = () => {
             <Space h="md" />
 
             <li className="list-item">
+              <Link to="/recipes" className="link">
+                <Title order={3}>
+                  Recettes
+                </Title>
+              </Link>
+            </li>
+
+            <Space h="md" />
+
+            <li className="list-item">
               <Link to="/about" className="link">
                 <Title order={3}>
                   A propos

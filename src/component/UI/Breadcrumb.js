@@ -32,6 +32,8 @@ const Breadcrumb = () => {
         name = "Equipement";
       } else if (partUrl === "artifact") {
         name = "Artéfacts";
+      } else if (partUrl === "recipes") {
+        name = "Recettes";
       } else {
         name = partUrl.replaceAll("%20", " ").replaceAll("%22", "");
       }

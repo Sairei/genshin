@@ -1,0 +1,47 @@
+.recipe_list_container {
+  width: 90%;
+  margin: 15px auto 0 auto ;
+
+  hr {
+    color: beige;
+    width: 80%;
+  }
+
+  .recipe {
+    margin: 20px 0;
+
+    .img_name { 
+      display: flex;
+
+      .div_image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .image {
+          border: 2px solid;
+          border-radius: .75rem;
+        }
+      }
+
+      .name {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-left: 15px;
+        font-size: 25px;
+        font-weight: bolder;
+      }
+
+      .effect {
+        margin-bottom: 3px;
+        margin-left: 35px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 15px;
+      }
+    }
+
+    .desc {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+  }
+}
