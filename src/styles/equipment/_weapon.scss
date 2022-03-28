@@ -12,6 +12,11 @@
     }
   }
 
+  hr {
+    color: beige;
+    width: 80%;
+  }
+
   .name_image {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -22,7 +27,7 @@
   }
 
   .weapon_description {
-    font-family: BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-family: Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 18px;
 
     > * {
@@ -72,6 +77,22 @@
           }
         }
       }
+    }
+  }
+
+  .refinement_container {
+    width: 90%;
+    margin: auto;
+    font-family: Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+
+    > div.rafinement {
+      padding: 15px 10px 10px 10px;
+      margin: 5px 0;
+    }
+
+    > div:not(:last-child) {
+      border-bottom: 1px solid;
     }
   }
 

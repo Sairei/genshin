@@ -30,14 +30,20 @@ const StatsWeapon = ({ weaponData, substat }) => {
             <tr>
               <th></th>
               <th>Attaque de base</th>
-              <th>{weaponData.substat}</th>
+              {
+                stats.specialized.length > 0 &&
+                <th>{weaponData.substat}</th>
+              }
             </tr>
           </thead>
           <tbody>
             <tr>
               <th>lvl {lvl}</th>
               <td>{Math.round(stats.attack)}</td>
-              <td>{convertNumberToSubstat(substat, stats.specialized)}</td>
+              {
+                stats.specialized.length > 0 &&
+                <td>{convertNumberToSubstat(substat, stats.specialized)}</td>
+              }
             </tr>
           </tbody>
         </Table>

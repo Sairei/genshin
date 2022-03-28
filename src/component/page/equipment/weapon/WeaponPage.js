@@ -15,6 +15,7 @@ const genshindb = require('genshin-db');
 const WeaponPage = () => {
   const { name } = useParams()
   const data = genshindb.weapons(name, { resultLanguage: "French" });
+  data['link'] = name;
   const substat = genshindb.weapons(name).substat;
 
   return (
@@ -41,18 +42,24 @@ const WeaponPage = () => {
         {convertInfo(convertTextWithGender(data.description))}
       </div>
 
-      <Space h='xl' />
+      <Space h="xl" />
+      <hr />
+      <Space h="xl" />
 
       <StatsWeapon
         weaponData={data}
         substat={substat} />
 
-      <Space h='xl' />
+      <Space h="xl" />
+      <hr />
+      <Space h="xl" />
 
       <PassifWeapon
         weapon={data} />
 
-      <Space h='xl' />
+      <Space h="xl" />
+      <hr />
+      <Space h="xl" />
 
       <AscentWeapon
         weapon={data} />

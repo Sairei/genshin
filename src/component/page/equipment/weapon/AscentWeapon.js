@@ -63,7 +63,7 @@ const AscentWeapon = ({ weapon }) => {
       </Title>
 
       <div className='ascent_table_container'>
-        <Table highlightOnHover
+        <Table
           className='ascent_table'>
           <tbody>
             {trAscent}
