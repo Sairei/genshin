@@ -28,7 +28,6 @@ const Recipes = () => {
       <div></div>
     );
   }
-  console.log(recipeList);
 
   return (
     <div className='recipe_list_container'>
