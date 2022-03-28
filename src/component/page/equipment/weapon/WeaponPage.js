@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { useParams } from 'react-router-dom';
 import { Image, Space, Title } from '@mantine/core';
@@ -50,12 +50,17 @@ const WeaponPage = () => {
         weaponData={data}
         substat={substat} />
 
-      <Space h="xl" />
-      <hr />
-      <Space h="xl" />
+      {
+        data.effect &&
+        <Fragment>
+          <Space h="xl" />
+          <hr />
+          <Space h="xl" />
 
-      <PassifWeapon
-        weapon={data} />
+          <PassifWeapon
+            weapon={data} />
+        </Fragment>
+      }
 
       <Space h="xl" />
       <hr />
