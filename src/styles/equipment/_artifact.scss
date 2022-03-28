@@ -1,3 +1,35 @@
 .artifact_container {
-  
+  padding: 15px 15px 0 15px;
+
+  .artifact_set {
+    .set {
+      display: flex;
+      margin: 20px 0; 
+
+      .div_image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .image {
+          border: 2px solid;
+          border-radius: .75rem;
+        }
+      }
+
+      .description {
+        margin-left: 15px;
+        
+        .name {
+          font-size: 25px;
+          font-weight: bolder;
+        }
+
+        .description {
+          font-size: 16px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+      }
+    }
+  }
 }
