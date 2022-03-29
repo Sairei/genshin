@@ -29,7 +29,7 @@ export const ConvertFR = {
       case "sword":
         return "Épée à une main";
       case "polearm":
-        return "Arme d’hast";
+        return "Arme d'hast";
       case "catalyst":
         return "Catalyseur";
       case "bow":
