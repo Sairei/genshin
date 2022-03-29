@@ -8,7 +8,7 @@ import { findImage } from '../../../../utils/finder/findImage';
 
 import { GenshinDB } from '../../../../utils/database/genshinbd';
 
-const AscentTable = ({ character, searchName }) => {
+const AscentTable = ({ character }) => {
   if (!character) {
     return (
       <div></div>

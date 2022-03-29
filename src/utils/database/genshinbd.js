@@ -1,7 +1,10 @@
+// Possible values : ChineseSimplified, ChineseTraditional, English, French, German, Indonesian, Japanese, Korean, Portuguese, Russian, Spanish, Thai, Vietnamese.
+const wantedLanguage = "French";
+
 const genshindb = require('genshin-db');
 genshindb.setOptions({
-  queryLanguages: ["French"],
-  resultLanguage: "French"
+  queryLanguages: [wantedLanguage],
+  resultLanguage: wantedLanguage
 });
 
 export const GenshinDB = {
@@ -11,7 +14,7 @@ export const GenshinDB = {
 
     let elt = genshindb.elements(name);
     
-    genshindb.setOptions({ queryLanguages: ["French"], resultLanguage: "French" });
+    genshindb.setOptions({ queryLanguages: [wantedLanguage], resultLanguage: wantedLanguage });
     return elt;
   },
 

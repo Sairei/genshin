@@ -5,7 +5,7 @@ import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const Costs = ({ talent, name }) => {
   if (!talent) {
@@ -16,7 +16,6 @@ const Costs = ({ talent, name }) => {
   
 
   const trCost = Object.entries(talent.costs).map((val, index) => {
-    let en = genshindb.talents(name);
     return (
       <tr key={index}>
         <th>
@@ -27,8 +26,7 @@ const Costs = ({ talent, name }) => {
         <td>
           {
             val[1].map((item, i) => {
-              let enName = en.costs[val[0]][i].name;
-              let material = genshindb.materials(enName)
+              let material = GenshinDB.findMaterials(item.name)
               return (
                 <div className='skill_cost_item' key={`${index}_${i}`}>
                   <Image
@@ -38,7 +36,7 @@ const Costs = ({ talent, name }) => {
 
                   <div className='vertical_align_text'>
                     <div>
-                      <Anchor component={Link} to={`/item/${enName}`} >
+                      <Anchor component={Link} to={`/item/${item.name}`} >
                         {`${item.name} `} 
                       </Anchor>
                       {`x${item.count}`}

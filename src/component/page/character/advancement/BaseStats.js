@@ -4,7 +4,7 @@ import { Slider, Switch, Table, Title } from '@mantine/core';
 
 import { ascent } from '../../../../utils/enum/enumAscent';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const BaseStats = ({ name }) => {
   const [ascentPlusOne, setAscentPlusOne] = useState(false);
@@ -12,9 +12,9 @@ const BaseStats = ({ name }) => {
   const [stats, setStats] = useState({ attack: 0, defense: 0, hp: 0 });
 
   useEffect(() => {
-    let s = genshindb.characters(name).stats(lvl);
+    let s = GenshinDB.findCharacter(name).stats(lvl);
     if(ascentPlusOne) {
-      s = genshindb.characters(name).stats(lvl, '+');
+      s = GenshinDB.findCharacter(name).stats(lvl, '+');
     }
     
     setStats(s);

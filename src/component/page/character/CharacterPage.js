@@ -36,7 +36,7 @@ const CharacterPage = () => {
   }, [name])
 
   useEffect(() => {
-    setTalentData(GenshinDB.findCharacter(searchName));
+    setTalentData(GenshinDB.findTalents(searchName));
     setConstellationData(GenshinDB.findConstellations(searchName));
     setOutfit(GenshinDB.findOutfits(searchName));
 

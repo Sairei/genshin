@@ -5,7 +5,7 @@ import { Anchor, Space } from '@mantine/core';
 
 import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const ProfilTab = ({ character, outfit }) => {
   const url = useLocation().pathname;
@@ -72,16 +72,16 @@ const ProfilTab = ({ character, outfit }) => {
           {
             outfit &&
             outfit.map((tenue) => {
-              let res = genshindb.outfits(tenue, { resultLanguage: 'French' });
+              let res = GenshinDB.findOutfits(tenue);
               
               return (
                 <li key={tenue}>
-                  {tenue}
+                  {`${tenue} `}
                   {
                     res.url.modelviewer &&
                     <Anchor target='_blank'
                       href={res.url.modelviewer} >
-                        {" (Lien vers le model 3D)"}
+                        {"(Lien vers le model 3D)"}
                     </Anchor>
                   }
                 </li>
