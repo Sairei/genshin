@@ -33,5 +33,9 @@ export const GenshinDB = {
 
   findOutfits: (characterName) => {
     return genshindb.outfits(characterName, { matchCategories: true });
+  },
+  
+  findMaterials: (name) => {
+    return genshindb.materials(name);
   }
 }
