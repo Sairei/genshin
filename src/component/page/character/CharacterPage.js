@@ -11,7 +11,7 @@ import PassiveTab from './passive/PassiveTab';
 import ConstellationTab from './constellation/ConstellationTab';
 import ProfilTab from './profil/ProfilTab';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd';
 
 const CharacterPage = () => {
   const { name } = useParams()
@@ -25,7 +25,7 @@ const CharacterPage = () => {
   useEffect(() => {
     setName(name);
 
-    let d = genshindb.characters(name, { resultLanguage: "French" });
+    let d = GenshinDB.findCharacter(name);
     setData(d);
 
     setElt(d.element);
@@ -36,9 +36,9 @@ const CharacterPage = () => {
   }, [name])
 
   useEffect(() => {
-    setTalentData(genshindb.talents(searchName, { resultLanguage: "French" }));
-    setConstellationData(genshindb.constellations(searchName, { resultLanguage: "French" }));
-    setOutfit(genshindb.outfits(searchName, { matchCategories:true }));
+    setTalentData(GenshinDB.findCharacter(searchName));
+    setConstellationData(GenshinDB.findConstellations(searchName));
+    setOutfit(GenshinDB.findOutfits(searchName));
 
     if (searchName && searchName.startsWith('Traveler')) {
       let open = searchName.indexOf('(');
