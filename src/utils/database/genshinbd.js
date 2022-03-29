@@ -27,11 +27,25 @@ export const GenshinDB = {
   },
 
   findTalents: (characterName) => {
-    return genshindb.talents(characterName);
+    let search = characterName;
+    // if (characterName && characterName.startsWith('Traveler')){
+    //   let open = characterName.indexOf('(') + 1;
+    //   let close = characterName.indexOf(')');
+    //   search = characterName.substring(open, close)
+    // }
+
+    return genshindb.talents(search);
   },
 
   findConstellations: (characterName) => {
-    return genshindb.constellations(characterName);
+    let search = characterName;
+    // if (characterName && characterName.startsWith('Traveler')){
+    //   let open = characterName.indexOf('(') + 1;
+    //   let close = characterName.indexOf(')');
+    //   search = characterName.substring(open, close)
+    // }
+
+    return genshindb.constellations(search);
   },
 
   findOutfits: (characterName) => {

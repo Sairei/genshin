@@ -52,7 +52,7 @@ const ProfilTab = ({ character, outfit }) => {
               );
             })
           }
-        </ul> 
+        </ul>
       </div>
 
       <Space h='md' />
@@ -66,30 +66,32 @@ const ProfilTab = ({ character, outfit }) => {
 
       <Space h='md' />
 
-      <div>
-        <b className='elem_color_text'>{`Tenues :`}</b>
-        <ul>
-          {
-            outfit &&
-            outfit.map((tenue) => {
-              let res = GenshinDB.findOutfits(tenue);
-              
-              return (
-                <li key={tenue}>
-                  {`${tenue} `}
-                  {
-                    res.url.modelviewer &&
-                    <Anchor target='_blank'
-                      href={res.url.modelviewer} >
+      {
+        outfit &&
+        <div>
+          <b className='elem_color_text'>{`Tenues :`}</b>
+          <ul>
+            {
+              outfit.map((tenue) => {
+                let res = GenshinDB.findOutfits(tenue);
+
+                return (
+                  <li key={tenue}>
+                    {`${tenue} `}
+                    {
+                      res.url.modelviewer &&
+                      <Anchor target='_blank'
+                        href={res.url.modelviewer} >
                         {"(Lien vers le model 3D)"}
-                    </Anchor>
-                  }
-                </li>
-              );
-            })
-          }
-        </ul> 
-      </div>
+                      </Anchor>
+                    }
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      }
     </div>
   );
 };

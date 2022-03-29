@@ -44,6 +44,8 @@ const CharacterPage = () => {
       let open = searchName.indexOf('(');
       let close = searchName.indexOf(')');
       setElt(searchName.substring(open + 1, close));
+      setTalentData(GenshinDB.findTalents(searchName.substring(open + 1, close)));
+      setConstellationData(GenshinDB.findConstellations(searchName.substring(open + 1, close)));
     }
   }, [searchName])
 
