@@ -1,8 +1,11 @@
-import { Image } from '@mantine/core';
 import React from 'react';
 
-const NewFeature = ({ version }) => {
-  if (version !== "2.6") {
+import { Image } from '@mantine/core';
+
+import { genshin_version } from '../../utils/database/version';
+
+const NewFeature = ({ version, size }) => {
+  if (version !== genshin_version) {
     return (
       <></>
     );
@@ -12,7 +15,7 @@ const NewFeature = ({ version }) => {
     <Image
       className='new_feature'
       src={require('../../assets/images/new-icon.png')}
-      height={75} width={75} />
+      height={size} width={size} />
   );
 };
 

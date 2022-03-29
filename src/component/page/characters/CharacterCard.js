@@ -23,7 +23,8 @@ const CharacterCard = ({ name }) => {
 
   return (
     <div className='character_card'>
-      <NewFeature version={characterData.version} />
+      <NewFeature size={75}
+        version={characterData.version} />
 
       <div className="character_card_image" onClick={() => nav(`/character/${name}`)}>
         <Image

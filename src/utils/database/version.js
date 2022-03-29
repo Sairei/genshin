@@ -1,0 +1,1 @@
+export const genshin_version = "2.6";

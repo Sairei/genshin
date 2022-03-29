@@ -3,12 +3,16 @@ import React from 'react';
 import { Image } from '@mantine/core';
 
 import { findImage } from '../../../utils/finder/findImage';
+import NewFeature from '../../UI/NewFeature';
 
 const Recipe = ({ recipe }) => {
   return (
     <div className='recipe'>
       <div className='img_name'>
         <div className='div_image'>
+          <NewFeature 
+            version={recipe.version} size={40} />
+
           <Image
             className={`image rarity_${recipe.rarity}`}
             width={75} height={75}

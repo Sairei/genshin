@@ -1,5 +1,6 @@
 import { Image } from '@mantine/core';
 import React from 'react';
+import NewFeature from '../../../UI/NewFeature';
 
 const OnePieceSet = ({ artifacts }) => {
   if (!artifacts) {
@@ -22,6 +23,9 @@ const OnePieceSet = ({ artifacts }) => {
             return (
               <div className='set' key={elt.link}>
                 <div className='div_image'>
+                  <NewFeature
+                    version={elt.version} size={40} />
+
                   <Image
                     fit='contain'
                     className={`image rarity_${elt.rarity[elt.rarity.length - 1]}`}

@@ -22,9 +22,13 @@
         text-decoration: none;
         color: black;
 
-        .image {
-          border: 2px solid;
-          border-radius: .75rem;
+        .div_image {
+          position: relative;
+          
+          .image {
+            border: 2px solid;
+            border-radius: .75rem;
+          }
         }
 
         .name_desc {
