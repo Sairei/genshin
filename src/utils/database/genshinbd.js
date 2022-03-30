@@ -3,11 +3,12 @@ const wantedLanguage = "French";
 
 const genshindb = require('genshin-db');
 genshindb.setOptions({
-  queryLanguages: [wantedLanguage],
+  queryLanguages: ["English", wantedLanguage],
   resultLanguage: wantedLanguage
 });
 
 export const GenshinDB = {
+  /***** Element *****/
   getElement: (name) => {
     // Les élément n'existe que en version anglaise
     genshindb.setOptions({ queryLanguages: ["English"], resultLanguage: "English" });
@@ -18,6 +19,7 @@ export const GenshinDB = {
     return elt;
   },
 
+  /***** Personnage *****/
   getAllCharactersNames: () => {
     return genshindb.characters('name', { matchCategories: true });
   },
@@ -26,33 +28,51 @@ export const GenshinDB = {
     return genshindb.characters(name);
   },
 
+  /***** Talent *****/
   findTalents: (characterName) => {
-    let search = characterName;
-    // if (characterName && characterName.startsWith('Traveler')){
-    //   let open = characterName.indexOf('(') + 1;
-    //   let close = characterName.indexOf(')');
-    //   search = characterName.substring(open, close)
-    // }
-
-    return genshindb.talents(search);
+    return genshindb.talents(characterName);
   },
 
+  /***** Constellations *****/
   findConstellations: (characterName) => {
-    let search = characterName;
-    // if (characterName && characterName.startsWith('Traveler')){
-    //   let open = characterName.indexOf('(') + 1;
-    //   let close = characterName.indexOf(')');
-    //   search = characterName.substring(open, close)
-    // }
-
-    return genshindb.constellations(search);
+    return genshindb.constellations(characterName);
   },
 
+  /***** Tenues *****/
   findOutfits: (characterName) => {
     return genshindb.outfits(characterName, { matchCategories: true });
   },
+
+  /***** Animaux *****/
+  findAnimalByCategorie: (catego) => {
+    return genshindb.animals(catego, { matchCategories: true });
+  },
+
+  findAnimals: (name) => {
+    return genshindb.animals(name);
+  },
+
+  /***** Enemies *****/
+  findEnemiesByCategorie: (catego) => {
+    return genshindb.enemies(catego, { matchCategories: true });
+  },
+
+  findEnemies: (name) => {
+    return genshindb.enemies(name);
+  },
   
+  /***** Matériaux *****/
   findMaterials: (name) => {
     return genshindb.materials(name);
+  },
+  
+  /***** Artefact *****/
+  findArtifact: (name) => {
+    return genshindb.artifacts(name);
+  },
+  
+  /***** Armes *****/
+  findWeapon: (name) => {
+    return genshindb.weapons(name);
   }
 }
