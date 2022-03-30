@@ -4,15 +4,15 @@ import { Space, Tabs } from '@mantine/core';
 
 import Recipe from './Recipe';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd';
 
 const Recipes = () => {
   const [recipeList, setList] = useState();
 
   useEffect(() => {
     let list = {};
-    genshindb.foods('name', { matchCategories: true }).forEach(name => {
-      let obj = genshindb.foods(name, { resultLanguage: "French" });
+    GenshinDB.getAllFoodsNames().forEach(name => {
+      let obj = GenshinDB.findFood(name);
 
       if (!list[obj.foodfilter]) {
         list[obj.foodfilter] = [];

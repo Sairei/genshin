@@ -74,5 +74,14 @@ export const GenshinDB = {
   /***** Armes *****/
   findWeapon: (name) => {
     return genshindb.weapons(name);
+  },
+  
+  /***** Recettes *****/
+  getAllFoodsNames: () => {
+    return genshindb.foods('name', { matchCategories: true });
+  },
+
+  findFood: (name) => {
+    return genshindb.food(name);
   }
 }
