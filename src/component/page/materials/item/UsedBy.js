@@ -4,14 +4,14 @@ import { Image, Title, Tooltip } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const UsedBy = ({ name }) => {
   let characList = [];
 
-  genshindb.talents('name', { matchCategories: true }).map((elt) => {
+  GenshinDB.getAllTalentsNames().map((elt) => {
     let find = false;
-    let talents = genshindb.talents(elt);
+    let talents = GenshinDB.findTalents(elt);
 
     Object.entries(talents.costs).map((lvl) => {
       if (lvl[1].filter(e => e.name === name).length > 0) {
@@ -20,16 +20,16 @@ const UsedBy = ({ name }) => {
       return '';
     })
 
-    let characName = elt.includes("Traveler") ? "Aether" : elt;
+    let characName = elt.includes("(") ? "Aether" : elt;
     if (find) {
       characList.push(characName);
     }
     return '';
   })
 
-  genshindb.characters('name', { matchCategories: true }).map((elt) => {
+  GenshinDB.getAllCharactersNames().map((elt) => {
     let find = false;
-    let charac = genshindb.characters(elt);
+    let charac = GenshinDB.findCharacter(elt);
 
     Object.entries(charac.costs).map((lvl) => {
       if (lvl[1].filter(e => e.name === name).length > 0) {
@@ -57,7 +57,7 @@ const UsedBy = ({ name }) => {
         {
           characList.map((elt) => {
             let characName = elt;
-            let img = genshindb.characters(elt).images;
+            let img = GenshinDB.findCharacter(elt).images;
             if (elt === "Aether") {
               img = img.image;
               characName = "Aether / Lumine"
