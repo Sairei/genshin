@@ -24,7 +24,7 @@ const Reward = ({ select }) => {
       let rarity = mat ?
         mat.rarity : elt.rarity ?
           elt.rarity : undefined;
-          rewardTmp[index]["rarity"] = rarity;
+      rewardTmp[index]["rarity"] = rarity;
 
       return '';
     })

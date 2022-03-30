@@ -9,14 +9,14 @@ import BaseStats from './BaseStats';
 import Reward from './Reward';
 // import Resistances from './Resistances';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd'
 
 const MonsterPage = () => {
   const { name } = useParams();
   const [data, setData] = useState();
 
   useEffect(() => {
-    let obj = genshindb.enemies(name, { resultLanguage: "French" });
+    let obj = GenshinDB.findEnemies(name);
     obj["link"] = name;
 
     setData(obj);
