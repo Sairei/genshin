@@ -17,7 +17,7 @@ export const sortMonsterMaterials = (sourceList) => {
 
   let list = {}
   filterList.map((m) => {
-    m.rewardEn.map((r, index) => {
+    m.rewardpreview.map((r, index) => {
       let name = r.name;
 
       if (!list[name]) {
@@ -29,7 +29,7 @@ export const sortMonsterMaterials = (sourceList) => {
       let o = {
         obj: m,
         name: m.name,
-        category: m.categoryEn,
+        category: m.category,
         image: m.images.nameicon,
         count: m.rewardpreview[index]["count"]
       }

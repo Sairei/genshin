@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { categorie } from '../../../../utils/categorie/categorie';
+import { ConvertFR } from '../../../../utils/categorie/convertByLang';
 import MaterialsByMonster from './MaterialsByMonster';
 
 const CategorieMonster = ({ monsterList }) => {
@@ -25,12 +26,13 @@ const CategorieMonster = ({ monsterList }) => {
     <>
       {
         categorie.enemies.map((v) => {
+          let catego = ConvertFR.animalAndEnemiesLabel(v);
           return (
             <Fragment key={v}>
               {
-                monstersByCategorie[v] &&
+                monstersByCategorie[catego] &&
                 <MaterialsByMonster 
-                  monsterList={monstersByCategorie[v]} />
+                  monsterList={monstersByCategorie[catego]} />
               }
             </Fragment>
           );

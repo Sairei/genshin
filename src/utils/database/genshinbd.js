@@ -57,6 +57,10 @@ export const GenshinDB = {
   },
 
   /***** Enemies *****/
+  getAllEnemiesNames: () => {
+    return genshindb.enemies('name', { matchCategories: true });
+  },
+
   findEnemiesByCategorie: (catego) => {
     return genshindb.enemies(catego, { matchCategories: true });
   },
