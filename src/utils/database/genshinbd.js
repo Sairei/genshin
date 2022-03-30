@@ -14,7 +14,7 @@ export const GenshinDB = {
     genshindb.setOptions({ queryLanguages: ["English"], resultLanguage: "English" });
 
     let elt = genshindb.elements(name);
-    
+
     genshindb.setOptions({ queryLanguages: [wantedLanguage], resultLanguage: wantedLanguage });
     return elt;
   },
@@ -29,6 +29,10 @@ export const GenshinDB = {
   },
 
   /***** Talent *****/
+  getAllTalentsNames: () => {
+    return genshindb.talents('name', { matchCategories: true });
+  },
+
   findTalents: (characterName) => {
     return genshindb.talents(characterName);
   },
@@ -60,22 +64,30 @@ export const GenshinDB = {
   findEnemies: (name) => {
     return genshindb.enemies(name);
   },
-  
+
   /***** Matériaux *****/
+  getAllMaterialsNames: () => {
+    return genshindb.materials('name', { matchCategories: true });
+  },
+
+  findMaterialsByCategorie: (catego) => {
+    return genshindb.materials(catego, { matchCategories: true });
+  },
+
   findMaterials: (name) => {
     return genshindb.materials(name);
   },
-  
+
   /***** Artefact *****/
   findArtifact: (name) => {
     return genshindb.artifacts(name);
   },
-  
+
   /***** Armes *****/
   findWeapon: (name) => {
     return genshindb.weapons(name);
   },
-  
+
   /***** Recettes *****/
   getAllFoodsNames: () => {
     return genshindb.foods('name', { matchCategories: true });
@@ -83,5 +95,10 @@ export const GenshinDB = {
 
   findFood: (name) => {
     return genshindb.food(name);
-  }
+  },
+
+  /***** Domaines *****/
+  findDomain: (name) => {
+    return genshindb.domains(name);
+  },
 }
