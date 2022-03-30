@@ -38,7 +38,7 @@ const SpecialtyRegion = ({ name, items }) => {
                         fit='contain' />
 
                       <div className='vertical_align_text'>
-                        <Anchor component={Link} to={`/item/${i.link}`} >
+                        <Anchor component={Link} to={`/item/${i.name}`} >
                           {i.name}
                         </Anchor>
                       </div>
