@@ -6,7 +6,7 @@ import { sortTalent } from '../../../../utils/sort/sortTalentMaterials';
 import { categorie } from '../../../../utils/categorie/categorie';
 import ByRegion from './ByRegion';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const TalentMaterialPage = () => {
   const [talentLvlUpList, setTalentList] = useState([]);
@@ -16,22 +16,18 @@ const TalentMaterialPage = () => {
 
     // Récupération des valeurs
     categorie.materialtype.talent_lvl_up.map((val) => {
-      genshindb.materials(val, { matchCategories: true }).map((m) => {
-        let enObj = genshindb.materials(m);
+      GenshinDB.findMaterialsByCategorie(val).map((m) => {
+        let obj = GenshinDB.findMaterials(m);
 
         // Evenement (A traiter plus tard)
-        if (!enObj.dropdomain) {
+        if (!obj.dropdomain) {
           return '';
         }
+        let domain = GenshinDB.findDomain(obj.dropdomain.split(": ")[1]);
 
-        let domain = genshindb.domains(enObj.dropdomain.split(": ")[1], { resultLanguage: 'French' });
-
-        let o = genshindb.materials(m, { resultLanguage: 'French' });
-        o['link'] = m;
-        o['domainLink'] = enObj.dropdomain;
-        o['region'] = domain.region;
-        o['days'] = domain.daysofweek;
-        sourceTalentList.push(o)
+        obj['region'] = domain.region;
+        obj['days'] = domain.daysofweek;
+        sourceTalentList.push(obj)
 
         return '';
       })

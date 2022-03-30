@@ -16,7 +16,7 @@ const MaterialsList = ({ list }) => {
             .map((mat) => {
               convertTextWithGender(mat.name);
               return (
-                <li key={mat.link}>
+                <li key={mat.name}>
                   <Image
                     fit='contain'
                     width={40} height={40}
