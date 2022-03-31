@@ -113,4 +113,36 @@ export const GenshinDB = {
   findDomain: (name) => {
     return genshindb.domains(name);
   },
+
+  /***** Succès *****/
+  getAllGroupAchivementNames: () => {
+    return genshindb.achievementgroups('names', { matchCategories: true, verboseCategories: true });
+  },
+
+  findGroupAchivement: (elt) => {
+    return genshindb.achievementgroups(elt);
+  },
+
+  getAllAchivementNames: () => {
+    return genshindb.achievements('names', { matchCategories: true, verboseCategories: true });
+  },
+
+  /***** Panoramas *****/
+  getAllGeographiesNames: () => {
+    return genshindb.geographies('name', { matchCategories: true });
+  },
+
+  /***** Thèmes *****/
+  getAllNamecardsNames: () => {
+    return genshindb.namecards('name', { matchCategories: true });
+  },
+
+  findNamecard: (elt) => {
+    return genshindb.namecards(elt);
+  },
+
+  /***** Ailes *****/
+  getAllWindglidersNames: () => {
+    return genshindb.windgliders('name', { matchCategories: true });
+  },
 }
