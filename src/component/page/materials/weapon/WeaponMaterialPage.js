@@ -6,7 +6,7 @@ import { categorie } from '../../../../utils/categorie/categorie';
 import { sortWeapon } from '../../../../utils/sort/sortWeaponMaterials';
 import ByRegion from './ByRegion';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const WeaponMaterialPage = () => {
   const [weaponLvlUpList, setWeaponMatList] = useState([]);
@@ -16,16 +16,13 @@ const WeaponMaterialPage = () => {
 
     // Récupération des valeurs
     categorie.materialtype.weapon_lvl_up.map((val) => {
-      genshindb.materials(val, { matchCategories: true }).map((m) => {
-        let enObj = genshindb.materials(m);
+      GenshinDB.findMaterialsByCategorie(val).map((m) => {
+        let obj = GenshinDB.findMaterials(m);
 
-        let domain = genshindb.domains(enObj.dropdomain.split(": ")[1], { resultLanguage: 'French' });
+        let domain = GenshinDB.findDomain(obj.dropdomain.split(": ")[1]);
 
-        let o = genshindb.materials(m, { resultLanguage: 'French' });
-        o['link'] = m;
-        o['domainLink'] = enObj.dropdomain;
-        o['region'] = domain.region;
-        sourceWeaponList.push(o)
+        obj['region'] = domain.region;
+        sourceWeaponList.push(obj)
 
         return '';
       });

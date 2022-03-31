@@ -7,7 +7,7 @@ import { sortMonsterMaterials } from '../../../../utils/sort/sortMonsterMaterial
 import TypeMonster from './TypeMonster';
 import MaterialsByMonster from './MaterialsByMonster';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const MonsterMaterialPage = () => {
   const [monsterList, setMonsterList] = useState([]);
@@ -16,15 +16,8 @@ const MonsterMaterialPage = () => {
 
   useEffect(() => {
     let list = [];
-    genshindb.enemies('name', { matchCategories: true }).map((m) => {
-      let enObj = genshindb.enemies(m);
-
-      let o = genshindb.enemies(m, { resultLanguage: 'French' });
-      o['link'] = m;
-      o['rewardEn'] = enObj.rewardpreview;
-      o['categoryEn'] = enObj.category;
-
-      list.push(o)
+    GenshinDB.getAllEnemiesNames().map((m) => {
+      list.push(GenshinDB.findEnemies(m));
 
       return '';
     });

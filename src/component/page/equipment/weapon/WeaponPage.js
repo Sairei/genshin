@@ -10,13 +10,12 @@ import StatsWeapon from './StatsWeapon';
 import PassifWeapon from './PassifWeapon';
 import AscentWeapon from './AscentWeapon';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const WeaponPage = () => {
   const { name } = useParams()
-  const data = genshindb.weapons(name, { resultLanguage: "French" });
-  data['link'] = name;
-  const substat = genshindb.weapons(name).substat;
+  const data = GenshinDB.findWeapon(name);
+  const substat = GenshinDB.findWeapon(name).substat;
 
   return (
     <div className='weapon_container'>

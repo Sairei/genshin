@@ -33,7 +33,7 @@ const BestiaryInfo = ({ display, select }) => {
               <MonstersInfo select={select} />
 
               <div>
-                <Link to={`/bestiary/${select.link}`} >Plus d'info...</Link>
+                <Link to={`/bestiary/${select.name}`} >Plus d'info...</Link>
               </div>
             </>
           }

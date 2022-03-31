@@ -19,13 +19,12 @@ const ImageList = ({ select, type, bestiaryList }) => {
       <div className='list_images'>
         {
           bestiaryList.map((elt) => {
-            console.log(elt);
             return (
-              <div className='bestiary_image'>
+              <div className='bestiary_image' key={elt.name}>
                 <NewFeature
                   version={elt.version} size={40} />
 
-                <Image key={elt.link}
+                <Image
                   onClick={() => select(elt)}
                   radius='lg' fit='contain'
                   width={100} height={100}

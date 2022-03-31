@@ -6,7 +6,7 @@ import Categories from './_main/Categories';
 import SearchAndFilter from './_main/SearchAndFilter';
 import MaterialsList from './_main/MaterialsList';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd';
 
 const MaterialsPage = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -15,12 +15,8 @@ const MaterialsPage = () => {
 
   useEffect(() => {
     let l = [];
-    let enList = genshindb.materials('name', { matchCategories: true });
-    enList.map((elt) => {
-      let o = genshindb.materials(elt, { resultLanguage: "French" });
-      o['link'] = elt;
-      
-      l.push(o);
+    GenshinDB.getAllMaterialsNames().map((elt) => {
+      l.push(GenshinDB.findMaterials(elt));
 
       return '';
     })

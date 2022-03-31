@@ -5,24 +5,17 @@ import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { ascentLvl } from '../../../../utils/enum/enumAscent';
 import { findImage } from '../../../../utils/finder/findImage';
-import { simplifyText } from '../../../../utils/converter/simplifyElementText';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
-const AscentTable = ({ character, searchName }) => {
+const AscentTable = ({ character }) => {
   if (!character) {
     return (
       <div></div>
     );
   }
 
-
   const trAscent = Object.entries(character.costs).map((val, index) => {
-    let en = genshindb.characters(simplifyText(character.name));
-    if (!en) {
-      en = genshindb.characters(simplifyText(searchName));
-    }
-
     return (
       <tr key={index}>
         <th>
@@ -33,8 +26,7 @@ const AscentTable = ({ character, searchName }) => {
         <td>
           {
             val[1].map((item, i) => {
-              let enName = en.costs[val[0]][i].name;
-              let material = genshindb.materials(enName)
+              let material = GenshinDB.findMaterials(item.name)
               return (
                 <div className='ascent_item' key={`${index}_${i}`}>
                   <Image
@@ -44,7 +36,7 @@ const AscentTable = ({ character, searchName }) => {
 
                   <div className='vertical_align_text'>
                     <div>
-                      <Anchor component={Link} to={`/item/${enName}`} >
+                      <Anchor component={Link} to={`/item/${item.name}`} >
                         {`${item.name} `}
                       </Anchor>
                       {`x${item.count}`}

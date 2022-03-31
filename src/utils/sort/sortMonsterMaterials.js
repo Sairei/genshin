@@ -1,6 +1,6 @@
 import { categorie } from '../categorie/categorie';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../database/genshinbd';
 
 export const sortMonsterMaterials = (sourceList) => {
   let material = {};
@@ -17,7 +17,7 @@ export const sortMonsterMaterials = (sourceList) => {
 
   let list = {}
   filterList.map((m) => {
-    m.rewardEn.map((r, index) => {
+    m.rewardpreview.map((r, index) => {
       let name = r.name;
 
       if (!list[name]) {
@@ -29,7 +29,7 @@ export const sortMonsterMaterials = (sourceList) => {
       let o = {
         obj: m,
         name: m.name,
-        category: m.categoryEn,
+        category: m.category,
         image: m.images.nameicon,
         count: m.rewardpreview[index]["count"]
       }
@@ -48,8 +48,8 @@ export const sortMonsterMaterials = (sourceList) => {
     let values = entry[1];
     values.monsters.sort((a, b) => { return a["name"].localeCompare(b["name"]) });
 
-    let mat = genshindb.materials(key);
-    let art = genshindb.artifacts(key.split("_")[0]);
+    let mat = GenshinDB.findMaterials(key);
+    let art = GenshinDB.findArtifact(key.split("_")[0]);
     
     if (key.toLocaleLowerCase().includes("exp")) {
       material["exp"].push({ name: key, img: mat.images.nameicon, values: values });

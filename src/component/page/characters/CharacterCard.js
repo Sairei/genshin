@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
 import { Image } from '@mantine/core';
+
 import { useNavigate } from 'react-router-dom';
 import { findImage } from '../../../utils/finder/findImage';
 import NewFeature from '../../UI/NewFeature';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd';
 
 const CharacterCard = ({ name }) => {
   const nav = useNavigate();
   const [characterData, setData] = useState();
 
   useEffect(() => {
-    setData(genshindb.characters(name, { resultLanguage: "French" }));
+    setData(GenshinDB.findCharacter(name));
   }, [name])
 
   if (!characterData) {

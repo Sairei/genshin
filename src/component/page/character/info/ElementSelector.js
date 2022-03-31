@@ -1,12 +1,12 @@
 import { Image } from '@mantine/core';
 import React from 'react';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
-const ElementSelector = ({ name, setName }) => {
-  const anemo = genshindb.elements('anemo');
-  const geo = genshindb.elements('geo');
-  const electro = genshindb.elements('electro');
+const ElementSelector = ({ setName }) => {
+  const anemo = GenshinDB.getElement('anemo');
+  const geo = GenshinDB.getElement('geo');
+  const electro = GenshinDB.getElement('electro');
 
   const handleClick = (elt) => {
     setName(`Traveler (${elt.name})`);

@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { categorie } from '../../../../utils/categorie/categorie';
 import SpecialtyRegion from './SpecialtyRegion';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const LocalSpecialtyPage = () => {
   const [specialtyList, setList] = useState([]);
@@ -14,10 +14,8 @@ const LocalSpecialtyPage = () => {
     categorie.materialtype.local_specialty.map((val) => {
       list[val] = []
 
-      genshindb.materials(val, { matchCategories: true }).map((m) => {
-        let o = genshindb.materials(m, { resultLanguage: 'French' });
-        o['link'] = m;
-        list[val].push(o)
+      GenshinDB.findMaterialsByCategorie(val).map((m) => {
+        list[val].push(GenshinDB.findMaterials(m));
         return '';
       })
       return '';

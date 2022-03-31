@@ -21,7 +21,7 @@ const WeaponsByType = ({ weapons }) => {
           .map((elt) => {
             return (
               <li key={elt.name} >
-                <Link to={`/equipment/weapon/${elt.link}`}>
+                <Link to={`/equipment/weapon/${elt.name}`}>
                   <div className='div_image'>
                     <NewFeature
                       version={elt.version} size={40} />

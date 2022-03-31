@@ -6,7 +6,7 @@ import { categorie } from '../../../utils/categorie/categorie';
 import BestiaryList from './BestiaryList';
 import BestiaryInfo from './info/BestiaryInfo';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd';
 
 const BestiaryPage = () => {
   const [selected, setSelect] = useState();
@@ -20,9 +20,8 @@ const BestiaryPage = () => {
     // Animaux
     categorie.animal.map((elt) => {
       animalTmpList[elt] = [];
-      genshindb.animals(elt, { matchCategories: true }).map((enName) => {
-        let a = genshindb.animals(enName, { resultLanguage: "French" });
-        a['link'] = enName;
+      GenshinDB.findAnimalByCategorie(elt).map((name) => {
+        let a = GenshinDB.findAnimals(name);
         animalTmpList[elt].push(a);
         return '';
       });
@@ -34,9 +33,8 @@ const BestiaryPage = () => {
     // Enemies
     categorie.enemies.map((elt) => {
       enemiesTmpList[elt] = [];
-      genshindb.enemies(elt, { matchCategories: true }).map((enName) => {
-        let e = genshindb.enemies(enName, { resultLanguage: "French" });
-        e['link'] = enName;
+      GenshinDB.findEnemiesByCategorie(elt).map((name) => {
+        let e = GenshinDB.findEnemies(name);
         enemiesTmpList[elt].push(e);
         return '';
       });

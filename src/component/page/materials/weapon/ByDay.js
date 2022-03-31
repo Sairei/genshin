@@ -5,16 +5,16 @@ import { Anchor, Image, Table, Title } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const ByDay = ({ materials }) => {
   const date =
     materials[0].daysofweek[0] + " / " +
     materials[0].daysofweek[1] + " / " +
     materials[0].daysofweek[2]
-  const dropDomain = materials[0].dropdomain.split(": ")[1];
 
-  let domainImage = genshindb.domains(materials[0].domainLink, { resultLanguage: 'French' }).images.namepic;
+  const dropDomain = materials[0].dropdomain.split(": ")[1];
+  let domainImage = GenshinDB.findDomain(dropDomain).images.namepic;
 
   return (
     <div className='weapon_material_day' >
@@ -32,7 +32,7 @@ const ByDay = ({ materials }) => {
                       fit='contain' />
 
                     <div className='vertical_align_text'>
-                      <Anchor component={Link} to={`/item/${i.link}`} >
+                      <Anchor component={Link} to={`/item/${i.name}`} >
                         {i.name}
                       </Anchor>
                     </div>

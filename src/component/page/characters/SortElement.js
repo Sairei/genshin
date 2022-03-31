@@ -12,28 +12,28 @@ const SortElement = () => {
 
   const eltData = [''];
   categorie.element.map((e) => {
-    eltData.push({ value: e, label: ConvertFR.elementLabel(e) });
+    eltData.push({ value: ConvertFR.elementLabel(e), label: ConvertFR.elementLabel(e) });
     return '';
   });
   const elementValue = useSelector((state) => state.element);
 
   const weaponData = [''];
   categorie.weapontype.map((w) => {
-    weaponData.push({ value: w, label: ConvertFR.weaponLabel(w) });
+    weaponData.push({ value: ConvertFR.weaponLabel(w), label: ConvertFR.weaponLabel(w) });
     return '';
   });
   const weaponValue = useSelector((state) => state.weapon);
 
   const regionData = [''];
   categorie.region.map((r) => {
-    regionData.push({ value: r, label: ConvertFR.regionLabel(r) });
+    regionData.push({ value: ConvertFR.regionLabel(r), label: ConvertFR.regionLabel(r) });
     return '';
   });
   const regionValue = useSelector((state) => state.region);
 
   const genderData = [''];
   categorie.gender.map((g) => {
-    genderData.push({ value: g, label: ConvertFR.genderLabel(g) });
+    genderData.push({ value: ConvertFR.genderLabel(g), label: ConvertFR.genderLabel(g) });
     return '';
   });
   const genderValue = useSelector((state) => state.gender);

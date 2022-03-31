@@ -4,36 +4,33 @@ import { Image, Space, Title, Tooltip } from '@mantine/core';
 
 import { findImage } from '../../../utils/finder/findImage';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd'
 
 const Reward = ({ select }) => {
   const [reward, setReward] = useState([])
 
   useEffect(() => {
-    let rewardEn = genshindb.enemies(select.link).rewardpreview;
-    rewardEn.map((elt, index) => {
-      let mat = genshindb.materials(elt.name, { resultLanguage: "French" });
-      let art = genshindb.artifacts(elt.name, { resultLanguage: "French" });
+    let rewardTmp = select.rewardpreview;
+    select.rewardpreview.map((elt, index) => {
+      let mat = GenshinDB.findMaterials(elt.name);
+      let art = GenshinDB.findArtifact(elt.name);
 
       let image = mat ? mat.images.nameicon : undefined;
       if (!image) {
         let imgArt = art.images;
         image = imgArt.flower ? imgArt.flower : imgArt.circlet
       }
-      rewardEn[index]["img"] = image;
+      rewardTmp[index]["img"] = image;
 
       let rarity = mat ?
         mat.rarity : elt.rarity ?
           elt.rarity : undefined;
-      rewardEn[index]["rarity"] = rarity;
-      
-      let nameFr = mat ? mat.name : art.name;
-      rewardEn[index]["fr"] = nameFr;
+      rewardTmp[index]["rarity"] = rarity;
 
       return '';
     })
 
-    setReward(rewardEn);
+    setReward(rewardTmp);
   }, [select])
 
   return (
@@ -47,11 +44,11 @@ const Reward = ({ select }) => {
         {
           reward.map((elt, index) => {
             let src = elt.img.startsWith("https") ? elt.img : findImage(elt.img);
-            
+
 
             return (
               <Tooltip key={elt.name + '_' + index}
-                label={elt.fr} position="top"
+                label={elt.name} position="top"
                 transition="slide-up"
               >
                 <Image fit='contain'

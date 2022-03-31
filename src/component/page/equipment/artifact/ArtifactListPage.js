@@ -4,17 +4,16 @@ import React, { useEffect, useState } from 'react';
 import FourPieceSet from './FourPieceSet';
 import OnePieceSet from './OnePieceSet';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const ArtifactListPage = () => {
   const [artifacts, setArtifacts] = useState({});
   useEffect(() => {
     let list = {};
 
-    genshindb.artifacts('name', { matchCategories: true }).map((elt) => {
-      let o = genshindb.artifacts(elt, { resultLanguage: 'French' });
-      o['link'] = elt;
-
+    GenshinDB.getAllArtifactNames().map((elt) => {
+      let o = GenshinDB.findArtifact(elt);
+      
       let t = '4pc'
       if (o['1pc']) {
         t = '1pc';

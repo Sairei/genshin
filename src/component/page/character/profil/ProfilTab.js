@@ -5,7 +5,7 @@ import { Anchor, Space } from '@mantine/core';
 
 import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const ProfilTab = ({ character, outfit }) => {
   const url = useLocation().pathname;
@@ -52,7 +52,7 @@ const ProfilTab = ({ character, outfit }) => {
               );
             })
           }
-        </ul> 
+        </ul>
       </div>
 
       <Space h='md' />
@@ -66,30 +66,32 @@ const ProfilTab = ({ character, outfit }) => {
 
       <Space h='md' />
 
-      <div>
-        <b className='elem_color_text'>{`Tenues :`}</b>
-        <ul>
-          {
-            outfit &&
-            outfit.map((tenue) => {
-              let res = genshindb.outfits(tenue, { resultLanguage: 'French' });
-              
-              return (
-                <li key={tenue}>
-                  {tenue}
-                  {
-                    res.url.modelviewer &&
-                    <Anchor target='_blank'
-                      href={res.url.modelviewer} >
-                        {" (Lien vers le model 3D)"}
-                    </Anchor>
-                  }
-                </li>
-              );
-            })
-          }
-        </ul> 
-      </div>
+      {
+        outfit &&
+        <div>
+          <b className='elem_color_text'>{`Tenues :`}</b>
+          <ul>
+            {
+              outfit.map((tenue) => {
+                let res = GenshinDB.findOutfits(tenue);
+
+                return (
+                  <li key={tenue}>
+                    {`${tenue} `}
+                    {
+                      res.url.modelviewer &&
+                      <Anchor target='_blank'
+                        href={res.url.modelviewer} >
+                        {"(Lien vers le model 3D)"}
+                      </Anchor>
+                    }
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      }
     </div>
   );
 };

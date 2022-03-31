@@ -8,11 +8,11 @@ import { convertInfo } from '../../../../utils/converter/convertInfoToHTML';
 import { convertTextWithGender } from '../../../../utils/converter/convertTextWithGender';
 import UsedBy from './UsedBy';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const ItemPage = () => {
   const { name } = useParams()
-  const data = genshindb.materials(name, { resultLanguage: "French" });
+  const data = GenshinDB.findMaterials(name);
 
   return (
     <div className='item_container'>

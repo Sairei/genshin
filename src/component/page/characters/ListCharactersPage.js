@@ -7,7 +7,7 @@ import { simplifyText } from '../../../utils/converter/simplifyElementText';
 import CharacterCard from './CharacterCard';
 import SortElement from './SortElement';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../utils/database/genshinbd'; 
 
 const ListCharactersPage = () => {
   const [caracterList, setList] = useState([]);
@@ -15,8 +15,8 @@ const ListCharactersPage = () => {
   
   useEffect(() => {
     let list = [];
-    genshindb.characters('name', { matchCategories: true }).forEach(name => {
-      let c = genshindb.characters(name);
+    GenshinDB.getAllCharactersNames().forEach(name => {
+      let c = GenshinDB.findCharacter(name);
       
       let obj = {};
       obj['name'] = name;
@@ -41,25 +41,25 @@ const ListCharactersPage = () => {
 
     if (elementValue) {
       l = l.filter((e) => {
-        return e.elt === elementValue;
+        return e.elt === simplifyText(elementValue);
       })
     }
 
     if (weaponValue) {
       l = l.filter((e) => {
-        return e.weapon === weaponValue;
+        return e.weapon === simplifyText(weaponValue);
       })
     }
 
     if (regionValue) {
       l = l.filter((e) => {
-        return e.region === regionValue;
+        return e.region === simplifyText(regionValue);
       })
     }
 
     if (genderValue) {
       l = l.filter((e) => {
-        return e.gender === genderValue;
+        return e.gender === simplifyText(genderValue);
       })
     }
 
