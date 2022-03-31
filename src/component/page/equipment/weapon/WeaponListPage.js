@@ -7,7 +7,7 @@ import { categorie } from '../../../../utils/categorie/categorie';
 import { ConvertFR } from '../../../../utils/categorie/convertByLang';
 import WeaponsByType from './WeaponsByType';
 
-const genshindb = require('genshin-db');
+import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const WeaponListPage = () => {
   const matches = useMediaQuery('(max-width: 720px)');
@@ -16,15 +16,14 @@ const WeaponListPage = () => {
   useEffect(() => {
     let list = {};
 
-    genshindb.weapons('name', { matchCategories: true }).map((elt) => {
-      let o = genshindb.weapons(elt, { resultLanguage: 'French' });
-      o['link'] = elt;
+    GenshinDB.getAllWeaponsNames().map((elt) => {
+      let o = GenshinDB.findWeapon(elt);
 
-      let enType = genshindb.weapons(elt).weapontype.toLocaleLowerCase();
-      if (!list[enType]) {
-        list[enType] = []
+      let weaponType = o.weapontype;
+      if (!list[weaponType]) {
+        list[weaponType] = []
       }
-      list[enType].push(o);
+      list[weaponType].push(o);
 
       return '';
     });
@@ -46,7 +45,7 @@ const WeaponListPage = () => {
           categorie.weapontype.map((elt) => {
             return (
               <Tabs.Tab key={elt} label={ConvertFR.weaponLabel(elt)} >
-                <WeaponsByType weapons={weapons[elt]} />
+                <WeaponsByType weapons={weapons[ConvertFR.weaponLabel(elt)]} />
               </Tabs.Tab>
             );
           })
