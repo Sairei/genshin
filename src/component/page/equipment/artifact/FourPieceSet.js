@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Image } from '@mantine/core';
+
 import NewFeature from '../../../UI/NewFeature';
 
 const FourPieceSet = ({ artifacts }) => {
@@ -22,7 +23,7 @@ const FourPieceSet = ({ artifacts }) => {
           })
           .map((elt) => {
             return (
-              <div className='set' key={elt.link}>
+              <div className='set' key={elt.name}>
                 <div className='div_image'>
                   <NewFeature
                     version={elt.version} size={40} />

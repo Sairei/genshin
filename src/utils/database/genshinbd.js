@@ -83,11 +83,19 @@ export const GenshinDB = {
   },
 
   /***** Artefact *****/
+  getAllArtifactNames: () => {
+    return genshindb.artifacts('name', { matchCategories: true });
+  },
+
   findArtifact: (name) => {
     return genshindb.artifacts(name);
   },
 
   /***** Armes *****/
+  getAllWeaponsNames: () => {
+    return genshindb.weapons('name', { matchCategories: true });
+  },
+
   findWeapon: (name) => {
     return genshindb.weapons(name);
   },
