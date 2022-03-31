@@ -35,15 +35,15 @@ const Breadcrumb = () => {
       } else if (partUrl === "recipes") {
         name = "Recettes";
       } else {
-        name = partUrl.replaceAll("%20", " ").replaceAll("%22", "");
+        name = partUrl;
       }
 
       link = tmp[0];
-      for (let i=0; i<index; i++) {
-        link += "/" + tmp[i+1];
+      for (let i = 0; i < index; i++) {
+        link += "/" + tmp[i + 1];
       }
 
-      return { name: name, link: link };
+      return { name: decodeURI(name), link: link };
     });
   }
 

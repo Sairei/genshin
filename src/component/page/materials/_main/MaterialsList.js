@@ -23,7 +23,7 @@ const MaterialsList = ({ list }) => {
                     src={findImage(mat.images.nameicon)} />
 
                   <Anchor className='item_link vertical_align_text'
-                    component={Link} to={`/item/${mat.name}`} >
+                    component={Link} to={`/item/${convertTextWithGender(mat.name)}`} >
                     {convertTextWithGender(mat.name)}
                   </Anchor>
                 </li>
