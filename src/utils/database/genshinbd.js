@@ -2,6 +2,20 @@
 const wantedLanguage = "French";
 
 const genshindb = require('genshin-db');
+
+export const InitDB = () => {
+  let oReq = new XMLHttpRequest();
+  oReq.responseType = "arraybuffer";
+  oReq.onloadend = function (e) {
+    var arraybuffer = oReq.response;
+    genshindb.addData(arraybuffer);
+    console.log(`add ${arraybuffer}`)
+  }
+
+  oReq.open('GET', 'https://gitcdn.link/cdn/theBowja/genshin-db/main/dist/data/gzips/all-all.min.json.gzip');
+  oReq.send();
+}
+
 genshindb.setOptions({
   queryLanguages: ["English", wantedLanguage],
   resultLanguage: wantedLanguage
@@ -116,7 +130,7 @@ export const GenshinDB = {
 
   /***** Succès *****/
   getAllGroupAchivementNames: () => {
-    return genshindb.achievementgroups('names', { matchCategories: true, verboseCategories: true });
+    return genshindb.achievementgroups('name', { matchCategories: true });
   },
 
   findGroupAchivement: (elt) => {
@@ -124,7 +138,7 @@ export const GenshinDB = {
   },
 
   getAllAchivementNames: () => {
-    return genshindb.achievements('names', { matchCategories: true, verboseCategories: true });
+    return genshindb.achievements('name', { matchCategories: true, verboseCategories: true });
   },
 
   /***** Panoramas *****/
