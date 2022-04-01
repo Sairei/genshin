@@ -4,16 +4,26 @@ const wantedLanguage = "French";
 const genshindb = require('genshin-db');
 
 export const InitDB = () => {
-  let oReq = new XMLHttpRequest();
-  oReq.responseType = "arraybuffer";
-  oReq.onloadend = function (e) {
-    var arraybuffer = oReq.response;
+  let oReq1 = new XMLHttpRequest();
+  oReq1.open('GET', 'https://gitcdn.link/cdn/theBowja/genshin-db/main/dist/data/gzips/all-achievements.min.json.gzip');
+  oReq1.responseType = "arraybuffer";
+  oReq1.onloadend = function (e) {
+    var arraybuffer = oReq1.response;
     genshindb.addData(arraybuffer);
     console.log(`add ${arraybuffer}`)
   }
+  oReq1.send();
 
-  oReq.open('GET', 'https://gitcdn.link/cdn/theBowja/genshin-db/main/dist/data/gzips/all-all.min.json.gzip');
-  oReq.send();
+  let oReq2 = new XMLHttpRequest();
+  oReq2.open('GET', 'https://gitcdn.link/cdn/theBowja/genshin-db/main/dist/data/gzips/all-achievementgroups.min.json.gzip');
+  oReq2.responseType = "arraybuffer";
+  oReq2.onloadend = function (e) {
+    var arraybuffer = oReq2.response;
+    genshindb.addData(arraybuffer);
+    console.log(`add ${arraybuffer}`)
+  }
+  oReq2.send();
+
 }
 
 genshindb.setOptions({
