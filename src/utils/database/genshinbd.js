@@ -10,7 +10,6 @@ export const InitDB = () => {
   oReq1.onloadend = function (e) {
     var arraybuffer = oReq1.response;
     genshindb.addData(arraybuffer);
-    console.log(`add ${arraybuffer}`)
   }
   oReq1.send();
 
@@ -20,7 +19,6 @@ export const InitDB = () => {
   oReq2.onloadend = function (e) {
     var arraybuffer = oReq2.response;
     genshindb.addData(arraybuffer);
-    console.log(`add ${arraybuffer}`)
   }
   oReq2.send();
 
@@ -148,12 +146,16 @@ export const GenshinDB = {
   },
 
   getAllAchivementNames: () => {
-    return genshindb.achievements('name', { matchCategories: true, verboseCategories: true });
+    return genshindb.achievements('name', { matchCategories: true });
   },
 
   /***** Panoramas *****/
   getAllGeographiesNames: () => {
     return genshindb.geographies('name', { matchCategories: true });
+  },
+
+  findGeographie: (elt) => {
+    return genshindb.geographies(elt);
   },
 
   /***** Thèmes *****/

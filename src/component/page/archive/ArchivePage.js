@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ const ArchivePage = () => {
       <div className='vertical_separator'></div>
 
       <div className='archive_vertical'>
-        <Link to='#' >
+        <Link to='/archive/geographies' >
           <div>
             Panoramas
           </div>

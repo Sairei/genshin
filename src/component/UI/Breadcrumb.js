@@ -34,6 +34,16 @@ const Breadcrumb = () => {
         name = "Artéfacts";
       } else if (partUrl === "recipes") {
         name = "Recettes";
+      } else if (partUrl === "archive") {
+        name = "Archive";
+      } else if (partUrl === "achivements") {
+        name = "Succès";
+      } else if (partUrl === "geographies") {
+        name = "Panoramas";
+      } else if (partUrl === "namecards") {
+        name = "Thèmes";
+      } else if (partUrl === "windglider") {
+        name = "Ailes";
       } else {
         name = partUrl;
       }
