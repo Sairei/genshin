@@ -1,3 +1,32 @@
 .geographies_container {
   padding: 15px 15px 0 15px;
+
+  .geographie_list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .geographie_card {
+      margin: 0 20px 20px 20px;
+      width: 266px;
+
+      .area_name {
+        background-color: #666666;
+        color: beige;
+        padding: 5px 0 5px 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .img_name {
+        background-color: #CCCCCC;
+        padding: 5px;
+        font-size: 14px;
+        font-weight: bolder;
+        
+        p {
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
 }

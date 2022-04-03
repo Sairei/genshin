@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 
 import { Accordion, Title } from '@mantine/core';
 
@@ -28,7 +28,7 @@ const GeographiesPage = () => {
 
     setList(list);
   }, [])
- console.log(geographies);
+
   return (
     <div className='geographies_container'>
       <Accordion multiple>
@@ -37,7 +37,7 @@ const GeographiesPage = () => {
             let list = geographies[elt];
             if (!list) {
               return (
-                <></>
+                <Fragment key={elt} />
               )
             }
 
