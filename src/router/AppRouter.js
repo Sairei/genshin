@@ -22,6 +22,7 @@ import ArtifactListPage from '../component/page/equipment/artifact/ArtifactListP
 import Recipes from '../component/page/recipe/Recipes';
 import ArchivePage from '../component/page/archive/ArchivePage';
 import GeographiesPage from '../component/page/archive/geographies/GeographiesPage';
+import NamecardPage from '../component/page/archive/namecard/NamecardPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -90,6 +91,7 @@ const AppRouter = () => {
               <Route path='archive'>
                 <Route index element={<ArchivePage />} />
                 <Route path='geographies' element={<GeographiesPage />} />
+                <Route path='namecards' element={<NamecardPage />} />
               </Route> 
 
             </Route>

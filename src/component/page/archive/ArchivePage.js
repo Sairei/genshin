@@ -14,7 +14,7 @@ const ArchivePage = () => {
 
         <hr />
 
-        <Link to='#' >
+        <Link to='/archive/namecards' >
           <div>
             Thèmes
           </div>
