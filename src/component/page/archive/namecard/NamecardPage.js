@@ -33,11 +33,18 @@ const NamecardPage = () => {
                 className="namecard_card" shadow >
 
                 <Card.Section className='img_name'>
-                  <Image
-                    src={findImage(elt.images.namebackground)}
-                    fit='contain'
-                    height={180}
-                  />
+                  <div className='img'>
+                    <Image
+                      src={findImage(elt.images.namebackground)}
+                      fit='contain'
+                      height={180}
+                    />
+
+                    <div className='hover_text vertical_align_text'>
+                      {elt.source[0]}
+                    </div>
+                  </div>
+
                   <p>{elt.name}</p>
                 </Card.Section>
 

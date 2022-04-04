@@ -13,6 +13,26 @@
       font-size: 14px;
       font-weight: bolder;
       
+      .img {
+        position: relative;
+
+        .hover_text {
+          display: none;
+          background-color: #CCCCCC99;
+          font-size: 18px;
+          position: absolute;
+          text-align: center;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+        }
+
+        &:hover .hover_text {
+          display: flex;
+        }
+      }
+
       p {
         word-wrap: break-word;
       }
