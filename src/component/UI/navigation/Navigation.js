@@ -112,7 +112,7 @@ const Navigation = () => {
             <Space h="md" />
 
             <li className="list-item">
-              <Link to="/recipes" className="link">
+              <Link to="/archive" className="link">
                 <Title order={3}>
                   Archives
                 </Title>
