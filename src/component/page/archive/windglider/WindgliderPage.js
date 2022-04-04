@@ -23,14 +23,14 @@ const WindgliderPage = () => {
   }, [])
 console.log(windgliders);
   return (
-    <div className='namecard_container'>
+    <div className='windglider_container'>
       {
         windgliders
           .sort((a, b) => a.sortorder - b.sortorder)
           .map((elt) => {
             return (
               <Card key={elt.name}
-                className="namecard_card" shadow >
+                className="windglider_card" shadow >
 
                 <Card.Section className='img_name'>
                   <div className='img'>

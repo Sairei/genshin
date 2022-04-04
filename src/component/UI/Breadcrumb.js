@@ -42,7 +42,7 @@ const Breadcrumb = () => {
         name = "Panoramas";
       } else if (partUrl === "namecards") {
         name = "Thèmes";
-      } else if (partUrl === "windglider") {
+      } else if (partUrl === "windgliders") {
         name = "Ailes";
       } else {
         name = partUrl;
