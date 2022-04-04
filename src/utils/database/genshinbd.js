@@ -171,4 +171,8 @@ export const GenshinDB = {
   getAllWindglidersNames: () => {
     return genshindb.windgliders('name', { matchCategories: true });
   },
+
+  findWindgliders: (elt) => {
+    return genshindb.windgliders(elt);
+  },
 }

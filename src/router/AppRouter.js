@@ -23,6 +23,7 @@ import Recipes from '../component/page/recipe/Recipes';
 import ArchivePage from '../component/page/archive/ArchivePage';
 import GeographiesPage from '../component/page/archive/geographies/GeographiesPage';
 import NamecardPage from '../component/page/archive/namecard/NamecardPage';
+import WindgliderPage from '../component/page/archive/windglider/WindgliderPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -92,6 +93,7 @@ const AppRouter = () => {
                 <Route index element={<ArchivePage />} />
                 <Route path='geographies' element={<GeographiesPage />} />
                 <Route path='namecards' element={<NamecardPage />} />
+                <Route path='windgliders' element={<WindgliderPage />} />
               </Route> 
 
             </Route>

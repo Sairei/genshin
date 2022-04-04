@@ -32,7 +32,7 @@ const ArchivePage = () => {
 
         <hr />
 
-        <Link to='#' >
+        <Link to='/archive/windgliders' >
           <div>
             Ailes
           </div>
