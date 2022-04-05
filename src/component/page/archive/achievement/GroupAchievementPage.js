@@ -23,14 +23,15 @@ const GroupAchievementPage = () => {
   }, [])
 console.log(achievementgroups);
   return (
-    <div className='achievement_container'>
+    <div className='achievement_groups_container'>
       {
         achievementgroups
           .sort((a, b) => a.sortorder - b.sortorder)
           .map((elt) => {
             return (
               <Card key={elt.name}
-                className="achievement_card" shadow >
+
+                className="achievement_groups_card" shadow >
 
                 <Card.Section className='img_name'>
                   <div className='img'>
