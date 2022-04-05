@@ -36,6 +36,8 @@ const Breadcrumb = () => {
         name = "Recettes";
       } else if (partUrl === "archive") {
         name = "Archive";
+      } else if (partUrl === "achivements_groups") {
+        name = "Groupes de succès";
       } else if (partUrl === "achivements") {
         name = "Succès";
       } else if (partUrl === "geographies") {

@@ -6,7 +6,7 @@ const ArchivePage = () => {
   return (
     <div className='archive_container'>
       <div className='archive_vertical'>
-        <Link to='#' >
+        <Link to='/archive/achivements_groups' >
           <div>
             Succès
           </div>
