@@ -24,7 +24,7 @@ import ArchivePage from '../component/page/archive/ArchivePage';
 import GeographiesPage from '../component/page/archive/geographies/GeographiesPage';
 import NamecardPage from '../component/page/archive/namecard/NamecardPage';
 import WindgliderPage from '../component/page/archive/windglider/WindgliderPage';
-import GroupAchivementPage from '../component/page/archive/achivement/GroupAchivementPage';
+import GroupAchievementPage from '../component/page/archive/achievement/GroupAchievementPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -92,7 +92,7 @@ const AppRouter = () => {
               {/******************/}
               <Route path='archive'>
                 <Route index element={<ArchivePage />} />
-                <Route path='achivements_groups' element={<GroupAchivementPage />} />
+                <Route path='achievements_groups' element={<GroupAchievementPage />} />
                 <Route path='geographies' element={<GeographiesPage />} />
                 <Route path='namecards' element={<NamecardPage />} />
                 <Route path='windgliders' element={<WindgliderPage />} />

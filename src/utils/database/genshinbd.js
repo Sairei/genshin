@@ -137,15 +137,15 @@ export const GenshinDB = {
   },
 
   /***** Succès *****/
-  getAllGroupAchivementNames: () => {
+  getAllGroupAchievementNames: () => {
     return genshindb.achievementgroups('name', { matchCategories: true });
   },
 
-  findGroupAchivement: (elt) => {
+  findGroupAchievement: (elt) => {
     return genshindb.achievementgroups(elt);
   },
 
-  getAllAchivementNames: () => {
+  getAllAchievementNames: () => {
     return genshindb.achievements('name', { matchCategories: true });
   },
 

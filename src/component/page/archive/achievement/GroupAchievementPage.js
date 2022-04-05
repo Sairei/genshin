@@ -6,14 +6,14 @@ import { findImage } from '../../../../utils/finder/findImage';
 
 import { GenshinDB } from '../../../../utils/database/genshinbd';
 
-const GroupAchivementPage = () => {
-  const [achivementgroups, setList] = useState([]);
+const GroupAchievementPage = () => {
+  const [achievementgroups, setList] = useState([]);
 
   useEffect(() => {
     let list = [];
 
-    GenshinDB.getAllGroupAchivementNames().map((elt) => {
-      let obj = GenshinDB.findGroupAchivement(elt)
+    GenshinDB.getAllGroupAchievementNames().map((elt) => {
+      let obj = GenshinDB.findGroupAchievement(elt)
       list.push(obj);
 
       return ''
@@ -21,16 +21,16 @@ const GroupAchivementPage = () => {
 
     setList(list);
   }, [])
-console.log(achivementgroups);
+console.log(achievementgroups);
   return (
-    <div className='achivement_container'>
+    <div className='achievement_container'>
       {
-        achivementgroups
+        achievementgroups
           .sort((a, b) => a.sortorder - b.sortorder)
           .map((elt) => {
             return (
               <Card key={elt.name}
-                className="achivement_card" shadow >
+                className="achievement_card" shadow >
 
                 <Card.Section className='img_name'>
                   <div className='img'>
@@ -52,4 +52,4 @@ console.log(achivementgroups);
   );
 };
 
-export default GroupAchivementPage;
+export default GroupAchievementPage;
