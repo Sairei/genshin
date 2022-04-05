@@ -9,6 +9,7 @@
     width: 260px;
     height: 350px;
     background-color: #72040199;
+    border-radius: 1rem;
 
     .img_name {
       padding: 5px;
@@ -26,6 +27,29 @@
         color: white;
         font-size: 20px;
       }
+    }
+  }
+}
+
+.achievement_container {
+  padding: 15px 15px 0 15px;
+  
+  .group_list {
+    padding: 0 15px;
+    width: 250px;
+    height: 90vh;
+    
+    .group_item {
+      background-color: aqua;
+      border-radius: 0.8rem;
+      flex-wrap: nowrap;
+      padding: 5px;
+      height: 70px;
+      
+      .text {
+        overflow-wrap: break-word;
+        font-size: 18px;
+      }  
     }
   }
 }

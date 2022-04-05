@@ -22,6 +22,7 @@ export const InitDB = () => {
   }
   oReq2.send();
 
+  return 'Import DONE !'
 }
 
 genshindb.setOptions({
@@ -138,15 +139,34 @@ export const GenshinDB = {
 
   /***** Succès *****/
   getAllGroupAchievementNames: () => {
-    return genshindb.achievementgroups('name', { matchCategories: true });
+    let res = genshindb.achievementgroups('name', { matchCategories: true });
+
+    if (!res) {
+      InitDB();
+      res = genshindb.achievementgroups('name', { matchCategories: true });
+    }
+
+    return res;
   },
 
   findGroupAchievement: (elt) => {
-    return genshindb.achievementgroups(elt);
+    let res = genshindb.achievementgroups(elt);
+    return res;
   },
 
   getAllAchievementNames: () => {
-    return genshindb.achievements('name', { matchCategories: true });
+    let res = genshindb.achievements('name', { matchCategories: true });
+    return res;
+  },
+
+  getAllAchievementNamesByGroup: (group) => {
+    let res = genshindb.achievements(group, { matchCategories: true });
+    return res;
+  },
+
+  findAchievement: (elt) => {
+    let res = genshindb.achievements(elt);
+    return res;
   },
 
   /***** Panoramas *****/

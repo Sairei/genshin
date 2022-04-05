@@ -21,10 +21,11 @@ import WeaponPage from '../component/page/equipment/weapon/WeaponPage';
 import ArtifactListPage from '../component/page/equipment/artifact/ArtifactListPage';
 import Recipes from '../component/page/recipe/Recipes';
 import ArchivePage from '../component/page/archive/ArchivePage';
+import GroupAchievementPage from '../component/page/archive/achievement/GroupAchievementPage';
+import AchievementPage from '../component/page/archive/achievement/select/AchievementPage';
 import GeographiesPage from '../component/page/archive/geographies/GeographiesPage';
 import NamecardPage from '../component/page/archive/namecard/NamecardPage';
 import WindgliderPage from '../component/page/archive/windglider/WindgliderPage';
-import GroupAchievementPage from '../component/page/archive/achievement/GroupAchievementPage';
 
 const AppRouter = () => {
   // Dans le return, il y a des '{/**/}'.
@@ -93,6 +94,8 @@ const AppRouter = () => {
               <Route path='archive'>
                 <Route index element={<ArchivePage />} />
                 <Route path='achievements_groups' element={<GroupAchievementPage />} />
+                <Route path='achievements/:name' element={<AchievementPage />} />
+                {/**/} <Route path='achievements' element={<Navigate replace to="/archive/achievements_groups" />} />
                 <Route path='geographies' element={<GeographiesPage />} />
                 <Route path='namecards' element={<NamecardPage />} />
                 <Route path='windgliders' element={<WindgliderPage />} />
