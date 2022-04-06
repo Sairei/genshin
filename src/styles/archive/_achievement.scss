@@ -40,11 +40,21 @@
     height: 90vh;
     
     .group_item {
-      background-color: aqua;
+      background-color: #72040199;
       border-radius: 0.8rem;
       flex-wrap: nowrap;
-      padding: 5px;
+      padding: 5px 8px 5px 2px;
       height: 70px;
+
+      &.select {
+        background-color: #720401;
+        font-weight: bold;
+        color: white;
+      }
+
+      &:hover:not(.select) {
+        cursor: pointer;
+      }
       
       .text {
         overflow-wrap: break-word;

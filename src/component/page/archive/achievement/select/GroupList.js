@@ -1,41 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { Group, Image, ScrollArea, Stack } from '@mantine/core';
 
-import { GenshinDB } from '../../../../../utils/database/genshinbd';
 import { findImage } from '../../../../../utils/finder/findImage';
 
-const GroupList = ({ select }) => {
-  const [achievementgroups, setList] = useState([]);
-
-  useEffect(() => {
-    let list = [];
-
-    let namesList = GenshinDB.getAllGroupAchievementNames();
-    (namesList ? namesList : [])
-      .map((elt) => {
-        let obj = GenshinDB.findGroupAchievement(elt)
-        list.push(obj);
-
-        return ''
-      });
-
-    if (achievementgroups.length < 1) {
-      setList(list);
-    }
-  }, [achievementgroups])
+const GroupList = ({ select, groups }) => {
+  const nav = useNavigate();
 
   return (
     <ScrollArea className='group_list'>
       <Stack spacing='xs'>
 
         {
-          achievementgroups
+          groups
             .sort((a, b) => a.sortorder - b.sortorder)
             .map((elt) => {
+              let selectedClass = '';
+              let link = '/archive/achievements/' + elt.name;
+              if (elt.name === select) {
+                selectedClass = 'select';
+                link = '#';
+              }
+
               return (
-                <div>
-                  <Group className='group_item' spacing='md'>
+                <div key={elt.name}
+                  onClick={() => nav(link)} >
+                  <Group className={`group_item ${selectedClass}`} spacing='md'>
                     <Image
                       width={60}
                       src={findImage(elt.images.nameicon)} />
