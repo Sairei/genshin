@@ -137,34 +137,23 @@ export const GenshinDB = {
 
   /***** Succès *****/
   getAllGroupAchievementNames: () => {
-    let res = genshindb.achievementgroups('name', { matchCategories: true });
-
-    if (!res) {
-      InitDB();
-      res = genshindb.achievementgroups('name', { matchCategories: true });
-    }
-
-    return res;
+    return genshindb.achievementgroups('name', { matchCategories: true });
   },
 
   findGroupAchievement: (elt) => {
-    let res = genshindb.achievementgroups(elt);
-    return res;
+    return genshindb.achievementgroups(elt);
   },
 
   getAllAchievementNames: () => {
-    let res = genshindb.achievements('name', { matchCategories: true });
-    return res;
+    return genshindb.achievements('name', { matchCategories: true });
   },
 
   getAllAchievementNamesByGroup: (group) => {
-    let res = genshindb.achievements(group, { matchCategories: true });
-    return res;
+    return genshindb.achievements(group, { matchCategories: true });
   },
 
   findAchievement: (elt) => {
-    let res = genshindb.achievements(elt);
-    return res;
+    return genshindb.achievements(elt);
   },
 
   /***** Panoramas *****/
