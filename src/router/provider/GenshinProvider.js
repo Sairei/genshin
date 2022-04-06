@@ -7,8 +7,7 @@ import { InitDB } from '../../utils/database/genshinbd';
 
 const GenshinProdiver = ({ children }) => {
   useEffect(() => {
-    let r = InitDB();
-    console.log(r);
+    InitDB();
   }, [])
   
   return (

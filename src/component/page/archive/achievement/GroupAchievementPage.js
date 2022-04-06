@@ -22,9 +22,11 @@ const GroupAchievementPage = () => {
 
         return ''
       });
-      
-    setList(list);
-  }, [])
+    
+    if (achievementgroups.length < 1) {
+      setList(list);
+    }
+  }, [achievementgroups])
 
   return (
     <div className='achievement_groups_container'>

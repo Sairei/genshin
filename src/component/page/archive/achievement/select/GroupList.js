@@ -11,15 +11,19 @@ const GroupList = ({ select }) => {
   useEffect(() => {
     let list = [];
 
-    GenshinDB.getAllGroupAchievementNames().map((elt) => {
-      let obj = GenshinDB.findGroupAchievement(elt)
-      list.push(obj);
+    let namesList = GenshinDB.getAllGroupAchievementNames();
+    (namesList ? namesList : [])
+      .map((elt) => {
+        let obj = GenshinDB.findGroupAchievement(elt)
+        list.push(obj);
 
-      return ''
-    });
+        return ''
+      });
 
-    setList(list);
-  }, [])
+    if (achievementgroups.length < 1) {
+      setList(list);
+    }
+  }, [achievementgroups])
 
   return (
     <ScrollArea className='group_list'>

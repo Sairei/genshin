@@ -21,8 +21,6 @@ export const InitDB = () => {
     genshindb.addData(arraybuffer);
   }
   oReq2.send();
-
-  return 'Import DONE !'
 }
 
 genshindb.setOptions({
