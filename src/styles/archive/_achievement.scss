@@ -86,13 +86,15 @@
       max-height: 80vh;
 
       .achievement_item {
+        margin-bottom: 25px;
+        
         > div {
           display: flex;
           justify-content: space-between;
         }
 
         .stage_2 {
-          padding-left: 25px;
+          padding-left: 20px;
         }
 
         .stage_3 {

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { Image, Title } from '@mantine/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 import { findImage } from '../../../../../utils/finder/findImage';
 
@@ -38,7 +40,10 @@ const Achievement = ({ elt }) => {
       {
         elt.stage2 &&
         <div className='stage_2'>
-          {elt.stage2.description}
+          <div>
+            <FontAwesomeIcon icon={faArrowRightFromBracket} />
+            {`\u00a0 ${elt.stage2.description}`}
+          </div>
 
           <div className='reward'>
             {`${elt.stage2.reward.count} x \u00a0`}
@@ -53,7 +58,10 @@ const Achievement = ({ elt }) => {
       {
         elt.stage3 &&
         <div className='stage_3'>
-          {elt.stage3.description}
+          <div>
+            <FontAwesomeIcon icon={faArrowRightFromBracket} />
+            {`\u00a0 ${elt.stage3.description}`}
+          </div>
 
           <div className='reward'>
             {`${elt.stage3.reward.count} x \u00a0`}
