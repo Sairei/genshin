@@ -2,6 +2,27 @@
 const wantedLanguage = "French";
 
 const genshindb = require('genshin-db');
+
+export const InitDB = () => {
+  let oReq1 = new XMLHttpRequest();
+  oReq1.open('GET', 'https://gitcdn.link/cdn/theBowja/genshin-db/main/dist/data/gzips/all-achievements.min.json.gzip');
+  oReq1.responseType = "arraybuffer";
+  oReq1.onloadend = function (e) {
+    var arraybuffer = oReq1.response;
+    genshindb.addData(arraybuffer);
+  }
+  oReq1.send();
+
+  let oReq2 = new XMLHttpRequest();
+  oReq2.open('GET', 'https://gitcdn.link/cdn/theBowja/genshin-db/main/dist/data/gzips/all-achievementgroups.min.json.gzip');
+  oReq2.responseType = "arraybuffer";
+  oReq2.onloadend = function (e) {
+    var arraybuffer = oReq2.response;
+    genshindb.addData(arraybuffer);
+  }
+  oReq2.send();
+}
+
 genshindb.setOptions({
   queryLanguages: ["English", wantedLanguage],
   resultLanguage: wantedLanguage
@@ -112,5 +133,53 @@ export const GenshinDB = {
   /***** Domaines *****/
   findDomain: (name) => {
     return genshindb.domains(name);
+  },
+
+  /***** Succès *****/
+  getAllGroupAchievementNames: () => {
+    return genshindb.achievementgroups('name', { matchCategories: true });
+  },
+
+  findGroupAchievement: (elt) => {
+    return genshindb.achievementgroups(elt);
+  },
+
+  getAllAchievementNames: () => {
+    return genshindb.achievements('name', { matchCategories: true });
+  },
+
+  getAllAchievementNamesByGroup: (group) => {
+    return genshindb.achievements(group, { matchCategories: true });
+  },
+
+  findAchievement: (elt) => {
+    return genshindb.achievements(elt);
+  },
+
+  /***** Panoramas *****/
+  getAllGeographiesNames: () => {
+    return genshindb.geographies('name', { matchCategories: true });
+  },
+
+  findGeographie: (elt) => {
+    return genshindb.geographies(elt);
+  },
+
+  /***** Thèmes *****/
+  getAllNamecardsNames: () => {
+    return genshindb.namecards('name', { matchCategories: true });
+  },
+
+  findNamecard: (elt) => {
+    return genshindb.namecards(elt);
+  },
+
+  /***** Ailes *****/
+  getAllWindglidersNames: () => {
+    return genshindb.windgliders('name', { matchCategories: true });
+  },
+
+  findWindgliders: (elt) => {
+    return genshindb.windgliders(elt);
   },
 }

@@ -40,6 +40,13 @@
 // SCSS pour les recettes
 @import './recipes/recipes';
 
+// SCSS pour les archives
+@import './archive/archive';
+@import './archive/achievement';
+@import './archive/geographies';
+@import './archive/namecards';
+@import './archive/windglider';
+
 // SCSS pour les composants annexes
 @import './items/header';
 @import './items/navbar';

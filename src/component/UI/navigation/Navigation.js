@@ -7,6 +7,7 @@ import { Drawer, Navbar, ScrollArea, Space, Title } from '@mantine/core';
 import { isNavbarOpen } from "../../../router/provider/Dispatcher";
 import ObjectNav from './ObjectNav';
 import EquipmentNav from './EquipmentNav';
+import ArchiveNav from './ArchiveNav';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Navigation = () => {
 
   let objectNav = url.pathname.includes("item");
   let equipmentNav = url.pathname.includes("equipment");
+  let archiveNav = url.pathname.includes("archive");
 
   return (
     <Drawer
@@ -105,6 +107,20 @@ const Navigation = () => {
                   Recettes
                 </Title>
               </Link>
+            </li>
+
+            <Space h="md" />
+
+            <li className="list-item">
+              <Link to="/archive" className="link">
+                <Title order={3}>
+                  Archives
+                </Title>
+              </Link>
+              {
+                archiveNav &&
+                <ArchiveNav />
+              }
             </li>
 
             <Space h="md" />

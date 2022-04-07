@@ -1,0 +1,51 @@
+.archive_container {
+  height: 100%;
+  display: flex;
+
+  .archive_vertical {
+    height: 100%;
+    width: 50%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 25px;
+      margin: auto;
+      border: 2px solid;
+      border-radius: 1rem;
+      padding: 7px 20px 5px 20px;
+      cursor: pointer;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    hr {
+      width: 99%;
+    }
+  }
+
+  .vertical_separator {
+    margin-top: 25px;
+    height: 100%;
+    width: 2px;
+    background-color: black;
+  }
+}
+
+@media screen and (max-width:720px){
+  .archive_vertical {
+    width: 100%;
+    flex-direction: column;
+  
+    .vertical_separator {
+      height: 3px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.achievement_groups_container {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .achievement_groups_card {
+    margin: 0 20px 20px 20px;
+    width: 260px;
+    height: 350px;
+    background-color: #72040199;
+    border-radius: 1rem;
+
+    .img_name {
+      padding: 5px;
+      font-size: 14px;
+      font-weight: bolder;
+      
+      .img {
+        position: relative;
+      }
+
+      p {
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        word-wrap: break-word;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.achievement_container {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  
+  .group_list {
+    position: fixed;
+    z-index: 50;
+    height: 100%;
+    padding: 0 15px;
+    min-width: 250px;
+    max-width: 250px;
+    height: 92vh;
+    
+    .group_item {
+      background-color: #72040199;
+      border-radius: 0.8rem;
+      flex-wrap: nowrap;
+      padding: 5px 8px 5px 2px;
+      height: 70px;
+
+      &.select {
+        background-color: #720401;
+        font-weight: bold;
+        color: white;
+      }
+
+      &:hover:not(.select) {
+        cursor: pointer;
+      }
+      
+      .text {
+        overflow-wrap: break-word;
+        font-size: 18px;
+      }  
+    }
+  }
+
+  .achievement_list {
+    position: absolute;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .group_reward {
+      display: flex;
+
+      .text {
+        font-size: 22px;
+      }
+    }
+
+    .list {
+      max-height: 80vh;
+
+      .achievement_item {
+        margin-bottom: 25px;
+        
+        > div {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .stage_2 {
+          padding-left: 20px;
+        }
+
+        .stage_3 {
+          padding-left: 50px;
+        }
+
+        .reward {
+          margin-left: 10px;
+          font-family: 'Arial Narrow', Arial, sans-serif;
+          display: flex;
+        }
+      }
+    }
+  }
+}

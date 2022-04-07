@@ -1,0 +1,41 @@
+.windglider_container {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .windglider_card {
+    margin: 0 20px 20px 20px;
+
+    .img_name {
+      background-color: #CCCCCC;
+      padding: 5px;
+      font-size: 14px;
+      font-weight: bolder;
+      
+      .img {
+        position: relative;
+
+        .hover_text {
+          display: none;
+          background-color: #cccccccc;
+          font-size: 18px;
+          position: absolute;
+          text-align: center;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+        }
+
+        &:hover .hover_text {
+          display: flex;
+        }
+      }
+
+      p {
+        word-wrap: break-word;
+      }
+    }
+  }
+}
