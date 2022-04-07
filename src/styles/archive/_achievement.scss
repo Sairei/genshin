@@ -33,11 +33,16 @@
 
 .achievement_container {
   padding: 15px 15px 0 15px;
+  display: flex;
   
   .group_list {
+    position: fixed;
+    z-index: 50;
+    height: 100%;
     padding: 0 15px;
-    width: 250px;
-    height: 90vh;
+    min-width: 250px;
+    max-width: 250px;
+    height: 92vh;
     
     .group_item {
       background-color: #72040199;
@@ -60,6 +65,25 @@
         overflow-wrap: break-word;
         font-size: 18px;
       }  
+    }
+  }
+
+  .achievement_list {
+    position: absolute;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .group_reward {
+      display: flex;
+
+      .text {
+        font-size: 22px;
+      }
+    }
+
+    .list {
+      max-height: 80vh;
     }
   }
 }

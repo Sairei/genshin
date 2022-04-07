@@ -5,11 +5,14 @@ import { useParams } from 'react-router-dom';
 import GroupList from './GroupList';
 
 import { GenshinDB } from '../../../../../utils/database/genshinbd';
+import AchievementList from './AchievementList';
 
 const AchievementPage = () => {
   const { name } = useParams();
+  const [oldName, setOldName] = useState("");
   const [achievement, setList] = useState([]);
   const [achievementgroups, setGroupList] = useState([]);
+  const [groupReward, setGroupReward] = useState({});
 
   useEffect(() => {
     let list = [];
@@ -19,6 +22,10 @@ const AchievementPage = () => {
       .map((elt) => {
         let obj = GenshinDB.findGroupAchievement(elt)
         list.push(obj);
+
+        if (elt === name) {
+          setGroupReward(obj.reward ? obj.reward : {});
+        }
 
         return ''
       });
@@ -35,10 +42,13 @@ const AchievementPage = () => {
 
         return '';
       })
-    if (achievement.length < 1) {
+    if (oldName !== name) {
+      if (namesList && namesList.length > 0) {
+        setOldName(name)
+      }
       setList(list);
     }
-  }, [name, achievementgroups, achievement])
+  }, [name, achievementgroups, oldName])
 
   if (achievementgroups.length === 0 || achievement === 0) {
     return (
@@ -46,10 +56,13 @@ const AchievementPage = () => {
     );
   }
 
-  console.log(achievement);
+  // console.log(achievementgroups);
   return (
     <div className='achievement_container'>
       <GroupList select={name} groups={achievementgroups} />
+
+      <AchievementList list={achievement}
+        groupReward={groupReward} />
     </div>
   );
 };
