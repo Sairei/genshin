@@ -84,6 +84,27 @@
 
     .list {
       max-height: 80vh;
+
+      .achievement_item {
+        > div {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .stage_2 {
+          padding-left: 25px;
+        }
+
+        .stage_3 {
+          padding-left: 50px;
+        }
+
+        .reward {
+          margin-left: 10px;
+          font-family: 'Arial Narrow', Arial, sans-serif;
+          display: flex;
+        }
+      }
     }
   }
 }

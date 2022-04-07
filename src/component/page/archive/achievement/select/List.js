@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Achievement from './Achievement';
+
 const List = ({ list }) => {
   console.log(list);
 
@@ -10,7 +12,7 @@ const List = ({ list }) => {
         list.map((elt) => {
           return (
             <div key={elt.name}>
-              {elt.name}
+              <Achievement elt={elt} />
             </div>
           )
         })
