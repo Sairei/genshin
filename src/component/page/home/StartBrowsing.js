@@ -38,7 +38,19 @@ const StartBrowsing = () => {
             
             <li>
               <BrowsingItem
-                title="Equipement" link="/equipment"
+                title="Artéfacts" link="/equipment/artifact"
+              />
+            </li>
+            
+            <li>
+              <BrowsingItem
+                title="Armes" link="/equipment/weapon"
+              />
+            </li>
+            
+            <li>
+              <BrowsingItem
+                title="Archives" link="/archive"
               />
             </li>
           </ul>

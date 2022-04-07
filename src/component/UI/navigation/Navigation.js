@@ -122,9 +122,11 @@ const Navigation = () => {
                 <ArchiveNav />
               }
             </li>
+          </ul>
+        </Navbar.Section>
 
-            <Space h="md" />
-
+        <Navbar.Section>
+          <ul>
             <li className="list-item">
               <Link to="/about" className="link">
                 <Title order={3}>
@@ -135,7 +137,7 @@ const Navigation = () => {
           </ul>
         </Navbar.Section>
       </Navbar>
-    </Drawer>
+    </Drawer >
   );
 };
 
