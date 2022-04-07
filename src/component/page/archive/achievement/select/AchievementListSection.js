@@ -5,7 +5,7 @@ import { Space, Switch } from '@mantine/core';
 import List from './List';
 import Reward from './Reward';
 
-const AchievementList = ({ list, groupReward }) => {
+const AchievementListSection = ({ list, groupReward }) => {
   const [hidden, setHidden] = useState(false);
   const [filterList, setList] = useState([]);
 
@@ -44,4 +44,4 @@ const AchievementList = ({ list, groupReward }) => {
   );
 };
 
-export default AchievementList;
+export default AchievementListSection;

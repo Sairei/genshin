@@ -5,7 +5,7 @@ import { Group, Image, ScrollArea, Stack } from '@mantine/core';
 
 import { findImage } from '../../../../../utils/finder/findImage';
 
-const GroupList = ({ select, groups }) => {
+const GroupListSection = ({ select, groups }) => {
   const nav = useNavigate();
 
   return (
@@ -45,4 +45,4 @@ const GroupList = ({ select, groups }) => {
   );
 };
 
-export default GroupList;
+export default GroupListSection;

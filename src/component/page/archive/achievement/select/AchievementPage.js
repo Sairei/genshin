@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import GroupList from './GroupList';
+import GroupListSection from './GroupListSection';
+import AchievementListSection from './AchievementListSection';
 
 import { GenshinDB } from '../../../../../utils/database/genshinbd';
-import AchievementList from './AchievementList';
 
 const AchievementPage = () => {
   const { name } = useParams();
@@ -59,9 +59,9 @@ const AchievementPage = () => {
   // console.log(achievementgroups);
   return (
     <div className='achievement_container'>
-      <GroupList select={name} groups={achievementgroups} />
+      <GroupListSection select={name} groups={achievementgroups} />
 
-      <AchievementList list={achievement}
+      <AchievementListSection list={achievement}
         groupReward={groupReward} />
     </div>
   );
