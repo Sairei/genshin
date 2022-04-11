@@ -44,8 +44,8 @@ const UsedBy = ({ name }) => {
     return '';
   })
 
-  characList = [... new Set(characList)];
-  
+  characList = [...new Set(characList)];
+
   return (
     <div className='characters_list'>
       {
