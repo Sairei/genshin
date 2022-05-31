@@ -1,1 +1,1 @@
-export const genshin_version = "2.6";
+export const genshin_version = "2.7";
