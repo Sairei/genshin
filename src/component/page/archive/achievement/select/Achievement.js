@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 import { findImage } from '../../../../../utils/finder/findImage';
+import { convertTextWithGender } from '../../../../../utils/converter/convertTextWithGender';
 
 import { GenshinDB } from '../../../../../utils/database/genshinbd';
 
@@ -22,7 +23,7 @@ const Achievement = ({ elt }) => {
   return (
     <div className='achievement_item'>
       <Title order={3}>
-        {elt.name}
+        {convertTextWithGender(elt.name)}
       </Title>
 
       <div className='stage_1'>
