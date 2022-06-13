@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Image } from '@mantine/core';
 
-import { genshin_version } from '../../utils/database/version';
+import { genshin_last_version } from '../../utils/database/version';
 
 const NewFeature = ({ version, size }) => {
-  if (version !== genshin_version) {
+  if (version !== genshin_last_version) {
     return (
       <></>
     );
