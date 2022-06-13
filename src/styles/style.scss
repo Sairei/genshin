@@ -5,6 +5,9 @@
 @import './home/browsing';
 @import './home/welcome';
 
+// SCSS pour la page des nouveautés
+@import './news/container';
+
 // SCSS de la page de liste des personnages
 @import './characters/card';
 @import './characters/list';

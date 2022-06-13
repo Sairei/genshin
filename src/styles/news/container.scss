@@ -1,0 +1,21 @@
+.news_container {
+  width: 90%;
+  margin: 15px auto 0 auto ;
+
+  .version_container {
+    margin-bottom: 40px;
+
+    .title_div {
+      .release_date {
+        margin-left: 2px;
+      }
+
+      .title_separator {
+        background-color: black;
+        margin-left: -4px;
+        height: 1px;
+        width: 50%;
+      }
+    }
+  }
+}
