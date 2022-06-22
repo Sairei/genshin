@@ -1,0 +1,26 @@
+.characters_version {
+  min-width: 500px;
+
+  > div {
+    margin: 5px 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .new_charac {
+    margin: 5px 10px;
+
+    img {
+      padding: 2px;
+      border-radius: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width:600px){
+  .characters_version {
+    min-width: unset;
+    width: 95%;
+  }
+}

@@ -5,6 +5,12 @@
   .version_container {
     margin-bottom: 40px;
 
+    .version_content {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
     .title_div {
       .release_date {
         margin-left: 2px;
@@ -13,9 +19,26 @@
       .title_separator {
         background-color: black;
         margin-left: -4px;
+        margin-bottom: 15px;
         height: 1px;
         width: 50%;
       }
     }
+  }
+
+}
+
+.border_anemo img { border: 4px solid #7bddce; }
+.border_cryo img { border: 4px solid #00e6e6; }
+.border_dendro img { border: 4px solid green; }
+.border_electro img { border: 4px solid #d17eda; }
+.border_geo img { border: 4px solid #dfc179; }
+.border_hydro img { border: 4px solid #79c9df; }
+.border_pyro img { border: 4px solid #de867a; }
+
+
+@media screen and (max-width:600px){
+  .news_container .version_container .title_div .title_separator {
+    width: 100%;
   }
 }

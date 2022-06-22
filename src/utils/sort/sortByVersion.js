@@ -1,10 +1,15 @@
-export const sortByVersion = (sourceList, version) => {
+import { genshin_versions } from '../database/version';
+
+export const sortByVersion = (sourceList) => {
   let list = []
 
+  genshin_versions.map(version => {
+    list[version.num] = [];
+    return '';
+  });
+
   sourceList.map(elt => {
-    if(elt.version === version) {
-      list.push(elt);
-    }
+    list[elt.version].push(elt);
     return '';
   })
 
