@@ -55,6 +55,16 @@ li {
 .center {
   text-align: center;
 }
+.left {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.right {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
 
 .flag {
   border: 2px #000000 solid;
