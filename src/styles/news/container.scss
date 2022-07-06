@@ -7,6 +7,10 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
+
+      .characters_version, .artifacts_version {
+        min-width: 500px;
+      }
     }
 
     .title_div {

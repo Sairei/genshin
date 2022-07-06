@@ -10,14 +10,21 @@ import VersionContent from '../news/VersionContent';
 
 const News = () => {
   let version = genshin_versions[0];
-  const [characterList, setList] = useState([]);
+  const [characterList, setCharacList] = useState([]);
+  const [artifactList, setArtifactList] = useState([]);
 
   useEffect(() => {
-    let list = [];
+    let cList = [];
     GenshinDB.getAllTalentsNames().forEach(name => {
-      list.push(GenshinDB.findTalents(name));
+      cList.push(GenshinDB.findTalents(name));
     });
-    setList(sortByVersion(list)[version.num]);
+    setCharacList(sortByVersion(cList)[version.num]);
+    
+    let aList = [];
+    GenshinDB.getAllArtifactNames().forEach(name => {
+      aList.push(GenshinDB.findArtifact(name));
+    });
+    setArtifactList(sortByVersion(aList)[version.num]);
   }, [version])
 
   return (
@@ -26,7 +33,9 @@ const News = () => {
         Nouveauté de la version {version.num}
       </Title>
       
-      <VersionContent characterList={characterList} />
+      <VersionContent 
+        characterList={characterList}
+        artifactList={artifactList} />
 
       <Link className='right' to="/news">Voir toutes les versions...</Link>
     </div>

@@ -1,15 +1,14 @@
 import React from 'react';
 
 import NewCharacters from './character/NewCharacters';
+import NewArtifacts from './artefact/NewArtifacts';
 
-const VersionContent = ({ characterList }) => {
+const VersionContent = ({ characterList, artifactList }) => {
   return (
     <div className='version_content'>
         <NewCharacters characters={characterList} />
 
-        <div className='artifacts_version'>
-          
-        </div>
+        <NewArtifacts artifact={artifactList} />
 
         <div className='recipes_version'>
           

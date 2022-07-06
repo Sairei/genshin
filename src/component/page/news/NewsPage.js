@@ -11,14 +11,21 @@ import { GenshinDB } from '../../../utils/database/genshinbd';
 // TODO : https://genshin-impact.fandom.com/wiki/Version
 
 const NewsPage = () => {
-  const [characterList, setList] = useState([]);
+  const [characterList, setCharacList] = useState([]);
+  const [artifactList, setArtifactList] = useState([]);
 
   useEffect(() => {
-    let list = [];
+    let cList = [];
     GenshinDB.getAllTalentsNames().forEach(name => {
-      list.push(GenshinDB.findTalents(name));
+      cList.push(GenshinDB.findTalents(name));
     });
-    setList(sortByVersion(list));
+    setCharacList(sortByVersion(cList));
+    
+    let aList = [];
+    GenshinDB.getAllArtifactNames().forEach(name => {
+      aList.push(GenshinDB.findArtifact(name));
+    });
+    setArtifactList(sortByVersion(aList));
   }, [])
 
   const items = genshin_versions.map(version => {
@@ -32,7 +39,9 @@ const NewsPage = () => {
           </div>
         }>
 
-        <VersionContent characterList={characterList[version.num]} />
+        <VersionContent
+          characterList={characterList[version.num]}
+          artifactList={artifactList[version.num]} />
       
       </Accordion.Item>
     )
