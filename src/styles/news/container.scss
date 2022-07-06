@@ -8,8 +8,8 @@
       justify-content: flex-start;
       flex-wrap: wrap;
 
-      .characters_version, .artifacts_version {
-        min-width: 500px;
+      > div:not(:first-child) {
+        margin-left: 20px;
       }
     }
 
