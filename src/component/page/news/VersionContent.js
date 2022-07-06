@@ -8,7 +8,10 @@ const VersionContent = ({ characterList, artifactList }) => {
     <div className='version_content'>
         <NewCharacters characters={characterList} />
 
-        <NewArtifacts artifact={artifactList} />
+        {
+          (artifactList && artifactList.length > 0) &&
+          <NewArtifacts artifact={artifactList} />
+        }
 
         <div className='recipes_version'>
           

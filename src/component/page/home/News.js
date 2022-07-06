@@ -30,7 +30,7 @@ const News = () => {
   return (
     <div className='home_news_container'>
       <Title order={1}>
-        Nouveauté de la version {version.num}
+        Nouveautés de la version {version.num}
       </Title>
       
       <VersionContent 
