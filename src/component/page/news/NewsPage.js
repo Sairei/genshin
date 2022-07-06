@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { Title } from '@mantine/core';
+import { Accordion, Title } from '@mantine/core';
 
 import { genshin_versions } from '../../../utils/database/version';
 import { sortByVersion } from '../../../utils/sort/sortByVersion';
-import NewCharacters from './character/NewCharacters';
+import VersionContent from './VersionContent';
 
 import { GenshinDB } from '../../../utils/database/genshinbd';
 
@@ -21,37 +21,28 @@ const NewsPage = () => {
     setList(sortByVersion(list));
   }, [])
 
+  const items = genshin_versions.map(version => {
+    return (
+      <Accordion.Item className='version_container' key={version.num} 
+        label={
+          <div className='title_div'>
+            <Title order={1}> Version { version.num } </Title>
+            <span className='release_date'>Sorti le { version.date }</span>
+            <div className='title_separator'></div>
+          </div>
+        }>
+
+        <VersionContent characterList={characterList[version.num]} />
+      
+      </Accordion.Item>
+    )
+  })
+
   return (
     <div className='news_container'>
-      {
-        genshin_versions.map(version => {
-          return (
-            <div className='version_container' key={version.num}>
-              <div className='title_div'>
-                <Title order={1}> Version { version.num } </Title>
-                <span className='release_date'>Sorti le { version.date }</span>
-                <div className='title_separator'></div>
-              </div>
-
-              <div className='version_content'>
-                <NewCharacters characters={characterList[version.num]} />
-
-                <div className='artifacts_version'>
-                  
-                </div>
-
-                <div className='recipes_version'>
-                  
-                </div>
-
-                <div className='bestiary_version'>
-                  
-                </div>
-              </div>
-            </div>
-          )
-        })
-      }
+      <Accordion initialItem={-1} iconPosition="right">
+        { items }
+      </Accordion>
     </div>
   );
 };

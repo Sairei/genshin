@@ -3,8 +3,6 @@
   margin: 15px auto 0 auto ;
 
   .version_container {
-    margin-bottom: 40px;
-
     .version_content {
       display: flex;
       justify-content: flex-start;
@@ -19,7 +17,7 @@
       .title_separator {
         background-color: black;
         margin-left: -4px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         height: 1px;
         width: 50%;
       }
