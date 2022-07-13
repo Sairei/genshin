@@ -12,6 +12,9 @@ const News = () => {
   let version = genshin_versions[0];
   const [characterList, setCharacList] = useState([]);
   const [artifactList, setArtifactList] = useState([]);
+  const [recipeList, setRecipeList] = useState([]);
+  const [enemiesList, setEnemiesList] = useState([]);
+  const [bestiaryList, setBestiaryList] = useState([]);
 
   useEffect(() => {
     let cList = [];
@@ -25,6 +28,24 @@ const News = () => {
       aList.push(GenshinDB.findArtifact(name));
     });
     setArtifactList(sortByVersion(aList)[version.num]);
+    
+    let rList = [];
+    GenshinDB.getAllFoodsNames().forEach(name => {
+      rList.push(GenshinDB.findFood(name));
+    });
+    setRecipeList(sortByVersion(rList)[version.num]);
+    
+    let eList = [];
+    GenshinDB.getAllEnemiesNames().forEach(name => {
+      eList.push(GenshinDB.findEnemies(name));
+    });
+    setEnemiesList(sortByVersion(eList)[version.num]);
+    
+    let bList = [];
+    GenshinDB.getAllAnimalNames().forEach(name => {
+      bList.push(GenshinDB.findAnimals(name));
+    });
+    setBestiaryList(sortByVersion(bList)[version.num]);
   }, [version])
 
   return (
@@ -35,7 +56,10 @@ const News = () => {
       
       <VersionContent 
         characterList={characterList}
-        artifactList={artifactList} />
+        artifactList={artifactList}
+        recipeList={recipeList}
+        enemiesList={enemiesList}
+        bestiaryList={bestiaryList} />
 
       <Link className='right' to="/news">Voir toutes les versions...</Link>
     </div>

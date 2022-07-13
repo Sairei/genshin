@@ -3,6 +3,7 @@ import { genshin_versions } from '../database/version';
 export const sortByVersion = (sourceList) => {
   let list = []
 
+  list[""] = [];
   genshin_versions.map(version => {
     list[version.num] = [];
     return '';

@@ -2,18 +2,18 @@ import React from 'react';
 
 import { Title } from '@mantine/core';
 
-import ArtifactList from './ArtifactList';
+import ItemsList from './ItemsList';
 
-const NewArtifacts = ({ artifact }) => {
+const NewItems = ({ title, items, finder }) => {
   return (
     <div className='artifacts_version'>
       <Title order={3}>
-        Artefacts
+        { title }
       </Title>
 
-      <ArtifactList artifact={artifact} />
+      <ItemsList items={items} finder={finder} />
     </div>
   );
 };
 
-export default NewArtifacts;
+export default NewItems;

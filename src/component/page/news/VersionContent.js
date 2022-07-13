@@ -1,25 +1,37 @@
 import React from 'react';
+import { GenshinDB } from '../../../utils/database/genshinbd';
 
 import NewCharacters from './character/NewCharacters';
-import NewArtifacts from './artefact/NewArtifacts';
+import NewItems from './item/NewItems';
 
-const VersionContent = ({ characterList, artifactList }) => {
+const VersionContent = ({ characterList, artifactList, recipeList, enemiesList, bestiaryList }) => {
   return (
     <div className='version_content'>
         <NewCharacters characters={characterList} />
 
         {
           (artifactList && artifactList.length > 0) &&
-          <NewArtifacts artifact={artifactList} />
+          <NewItems title="Artefacts" items={artifactList}
+            finder={GenshinDB.findArtifact} />
         }
 
-        <div className='recipes_version'>
-          
-        </div>
+        {
+          (recipeList && recipeList.length > 0) &&
+          <NewItems title="Recettes" items={recipeList} 
+            finder={GenshinDB.findFood} />
+        }
 
-        <div className='bestiary_version'>
-          
-        </div>
+        {
+          (enemiesList && enemiesList.length > 0) &&
+          <NewItems title="Enemies" items={enemiesList} 
+            finder={GenshinDB.findEnemies} />
+        }
+
+        {
+          (bestiaryList && bestiaryList.length > 0) &&
+          <NewItems title="Bestiaire" items={bestiaryList} 
+            finder={GenshinDB.findAnimals} />
+        }
       </div>
   );
 };

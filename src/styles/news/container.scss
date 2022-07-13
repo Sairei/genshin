@@ -8,7 +8,7 @@
       justify-content: flex-start;
       flex-wrap: wrap;
 
-      > div:not(:first-child) {
+      > div {
         margin-left: 20px;
       }
     }

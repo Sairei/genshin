@@ -13,6 +13,9 @@ import { GenshinDB } from '../../../utils/database/genshinbd';
 const NewsPage = () => {
   const [characterList, setCharacList] = useState([]);
   const [artifactList, setArtifactList] = useState([]);
+  const [recipeList, setRecipeList] = useState([]);
+  const [enemiesList, setEnemiesList] = useState([]);
+  const [bestiaryList, setBestiaryList] = useState([]);
 
   useEffect(() => {
     let cList = [];
@@ -26,6 +29,24 @@ const NewsPage = () => {
       aList.push(GenshinDB.findArtifact(name));
     });
     setArtifactList(sortByVersion(aList));
+    
+    let rList = [];
+    GenshinDB.getAllFoodsNames().forEach(name => {
+      rList.push(GenshinDB.findFood(name));
+    });
+    setRecipeList(sortByVersion(rList));
+    
+    let eList = [];
+    GenshinDB.getAllEnemiesNames().forEach(name => {
+      eList.push(GenshinDB.findEnemies(name));
+    });
+    setEnemiesList(sortByVersion(eList));
+    
+    let bList = [];
+    GenshinDB.getAllAnimalNames().forEach(name => {
+      bList.push(GenshinDB.findAnimals(name));
+    });
+    setBestiaryList(sortByVersion(bList));
   }, [])
 
   const items = genshin_versions.map(version => {
@@ -41,7 +62,10 @@ const NewsPage = () => {
 
         <VersionContent
           characterList={characterList[version.num]}
-          artifactList={artifactList[version.num]} />
+          artifactList={artifactList[version.num]}
+          recipeList={recipeList[version.num]}
+          enemiesList={enemiesList[version.num]}
+          bestiaryList={bestiaryList[version.num]} />
       
       </Accordion.Item>
     )
