@@ -21,7 +21,7 @@ const WindgliderPage = () => {
 
     setList(list);
   }, [])
-console.log(windgliders);
+  
   return (
     <div className='windglider_container'>
       {

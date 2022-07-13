@@ -12,7 +12,9 @@ const Breadcrumb = () => {
     let tmp = url.split('/');
     filAriane = tmp.map((partUrl, index) => {
       let name, link;
-      if (partUrl.startsWith("chara")) {
+      if (partUrl === "news") {
+        name = "Nouveautés";
+      } else if (partUrl.startsWith("chara")) {
         name = "Personnages";
       } else if (partUrl.includes("item")) {
         name = "Matériaux";

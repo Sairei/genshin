@@ -56,7 +56,6 @@ const AchievementPage = () => {
     );
   }
 
-  // console.log(achievementgroups);
   return (
     <div className='achievement_container'>
       <GroupListSection select={name} groups={achievementgroups} />

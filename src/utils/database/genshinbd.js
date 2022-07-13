@@ -69,6 +69,10 @@ export const GenshinDB = {
   },
 
   /***** Animaux *****/
+  getAllAnimalNames: () => {
+    return genshindb.animals('name', { matchCategories: true });
+  },
+
   findAnimalByCategorie: (catego) => {
     return genshindb.animals(catego, { matchCategories: true });
   },

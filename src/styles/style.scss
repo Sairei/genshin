@@ -3,7 +3,13 @@
 
 // SCSS pour la page d'accueil
 @import './home/browsing';
+@import './home/news';
 @import './home/welcome';
+
+// SCSS pour la page des nouveautés
+@import './news/container';
+@import './news/charac';
+@import './news/artefact';
 
 // SCSS de la page de liste des personnages
 @import './characters/card';

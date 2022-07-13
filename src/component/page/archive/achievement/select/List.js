@@ -3,7 +3,6 @@ import React from 'react';
 import Achievement from './Achievement';
 
 const List = ({ list }) => {
-  console.log(list);
 
   return (
     <div className='list'>

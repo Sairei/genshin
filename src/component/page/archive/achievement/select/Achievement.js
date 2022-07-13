@@ -18,7 +18,6 @@ const Achievement = ({ elt }) => {
       setImg(mat.images);
     }
   }, [elt])
-  console.log(rewardImg);
 
   return (
     <div className='achievement_item'>

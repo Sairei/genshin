@@ -5,6 +5,7 @@ import { BrowserRouter, Navigate, Routes, Route, Outlet } from "react-router-dom
 import GenshinProdiver from './provider/GenshinProvider';
 import MainPage from '../component/MainPage';
 import HomePage from '../component/page/home/HomePage';
+import NewsPage from '../component/page/news/NewsPage';
 import ListCharactersPage from '../component/page/characters/ListCharactersPage';
 import CharacterPage from '../component/page/character/CharacterPage';
 import MaterialsPage from '../component/page/materials/MaterialsPage';
@@ -41,6 +42,11 @@ const AppRouter = () => {
               {/* Page d'accueil */}
               {/******************/}
               <Route index element={<HomePage />} />
+
+              {/***********************/}
+              {/* Page des nouveautés */}
+              {/***********************/}
+              <Route path="news" element={<NewsPage />} />
 
               {/*******************/}
               {/* Page personnage */}
