@@ -3,7 +3,7 @@ import React from 'react';
 import { Image, Tooltip } from '@mantine/core';
 import { findImage } from '../../../../utils/finder/findImage';
 
-const ItemsList = ({ items, finder }) => {
+const ItemsList = ({ rarity, items, finder }) => {
   if (!items) {
     return <></>
   }
@@ -11,8 +11,8 @@ const ItemsList = ({ items, finder }) => {
   return (
     <div>
       {
-        items.map((art, index) => {
-          let itemName = art.name;
+        items.map((item, index) => {
+          let itemName = item.name;
 
           let tmp = finder(itemName);
           let img = tmp.images.nameicon;
@@ -29,7 +29,7 @@ const ItemsList = ({ items, finder }) => {
             >
               <Image
                 fit='contain'
-                className={`new_artifact`}
+                className={`${rarity ? `rarity_${item.rarity}` : ``} new_item`}
                 width={100} height={100}
                 src={findImage(img)} alt={itemName}
               />

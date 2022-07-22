@@ -4,14 +4,14 @@ import { Title } from '@mantine/core';
 
 import ItemsList from './ItemsList';
 
-const NewItems = ({ title, items, finder }) => {
+const NewItems = ({ rarity, title, items, finder }) => {
   return (
-    <div className='artifacts_version'>
+    <div className='items_version'>
       <Title order={3}>
         { title }
       </Title>
 
-      <ItemsList items={items} finder={finder} />
+      <ItemsList rarity={rarity} items={items} finder={finder} />
     </div>
   );
 };
