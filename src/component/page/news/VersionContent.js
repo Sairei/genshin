@@ -18,7 +18,7 @@ const VersionContent = ({ characterList, artifactList, recipeList, enemiesList, 
         {
           (recipeList && recipeList.length > 0) &&
           <NewItems title="Recettes" items={recipeList} 
-            finder={GenshinDB.findFood} />
+            rarity={true} finder={GenshinDB.findFood} />
         }
 
         {
