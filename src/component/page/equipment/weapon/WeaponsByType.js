@@ -18,9 +18,9 @@ const WeaponsByType = ({ weapons }) => {
       {
         weapons
           .sort((a, b) => a.rarity - b.rarity)
-          .map((elt) => {
+          .map((elt, index) => {
             return (
-              <li key={elt.name} >
+              <li key={`${elt.name1}_${index}`} >
                 <Link to={`/equipment/weapon/${elt.name}`}>
                   <div className='div_image'>
                     <NewFeature

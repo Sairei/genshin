@@ -13,10 +13,10 @@ const MaterialsList = ({ list }) => {
         {
           list
             .sort((a, b) => { return a.name.localeCompare(b.name) })
-            .map((mat) => {
+            .map((mat, index) => {
               convertTextWithGender(mat.name);
               return (
-                <li key={mat.name}>
+                <li key={`${mat.name}_${index}`}>
                   <Image
                     fit='contain'
                     width={40} height={40}
