@@ -14,6 +14,7 @@ const NewsPage = () => {
   const [characterList, setCharacList] = useState([]);
   const [artifactList, setArtifactList] = useState([]);
   const [recipeList, setRecipeList] = useState([]);
+  const [weaponList, setWeaponList] = useState([]);
   const [enemiesList, setEnemiesList] = useState([]);
   const [bestiaryList, setBestiaryList] = useState([]);
 
@@ -35,6 +36,12 @@ const NewsPage = () => {
       rList.push(GenshinDB.findFood(name));
     });
     setRecipeList(sortByVersion(rList));
+    
+    let wList = [];
+    GenshinDB.getAllWeaponsNames().forEach(name => {
+      wList.push(GenshinDB.findWeapon(name));
+    });
+    setWeaponList(sortByVersion(wList));
     
     let eList = [];
     GenshinDB.getAllEnemiesNames().forEach(name => {
@@ -64,6 +71,7 @@ const NewsPage = () => {
           characterList={characterList[version.num]}
           artifactList={artifactList[version.num]}
           recipeList={recipeList[version.num]}
+          weaponList={weaponList[version.num]}
           enemiesList={enemiesList[version.num]}
           bestiaryList={bestiaryList[version.num]} />
       

@@ -4,7 +4,7 @@ import { GenshinDB } from '../../../utils/database/genshinbd';
 import NewCharacters from './character/NewCharacters';
 import NewItems from './item/NewItems';
 
-const VersionContent = ({ characterList, artifactList, recipeList, enemiesList, bestiaryList }) => {
+const VersionContent = ({ characterList, artifactList, recipeList, weaponList, enemiesList, bestiaryList }) => {
   return (
     <div className='version_content'>
         <NewCharacters characters={characterList} />
@@ -19,6 +19,12 @@ const VersionContent = ({ characterList, artifactList, recipeList, enemiesList, 
           (recipeList && recipeList.length > 0) &&
           <NewItems title="Recettes" items={recipeList} 
             rarity={true} finder={GenshinDB.findFood} />
+        }
+
+        {
+          (weaponList && weaponList.length > 0) &&
+          <NewItems title="Armes" items={weaponList} 
+            rarity={true} finder={GenshinDB.findWeapon} />
         }
 
         {
