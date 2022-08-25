@@ -7,6 +7,7 @@ const ElementSelector = ({ setName }) => {
   const anemo = GenshinDB.getElement('anemo');
   const geo = GenshinDB.getElement('geo');
   const electro = GenshinDB.getElement('electro');
+  const dendro = GenshinDB.getElement('dendro');
 
   const handleClick = (elt) => {
     setName(`Traveler (${elt.name})`);
@@ -28,6 +29,11 @@ const ElementSelector = ({ setName }) => {
         className='traveler_elt'
         onClick={() => (handleClick(electro))}
         src={electro.images.wikia} />
+
+      <Image height={50} width={50} 
+        className='traveler_elt'
+        onClick={() => (handleClick(dendro))}
+        src={dendro.images.wikia} />
     </>
   );
 };
