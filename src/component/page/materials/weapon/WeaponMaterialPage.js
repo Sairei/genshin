@@ -19,6 +19,10 @@ const WeaponMaterialPage = () => {
       GenshinDB.findMaterialsByCategorie(val).map((m) => {
         let obj = GenshinDB.findMaterials(m);
 
+        // Erreur
+        if (!obj.dropdomain) {
+          return '';
+        }
         let domain = GenshinDB.findDomain(obj.dropdomain.split(": ")[1]);
 
         obj['region'] = domain.region;
