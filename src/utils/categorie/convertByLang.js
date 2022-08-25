@@ -60,6 +60,8 @@ export const ConvertFR = {
         return "Snezhnaya";
       case "inazuma":
         return "Inazuma";
+      case "sumeru":
+        return "Sumeru";
       default:
         return "";
     }

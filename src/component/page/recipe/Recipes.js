@@ -31,13 +31,22 @@ const Recipes = () => {
 
   return (
     <div className='recipe_list_container'>
-      <Tabs grow
-        className='list_recipe'>
+      <Tabs className='list_recipe' defaultValue={Object.entries(recipeList)[0][0]}>
+        <Tabs.List grow>
+          {
+            Object.entries(recipeList).map((entry) => {
+              return (
+                <Tabs.Tab key={entry[0]} value={entry[0]}>{entry[0]}</Tabs.Tab>
+              )
+            })
+          }
+        </Tabs.List>
+
         {
           Object.entries(recipeList).map((entry) => {
             return (
-              <Tabs.Tab
-                label={entry[0]}>
+              <Tabs.Panel key={entry[0]}
+                value={entry[0]}>
                 {
                   entry[1]
                     .sort((a, b) => {
@@ -63,7 +72,7 @@ const Recipes = () => {
                       );
                     })
                 }
-              </Tabs.Tab>
+              </Tabs.Panel>
             )
           })
         }

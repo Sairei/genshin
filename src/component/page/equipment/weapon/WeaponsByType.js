@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { Image } from '@mantine/core';
 
 import { findImage } from '../../../../utils/finder/findImage';
-import { Link } from 'react-router-dom';
 import NewFeature from '../../../UI/NewFeature';
 
 const WeaponsByType = ({ weapons }) => {

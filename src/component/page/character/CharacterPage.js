@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { Container, Image, ScrollArea, Tab, Tabs } from '@mantine/core';
+import { Container, Image, ScrollArea, Tabs } from '@mantine/core';
 
 import CharacterStyle from './CharacterStyle';
 import CharacterInfoPage from './info/CharacterInfoPage';
@@ -70,41 +70,49 @@ const CharacterPage = () => {
           </div>
 
           <div className='character_tabs_container'>
-            <Tabs grow color="gray"
+            <Tabs color="gray" defaultValue="Profil"
               classNames={{
                 root: 'character_tabs',
                 tabsList: 'tabs_list',
-                body: 'character_tab_body',
+                panel: 'character_tab_body',
                 tabActive: 'character_tab_active',
                 tabLabel: 'character_tabs_label'
               }}
             >
-              <Tab label="Profil">
+              <Tabs.List grow={true}>
+                <Tabs.Tab value="Profil">Profil</Tabs.Tab>
+                <Tabs.Tab value="Avancement">Avancement</Tabs.Tab>
+                <Tabs.Tab value="Compétences">Compétences</Tabs.Tab>
+                <Tabs.Tab value="Passifs">Passifs</Tabs.Tab>
+                <Tabs.Tab value="Constellations">Constellations</Tabs.Tab>
+              </Tabs.List>
+
+              <Tabs.Panel value="Profil">
                 <ProfilTab name={name}
                   outfit={outfit}
                   character={characterData} />
-              </Tab>
+              </Tabs.Panel>
 
-              <Tab label="Avancement">
+              <Tabs.Panel value="Avancement">
                 <AdvancementTab name={name}
                   searchName={searchName}
                   character={characterData} />
-              </Tab>
+              </Tabs.Panel>
 
-              <Tab label="Compétences">
+              <Tabs.Panel value="Compétences">
                 <SkillTab name={searchName}
                   talent={talentData} />
-              </Tab>
+              </Tabs.Panel>
 
-              <Tab label="Passifs">
+              <Tabs.Panel value="Passifs">
                 <PassiveTab
                   talent={talentData} />
-              </Tab>
+              </Tabs.Panel>
 
-              <Tab label="Constellations">
+              <Tabs.Panel value="Constellations">
                 <ConstellationTab elt={element} name={name}
                   constellation={constellationData} />
-              </Tab>
+              </Tabs.Panel>
             </Tabs>
           </div>
         </ScrollArea>

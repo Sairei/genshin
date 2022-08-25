@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Tab, Tabs } from '@mantine/core';
+import { Tabs } from '@mantine/core';
 
 import { categorie } from '../../../utils/categorie/categorie';
 import BestiaryList from './BestiaryList';
@@ -57,13 +57,19 @@ const BestiaryPage = () => {
   return (
     <div className='bestiary_container' >
 
-      <Tabs variant="outline" orientation="vertical">
-        <Tab label="Animaux" >
+      <Tabs variant="outline" orientation="vertical" defaultValue="Animaux">
+        <Tabs.List>
+          <Tabs.Tab value="Animaux">Animaux</Tabs.Tab>
+          <Tabs.Tab value="Enemies">Enemies</Tabs.Tab>
+        </Tabs.List>
+
+        <Tabs.Panel value="Animaux" >
           <BestiaryList list={animalList} select={handleSelected} />
-        </Tab>
-        <Tab label="Enemies" >
+        </Tabs.Panel>
+        <Tabs.Panel value="Enemies" >
           <BestiaryList list={enemiesList} select={handleSelected} />
-        </Tab>
+        </Tabs.Panel>
+
       </Tabs>
 
       <BestiaryInfo select={selected} display={display} />

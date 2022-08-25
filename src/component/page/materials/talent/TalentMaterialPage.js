@@ -35,6 +35,7 @@ const TalentMaterialPage = () => {
     })
 
     setTalentList(sortTalent(sourceTalentList));
+    console.log(sourceTalentList);
   }, [])
 
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import { Title } from '@mantine/core';
+import { Accordion, Title } from '@mantine/core';
 
 import { genshin_versions } from '../../../utils/database/version';
 import { sortByVersion } from '../../../utils/sort/sortByVersion';
@@ -57,17 +57,24 @@ const News = () => {
 
   return (
     <div className='home_news_container'>
-      <Title order={1}>
-        Nouveautés de la version {version.num}
-      </Title>
-      
-      <VersionContent 
-        characterList={characterList}
-        artifactList={artifactList}
-        recipeList={recipeList}
-        weaponList={weaponList}
-        enemiesList={enemiesList}
-        bestiaryList={bestiaryList} />
+      <Accordion>
+        <Accordion.Item className='version_container' key={version.num} value={`Version ${version.num}`}>
+          <Accordion.Control>
+            <Title order={1}>
+              Nouveautés de la version {version.num}
+            </Title>        
+          </Accordion.Control>
+          <Accordion.Panel>
+            <VersionContent 
+              characterList={characterList}
+              artifactList={artifactList}
+              recipeList={recipeList}
+              weaponList={weaponList}
+              enemiesList={enemiesList}
+              bestiaryList={bestiaryList} />
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
 
       <Link className='right' to="/news">Voir toutes les versions...</Link>
     </div>

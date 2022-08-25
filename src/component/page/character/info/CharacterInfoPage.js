@@ -32,7 +32,7 @@ const CharacterInfoPage = ({ data, name, setName }) => {
         <div className='info_image'>
           <Image
             src={data.images.namegachasplash ? findImage(data.images.namegachasplash) : data.images.portrait}
-            height={255}
+            height={255} width="none"
             fit='cover'
           />
         </div>

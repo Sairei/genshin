@@ -47,8 +47,13 @@ const GeographiesPage = () => {
               </Title>
 
             return (
-              <Accordion.Item key={elt} label={title} >
-                <GeographieList list={list} />
+              <Accordion.Item key={elt} value={elt}>
+                <Accordion.Control>
+                  {title}
+                </Accordion.Control>
+                <Accordion.Panel>
+                  <GeographieList list={list} />
+                </Accordion.Panel>
               </Accordion.Item>
             )
           })

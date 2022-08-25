@@ -58,30 +58,30 @@ const NewsPage = () => {
 
   const items = genshin_versions.map(version => {
     return (
-      <Accordion.Item className='version_container' key={version.num} 
-        label={
+      <Accordion.Item key={version.num} className='version_container' value={`Version ${version.num}`}>
+        <Accordion.Control>     
           <div className='title_div'>
             <Title order={1}> Version { version.num } </Title>
             <span className='release_date'>Sorti le { version.date }</span>
             <div className='title_separator'></div>
           </div>
-        }>
-
-        <VersionContent
-          characterList={characterList[version.num]}
-          artifactList={artifactList[version.num]}
-          recipeList={recipeList[version.num]}
-          weaponList={weaponList[version.num]}
-          enemiesList={enemiesList[version.num]}
-          bestiaryList={bestiaryList[version.num]} />
-      
+        </Accordion.Control>
+        <Accordion.Panel>
+          <VersionContent
+            characterList={characterList[version.num]}
+            artifactList={artifactList[version.num]}
+            recipeList={recipeList[version.num]}
+            weaponList={weaponList[version.num]}
+            enemiesList={enemiesList[version.num]}
+            bestiaryList={bestiaryList[version.num]} />
+        </Accordion.Panel>
       </Accordion.Item>
     )
   })
 
   return (
     <div className='news_container'>
-      <Accordion initialItem={-1} iconPosition="right">
+      <Accordion chevronPosition="right">
         { items }
       </Accordion>
     </div>

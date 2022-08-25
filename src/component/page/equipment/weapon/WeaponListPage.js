@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { useMediaQuery } from '@mantine/hooks';
 import { Tabs } from '@mantine/core';
 
 import { categorie } from '../../../../utils/categorie/categorie';
@@ -10,8 +9,6 @@ import WeaponsByType from './WeaponsByType';
 import { GenshinDB } from '../../../../utils/database/genshinbd';
 
 const WeaponListPage = () => {
-  const matches = useMediaQuery('(max-width: 720px)');
-
   const [weapons, setWeapons] = useState([]);
   useEffect(() => {
     let list = {};
@@ -33,23 +30,31 @@ const WeaponListPage = () => {
 
   return (
     <div className='weapon_list_container'>
-      <Tabs
+      <Tabs orientation="vertical"
+        defaultValue={ConvertFR.weaponLabel(categorie.weapontype[0])}
         classNames={{
           tabsListWrapper: "weapon_tabs_list",
           tabControl: "control_tab",
-          body: "weapon_tabs_body"
-        }}
-        grow={matches}
-        orientation={matches ? "horizontal" : "vertical"} >
-        {
-          categorie.weapontype.map((elt) => {
-            return (
-              <Tabs.Tab key={elt} label={ConvertFR.weaponLabel(elt)} >
-                <WeaponsByType weapons={weapons[ConvertFR.weaponLabel(elt)]} />
-              </Tabs.Tab>
-            );
-          })
-        }
+          panel: "weapon_tabs_body"
+        }}>
+          <Tabs.List>
+            {
+              categorie.weapontype.map((elt) => {
+                return (
+                  <Tabs.Tab key={elt} value={ConvertFR.weaponLabel(elt)}>{ConvertFR.weaponLabel(elt)}</Tabs.Tab>
+                );
+              })
+            }
+          </Tabs.List>
+          {
+            categorie.weapontype.map((elt) => {
+              return (
+                <Tabs.Panel key={elt} value={ConvertFR.weaponLabel(elt)} >
+                  <WeaponsByType weapons={weapons[ConvertFR.weaponLabel(elt)]} />
+                </Tabs.Panel>
+              );
+            })
+          }
       </Tabs>
     </div>
   );
