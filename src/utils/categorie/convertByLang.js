@@ -100,3 +100,17 @@ export const ConvertFR = {
     }
   }
 }
+
+
+export const ConvertEN = {
+  subStats: (stat) => {
+    switch (stat) {
+      case "Maîtrise élémentaire":
+      case "Elementarkunde":
+        return "Elemental Mastery";
+
+      default:
+        return "";
+    }
+  }
+}
