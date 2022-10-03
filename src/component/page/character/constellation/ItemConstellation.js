@@ -13,7 +13,7 @@ const ItemConstellation = ({ constellation, img }) => {
   return (
     <div className='constellation'>
       <div className='constellation_img_name'>
-        <Image
+        <Image withPlaceholder
           src={img}
           height={80} width={80} />
 
