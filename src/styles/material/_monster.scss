@@ -38,6 +38,11 @@
         background-color: #00000020;
         width: 70%;
         padding: 10px;
+        
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+        }
 
         .bestiary_image {
           margin: 10px 15px;
