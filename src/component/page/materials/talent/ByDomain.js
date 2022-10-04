@@ -30,7 +30,7 @@ const ByDomain = ({ domain, materials }) => {
                       <Image
                         className='talent_item_icon'
                         src={findImage(i.images.nameicon)}
-                        height={40}
+                        height={40} width={40}
                         fit='contain' />
 
                       <div className='vertical_align_text'>

@@ -31,6 +31,10 @@
 
         td {
           display: flex;
+
+          .item_name {
+            margin-left: 10px;
+          }
         }
       }
 

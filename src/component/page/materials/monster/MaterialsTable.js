@@ -21,7 +21,7 @@ const MaterialsTable = ({ values }) => {
                     src={findImage(obj.img)}
                   />
 
-                  <div className='vertical_align_text'>
+                  <div className='item_name vertical_align_text'>
                     <Anchor component={Link} to={`/item/${obj.link}`} >
                       {obj.name}
                     </Anchor>
