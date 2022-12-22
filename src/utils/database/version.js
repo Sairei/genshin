@@ -1,6 +1,10 @@
-export const genshin_last_version = "3.2";
+export const genshin_last_version = "3.3";
 
 export const genshin_versions = [
+  {
+    num: '3.3',
+    date: '07/12/2022'
+  },
   {
     num: '3.2',
     date: '02/11/2022'
