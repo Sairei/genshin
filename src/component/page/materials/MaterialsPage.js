@@ -70,7 +70,9 @@ const MaterialsPage = () => {
 
       <Space h={"xl"} />
 
-      <MaterialsList list={materialsArr} />
+      <MaterialsList list={
+        materialsArr.sort((a, b) => { return a.name.localeCompare(b.name) })
+      } />
     </>
   );
 };
