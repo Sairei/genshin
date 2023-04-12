@@ -5,7 +5,7 @@ export const categorie = {
 	gender: ["male", "female"],
 	region: ["mondstadt", "liyue", "snezhnaya", "inazuma", "sumeru"],
 	rarity: ["1", "2", "3", "4", "5"],
-	cristal: ['vayuda', 'agnidus', 'vajrada', 'prithiva', 'shivada', 'varunada'],
+	cristal: ['vayuda', 'agnidus', 'vajrada', 'prithiva', 'shivada', 'varunada', 'nagadus'],
 	day: ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
 	birthday: ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
 	animal: ["birds", "beasts", "fish", "other"],
