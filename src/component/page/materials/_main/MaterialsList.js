@@ -14,17 +14,19 @@ const MaterialsList = ({ list }) => {
           list
             .sort((a, b) => { return a.name.localeCompare(b.name) })
             .map((mat, index) => {
-              convertTextWithGender(mat.name);
+              var name = mat.dupealias ? mat.dupealias : mat.name;
+
+              convertTextWithGender(name);
               return (
-                <li key={`${mat.name}_${index}`}>
+                <li key={`${name}_${index}`}>
                   <Image
                     fit='contain'
                     width={40} height={40}
                     src={findImage(mat.images.nameicon)} />
 
                   <Anchor className='item_link vertical_align_text'
-                    component={Link} to={`/item/${convertTextWithGender(mat.name)}`} >
-                    {convertTextWithGender(mat.name)}
+                    component={Link} to={`/item/${convertTextWithGender(name)}`} >
+                    {convertTextWithGender(name)}
                   </Anchor>
                 </li>
               );

@@ -4,6 +4,7 @@ const wantedLanguage = "French";
 const genshindb = require('genshin-db');
 
 genshindb.setOptions({
+  matchAliases: true,
   queryLanguages: ["English", wantedLanguage],
   resultLanguage: wantedLanguage
 });

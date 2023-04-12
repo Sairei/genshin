@@ -16,7 +16,27 @@ const MaterialsPage = () => {
   useEffect(() => {
     let l = [];
     GenshinDB.getAllMaterialsNames().map((elt) => {
-      l.push(GenshinDB.findMaterials(elt));
+      let m = GenshinDB.findMaterials(elt);
+      let index = 0
+
+      if (!l.includes(m)) {
+        l.push(m);
+      } else {
+        let isInclude = l.includes(m);
+        let tmp = m;
+        while (isInclude) {
+          console.log(index);
+          tmp = GenshinDB.findMaterials(elt + " " + index);
+          isInclude = l.includes(tmp) && (tmp || index<10);
+          if (tmp) {
+            m = tmp;
+            index++;
+          }
+        }
+        console.log("m => ")
+        console.log(m);
+        l.push(m);
+      }
 
       return '';
     })
