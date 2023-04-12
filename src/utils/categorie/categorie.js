@@ -14,7 +14,7 @@ export const categorie = {
 		local_specialty: ["Local Specialty (Mondstadt)", "Local Specialty (Liyue)", "Local Specialty (Inazuma)", "Local Specialty (Sumeru)"],
 		character_lvl_up: ["Character Level-Up Material"],
 		character_exp: ["Character EXP Material"],
-		talent_lvl_up: ["Talent Level-Up Material", "Talent Level-Up Materials"],
+		talent_lvl_up: ["Talent"],
 		weapon_lvl_up: ["Weapon Ascension Material"],
 		weapon_exp: ["Weapon Enhancement Material"],
 		fishing: ["Fish", "Bait", "Fishing Rod"],
