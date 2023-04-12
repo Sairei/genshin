@@ -25,7 +25,6 @@ const MaterialsPage = () => {
         let isInclude = l.includes(m);
         let tmp = m;
         while (isInclude) {
-          console.log(index);
           tmp = GenshinDB.findMaterials(elt + " " + index);
           isInclude = l.includes(tmp) && (tmp || index<10);
           if (tmp) {
@@ -33,8 +32,6 @@ const MaterialsPage = () => {
             index++;
           }
         }
-        console.log("m => ")
-        console.log(m);
         l.push(m);
       }
 
