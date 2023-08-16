@@ -24,17 +24,19 @@ const CharacterList = ({ characters }) => {
             searchName = "Aether";
           }
           let tmp = GenshinDB.findCharacter(searchName);
-
           let img = tmp.images;
-          if (searchName === "Aether") {
-            img = img.image;
-            element = characName.substring(characName.indexOf('(') + 1, characName.indexOf(')'));
-            characName = "Aether / Lumine"
+          if (img) {
+            if (searchName === "Aether") {
+              img = img.image;
+              element = characName.substring(characName.indexOf('(') + 1, characName.indexOf(')'));
+              characName = "Aether / Lumine"
+            }
+            else {
+              img = findImage(img.nameicon);
+              element = tmp.element;
+            }
           }
-          else {
-            img = findImage(img.nameicon);
-            element = tmp.element;
-          }
+          tmp = undefined;
 
           return (
             <Tooltip key={index}
@@ -44,7 +46,7 @@ const CharacterList = ({ characters }) => {
               <Image
                 fit='contain'
                 className={`new_charac border_${simplifyText(element)}`}
-                width={100} height={100}
+                width={100} height={100} withPlaceholder 
                 src={img} alt={characName}
               />
             </Tooltip>

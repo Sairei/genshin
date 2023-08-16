@@ -21,6 +21,7 @@ const ItemsList = ({ rarity, items, finder }) => {
           } else if (tmp['1pc']) {
             img = tmp.images.namecirclet;
           }
+          tmp = undefined;
 
           return (
             <Tooltip key={index}
@@ -30,7 +31,7 @@ const ItemsList = ({ rarity, items, finder }) => {
               <Image
                 fit='contain'
                 className={`${rarity ? `rarity_${item.rarity}` : ``} new_item`}
-                width={100} height={100}
+                width={100} height={100} withPlaceholder
                 src={findImage(img)} alt={itemName}
               />
             </Tooltip>

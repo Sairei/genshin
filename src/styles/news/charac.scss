@@ -12,9 +12,14 @@
     margin: 5px 10px;
 
     img {
-      padding: 2px;
+      padding: 5px;
       border-radius: 1rem;
     }
+  }
+
+  .mantine-Image-placeholder {
+    margin: -3px;
+    border-radius: 0.8rem;
   }
 }
 
